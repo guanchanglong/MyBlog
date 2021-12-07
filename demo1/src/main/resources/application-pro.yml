@@ -1,0 +1,21 @@
+#生产环境(部署到服务器上面)
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/travel?useUnicode=true&characterEncoding=utf-8
+    username: travel
+    password: jyMymNkE8xnAhNST
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.xupt.demo1.entity
+
+logging:
+  level:
+    root: warn
+    com.gcl: info
+  file:
+    name: log/blog-pro.log
+
+server:
+  port: 8888

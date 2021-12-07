@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gcl.demo1.entity.User">
+<!--    <select id="findByEmailAndPassword" resultType="com.xupt.demo1.entity.User">-->
+<!--        select * from t_user where email = #{email} and password = #{password};-->
+<!--    </select>-->
+
+<!--    <select id="findByEmailAndPasswordAndAdminRole" resultType="com.xupt.demo1.entity.User">-->
+<!--        select * from t_user where email = #{email} and password = #{password} and role = 0;-->
+<!--    </select>-->
+
+<!--    <select id="findByEmail" resultType="com.xupt.demo1.entity.User">-->
+<!--        select * from t_user where email = #{email}-->
+<!--    </select>-->
+
+<!--    <select id="findAllCommonUser" resultType="com.xupt.demo1.entity.User">-->
+<!--        select * from t_user where role != 0-->
+<!--    </select>-->
+
+<!--    <select id="findById" resultType="com.xupt.demo1.entity.User">-->
+<!--        select * from t_user where id = #{userId}-->
+<!--    </select>-->
+
+<!--    <insert id="insertUser">-->
+<!--        insert into t_user(email,password,role) values(#{email},#{password},1)-->
+<!--    </insert>-->
+
+<!--    <insert id="addCommonUser" parameterType="com.xupt.demo1.entity.User">-->
+<!--        insert into t_user(username,phone,email,password,picture,role) values(#{user.username},#{user.phone},#{user.email},#{user.password},#{user.picture},1)-->
+<!--    </insert>-->
+
+<!--    <update id="updateUser" parameterType="com.xupt.demo1.entity.User">-->
+<!--        update t_user-->
+<!--        <set>-->
+<!--            <if test="user.username!=null">-->
+<!--                username = #{user.username},-->
+<!--            </if>-->
+<!--            <if test="user.email!=null">-->
+<!--                email = #{user.email},-->
+<!--            </if>-->
+<!--            <if test="user.phone!=null">-->
+<!--                phone = #{user.phone},-->
+<!--            </if>-->
+<!--            <if test="user.password!=null">-->
+<!--                password = #{user.password},-->
+<!--            </if>-->
+<!--            <if test="user.picture!=null">-->
+<!--                picture = #{user.picture},-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        where id = #{user.id}-->
+<!--    </update>-->
+
+<!--    <update id="updateUserStatusToBad">-->
+<!--        update t_user set role = 2 where id = #{userId}-->
+<!--    </update>-->
+
+<!--    <update id="updateUserStatusToGood">-->
+<!--        update t_user set role = 1 where id = #{userId}-->
+<!--    </update>-->
+
+<!--    <select id="findCommonByUserName" resultType="com.xupt.demo1.entity.User">-->
+<!--        select * from t_user where role != 0 and username like #{username}-->
+<!--    </select>-->
+
+<!--    <update id="updateUsernameAndPicture" parameterType="com.xupt.demo1.entity.User">-->
+<!--        update t_user-->
+<!--        set username = #{user.username},picture = #{user.picture}-->
+<!--        where id = #{user.id}-->
+<!--    </update>-->
+
+
+</mapper>

@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    suffix: .html
+    prefix: classpath:/templates/
+    check-template-location: true
+  mvc:
+    static-path-pattern: /static/**
+  profiles:
+    active: dev
+  messages:
+    basename: i18n/messages
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+comment.avatar: /images/avatar.png
