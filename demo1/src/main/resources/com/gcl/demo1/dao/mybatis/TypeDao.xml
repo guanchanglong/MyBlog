@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gcl.demo1.dao.mybatis.MTypeDao">
+
+    <resultMap id="typeMap" type="com.gcl.demo1.entity.mybatis.Type">
+        <id property="id" column="id"/>
+        <result property="name" column="type_name"/>
+    </resultMap>
+
+    <select id="findTypeById" resultMap="typeMap">
+        select * from t_type where id = #{typeId}
+    </select>
+
+</mapper>

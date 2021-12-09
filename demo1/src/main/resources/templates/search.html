@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索结果</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css}">
+  <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}">
+  <link rel="icon" href="../static/favicon.ico">
+</head>
+<body>
+
+  <!--导航-->
+  <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item">Blog</h2>
+        <a href="#" class=" m-item item m-mobile-hide"><i class="mini home icon"></i>&nbsp;首页</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>&nbsp;分类</a>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="mini tags icon"></i>&nbsp;标签</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>&nbsp;归档</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini envelope outline icon"></i>&nbsp;留言</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini icon chart pie"></i>&nbsp;流量统计</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini info icon"></i>&nbsp;关于我</a>
+        <div class="right m-item item m-mobile-hide">
+          <div class="ui icon inverted transparent input m-margin-tb-tiny">
+            <input type="text" placeholder="Search....">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+      <i class="sidebar icon"></i>
+    </a>
+  </nav>
+
+  <!--中间内容-->
+  <div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+      <!--header-->
+      <div class="ui top attached segment">
+        <div class="ui middle aligned two column grid">
+          <div class="column">
+            <h3 class="ui teal header">搜索结果</h3>
+          </div>
+          <div class="right aligned column">
+            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> 个
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="ui top attached teal segment">
+        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
+          <div class="ui middle aligned mobile reversed stackable grid" >
+            <div class="eleven wide column">
+              <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
+              <p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+              <div class="ui grid">
+                <div class="eleven wide column">
+                  <div class="ui mini horizontal link list">
+                    <div class="item">
+                      <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}"  alt="" class="ui avatar image">
+                      <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}" >李仁密</a></div>
+                    </div>
+                    <div class="item">
+                      <i class="calendar icon"></i><span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}">2017-10-01</span>
+                    </div>
+                    <div class="item">
+                      <i class="eye icon"></i> <span th:text="${blog.views}">2342</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="right aligned five wide column">
+                  <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="five wide column">
+              <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}"  alt="" class="ui rounded image">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--footer-->
+      <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+        <div class="ui middle aligned two column grid">
+          <div class="column">
+            <a href="#" th:href="@{/(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+          </div>
+          <div class="right aligned column">
+            <a href="#" th:href="@{/(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!--底部footer-->
+  <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+      <div class="ui inverted divided stackable grid">
+        <div class="three wide column">
+          <div class="ui inverted link list">
+            <div class="item">
+              <img src="../static/images/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
+            </div>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">Email：506921079@qq.com</a>
+            <a href="#" class="item m-text-thin">QQ：506921079</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
+          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 - 2021 guanchanglong Designed by guanchanglong</p>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny"><a href="https://beian.miit.gov.cn">桂ICP备2021002081号</a></p>
+    </div>
+
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js}"></script>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+  </script>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="../static/assets/waifu.min.css"/>
+  <!-- waifu-tips.js 依赖 JQuery 库 -->
+  <script src="../static/assets/jquery.min.js"></script>
+  <!-- 实现拖动效果，需引入 JQuery UI -->
+  <script src="../static/assets/jquery-ui.min.js"></script>
+
+  <script src="../static/assets/waifu-tips.min.js"></script>
+  <script src="../static/assets/live2d.min.js"></script>
+
+  <div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" class="live2d"></canvas>
+    <div class="waifu-tool">
+      <span class="fui-home"></span>
+      <span class="fui-chat"></span>
+      <span class="fui-eye"></span>
+      <span class="fui-user"></span>
+      <span class="fui-photo"></span>
+      <span class="fui-info-circle"></span>
+      <span class="fui-cross"></span>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    /* 可直接修改部分参数 */
+    // 工具栏设置
+    live2d_settings['showToolMenu']         = true;         // 显示 工具栏          ，可选 true(真), false(假)
+    live2d_settings['canCloseLive2d']       = true;         // 显示 关闭看板娘  按钮，可选 true(真), false(假)
+    live2d_settings['canSwitchModel']       = true;         // 显示 模型切换    按钮，可选 true(真), false(假)
+    live2d_settings['canSwitchTextures']    = true;         // 显示 材质切换    按钮，可选 true(真), false(假)
+    live2d_settings['canSwitchHitokoto']    = true;         // 显示 一言切换    按钮，可选 true(真), false(假)
+    live2d_settings['canTakeScreenshot']    = true;         // 显示 看板娘截图  按钮，可选 true(真), false(假)
+    live2d_settings['canTurnToHomePage']    = true;         // 显示 返回首页    按钮，可选 true(真), false(假)
+    live2d_settings['canTurnToAboutPage']   = true;         // 显示 跳转关于页  按钮，可选 true(真), false(假)
+
+    // 模型切换模式
+    live2d_settings['modelStorage']         = true;         // 记录 ID (刷新后恢复)，可选 true(真), false(假)
+    live2d_settings['modelRandMode']        = 'switch';     // 模型切换，可选 'rand'(随机), 'switch'(顺序)
+    live2d_settings['modelTexturesRandMode']= 'rand';       // 材质切换，可选 'rand'(随机), 'switch'(顺序)
+
+    // 提示消息选项
+    live2d_settings['showHitokoto']         = true;         // 显示一言
+    live2d_settings['showF12Status']        = true;         // 显示加载状态
+    live2d_settings['showF12Message']       = false;        // 显示看板娘消息
+    live2d_settings['showF12OpenMsg']       = true;         // 显示控制台打开提示
+    live2d_settings['showCopyMessage']      = true;         // 显示 复制内容 提示
+    live2d_settings['showWelcomeMessage']   = true;         // 显示进入面页欢迎词
+
+    //看板娘样式设置
+    live2d_settings['waifuSize']            = '280x250';    // 看板娘大小，例如 '280x250', '600x535'
+    live2d_settings['waifuTipsSize']        = '250x70';     // 提示框大小，例如 '250x70', '570x150'
+    live2d_settings['waifuFontSize']        = '12px';       // 提示框字体，例如 '12px', '30px'
+    live2d_settings['waifuToolFont']        = '14px';       // 工具栏字体，例如 '14px', '36px'
+    live2d_settings['waifuToolLine']        = '20px';       // 工具栏行高，例如 '20px', '36px'
+    live2d_settings['waifuToolTop']         = '0px'         // 工具栏顶部边距，例如 '0px', '-60px'
+    live2d_settings['waifuMinWidth']        = '768px';      // 面页小于 指定宽度 隐藏看板娘，例如 'disable'(禁用), '768px'
+    live2d_settings['waifuEdgeSide']        = 'right:0';     // 看板娘贴边方向，例如 'left:0'(靠左 0px), 'right:30'(靠右 30px)
+    live2d_settings['waifuDraggable']       = 'disable';    // 拖拽样式，例如 'disable'(禁用), 'axis-x'(只能水平拖拽), 'unlimited'(自由拖拽)
+    live2d_settings['waifuDraggableRevert'] = true;         // 松开鼠标还原拖拽位置，可选 true(真), false(假)
+
+    // 其他杂项设置
+    live2d_settings['l2dVersion']           = '1.4.2';        // 当前版本
+    live2d_settings['l2dVerDate']           = '2018.11.12'; // 版本更新日期
+    live2d_settings['homePageUrl']          = 'https://www.xiaoguantongxue.com/blog';       // 主页地址，可选 'auto'(自动), '{URL 网址}'
+    live2d_settings['aboutPageUrl']         = 'https://www.xiaoguantongxue.com/blog';   // 关于页地址, '{URL 网址}'
+    live2d_settings['screenshotCaptureName']= 'live2d.png'; // 看板娘截图文件名，例如 'live2d.png'
+    /* 在 initModel 前添加 */
+    initModel("../static/assets/waifu-tips.json")
+  </script>
+
+</body>
+</html>

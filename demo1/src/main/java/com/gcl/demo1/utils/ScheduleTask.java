@@ -1,7 +1,7 @@
 //package com.gcl.demo1.utils;
 //
-//import com.gcl.demo1.entity.DayCount;
-//import com.gcl.demo1.service.DayCountService;
+//import com.gcl.demo1.entity.jpa.DayCount;
+//import com.gcl.demo1.service.jpa.DayCountService;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.scheduling.annotation.EnableScheduling;
