@@ -24,6 +24,8 @@ public interface MBlogService {
 
     PageInfo<Blog> listBlog(int pageNum, int size);
 
+    Blog getAndConvert(int id);
+
 //    List<Blog> listRecommendBlogTop(Integer size);
 
 //    Map<String,List<Blog>> archiveBlog();

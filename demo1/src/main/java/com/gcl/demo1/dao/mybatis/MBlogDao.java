@@ -2,6 +2,7 @@ package com.gcl.demo1.dao.mybatis;
 
 import com.gcl.demo1.entity.mybatis.Blog;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,8 @@ import java.util.List;
 public interface MBlogDao {
 
     List<Blog> findAllByPublished();
+
+    Blog findBlogById(@Param("blogId") int blogId);
+
+    void updateViews(@Param("blogId") int blogId);
 }

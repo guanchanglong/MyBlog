@@ -33,16 +33,6 @@ public class IndexController {
     @Autowired
     private TagService tagService;
 
-//    @GetMapping("/")
-//    public String index(@PageableDefault(size = 8, sort = {"createTime"}, direction = Sort.Direction.DESC) Pageable pageable,
-//                        Model model) {
-//        model.addAttribute("page",blogService.listBlog(pageable));
-//        model.addAttribute("types", typeService.listTypeTop(6));
-//        model.addAttribute("tags", tagService.listTagTop(10));
-//        model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
-//        return "index";
-//    }
-
     /**
      * 主页
      * @param pageNum
@@ -83,8 +73,8 @@ public class IndexController {
      * @return
      */
     @GetMapping("/blog/{id}")
-    public String blog(@PathVariable Long id, Model model) {
-        model.addAttribute("blog", blogService.getAndConvert(id));
+    public String blog(@PathVariable int id, Model model) {
+        model.addAttribute("blog", mBlogService.getAndConvert(id));
         return "blog";
     }
 

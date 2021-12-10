@@ -62,6 +62,7 @@ public class Blog {
     //多个标签对应着多篇文章
     private List<Tag> tags = new ArrayList<>();
 
+
     public int getId() {
         return id;
     }

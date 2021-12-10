@@ -27,4 +27,12 @@
         select * from t_blog
     </select>
 
+    <select id="findBlogById" resultMap="blogMap">
+        select * from t_blog where id = #{blogId}
+    </select>
+
+    <update id="updateViews">
+        update t_blog set views = views+1 where id = #{blogId}
+    </update>
+
 </mapper>
