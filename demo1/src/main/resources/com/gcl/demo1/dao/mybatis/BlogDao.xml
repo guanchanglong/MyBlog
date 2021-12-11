@@ -35,4 +35,8 @@
         update t_blog set views = views+1 where id = #{blogId}
     </update>
 
+    <select id="findBlogByTypeId" resultMap="blogMap">
+        select * from t_blog where type_id = #{typeId}
+    </select>
+
 </mapper>

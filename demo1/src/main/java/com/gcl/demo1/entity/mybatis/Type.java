@@ -7,7 +7,7 @@ import java.util.List;
  * @author 小关同学
  * @create 2021/12/7
  */
-public class Type {
+public class Type implements Comparable<Type>{
 
     private int id;
 
@@ -37,5 +37,29 @@ public class Type {
 
     public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
+    }
+
+    @Override
+    public String toString() {
+        return "Type{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", blogs=" + blogs +
+                '}';
+    }
+
+
+    /**
+     * 实现Comparable接口内方法进行排序
+     * @param type
+     * @return
+     */
+    @Override
+    public int compareTo(Type type) {
+        //升序
+//        return blogs.size()-type.getBlogs().size();
+
+        //降序
+        return type.getBlogs().size() - blogs.size();
     }
 }

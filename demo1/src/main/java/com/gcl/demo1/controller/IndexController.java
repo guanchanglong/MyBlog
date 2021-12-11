@@ -4,6 +4,7 @@ import com.gcl.demo1.service.jpa.BlogService;
 import com.gcl.demo1.service.jpa.TagService;
 import com.gcl.demo1.service.jpa.TypeService;
 import com.gcl.demo1.service.mybatis.MBlogService;
+import com.gcl.demo1.service.mybatis.MTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -28,7 +29,10 @@ public class IndexController {
     private MBlogService mBlogService;
 
     @Autowired
-    private TypeService typeService;
+    private MTypeService mTypeService;
+
+//    @Autowired
+//    private TypeService typeService;
 
     @Autowired
     private TagService tagService;
@@ -42,10 +46,10 @@ public class IndexController {
      */
     @GetMapping("/")
     public String index(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
-                        @RequestParam(value = "size",defaultValue = "7") int size,
+                        @RequestParam(value = "size",defaultValue = "8") int size,
                         Model model) {
         model.addAttribute("page",mBlogService.listBlog(pageNum,size));
-        model.addAttribute("types", typeService.listTypeTop(6));
+        model.addAttribute("types", mTypeService.listTypeTop(6));
         model.addAttribute("tags", tagService.listTagTop(10));
         model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
         return "index";

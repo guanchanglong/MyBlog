@@ -7,11 +7,15 @@
 
     <resultMap id="typeMap" type="com.gcl.demo1.entity.mybatis.Type">
         <id property="id" column="id"/>
-        <result property="name" column="type_name"/>
+        <result property="name" column="name"/>
     </resultMap>
 
     <select id="findTypeById" resultMap="typeMap">
         select * from t_type where id = #{typeId}
+    </select>
+
+    <select id="findAllType" resultMap="typeMap">
+        select * from t_type
     </select>
 
 </mapper>

@@ -15,6 +15,8 @@ import java.util.List;
 public interface MTypeDao {
     Type findTypeById(@Param("typeId") int id);
 
+    List<Type> findAllType();
+
     Type findAllByName(String name);
 
     List<Type> findTop(Pageable pageable);

@@ -3,6 +3,7 @@ package com.gcl.demo1.service.mybatis.impl;
 import com.gcl.demo1.NotFoundException;
 import com.gcl.demo1.dao.mybatis.*;
 import com.gcl.demo1.entity.mybatis.Blog;
+import com.gcl.demo1.entity.mybatis.Comment;
 import com.gcl.demo1.entity.mybatis.Tag;
 import com.gcl.demo1.entity.mybatis.User;
 import com.gcl.demo1.service.mybatis.MBlogService;
@@ -12,6 +13,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -53,6 +56,7 @@ public class IMBlogService implements MBlogService {
 
     @Override
     public Blog getAndConvert(int id) {
+
         //找到对应的博客
         Blog blog = mBlogDao.findBlogById(id);
         //若博客不为空，继续接下来的步骤
@@ -76,4 +80,5 @@ public class IMBlogService implements MBlogService {
         mBlogDao.updateViews(id);
         return blog;
     }
+
 }
