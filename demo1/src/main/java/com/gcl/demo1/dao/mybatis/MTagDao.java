@@ -16,9 +16,5 @@ public interface MTagDao {
 
     List<Tag> findTagByBlogId(@Param("blogId") int blogId);
 
-    Tag findTagById(int id);
-
-    Tag findAllByName(String name);
-
-    List<Tag> findTop(Pageable pageable);
+    List<Tag> findAllTag();
 }

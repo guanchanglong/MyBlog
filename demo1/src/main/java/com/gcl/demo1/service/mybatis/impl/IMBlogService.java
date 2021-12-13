@@ -43,7 +43,6 @@ public class IMBlogService implements MBlogService {
     public PageInfo<Blog> listBlog(int pageNum, int size) {
         //按照博客创建时间排序
         PageHelper.startPage(pageNum,size,"create_time");
-        System.out.println(mBlogDao==null);
         List<Blog> list = mBlogDao.findAllByPublished();
         for (Blog blog:list){
             //设置博客的作者

@@ -4,6 +4,7 @@ import com.gcl.demo1.service.jpa.BlogService;
 import com.gcl.demo1.service.jpa.TagService;
 import com.gcl.demo1.service.jpa.TypeService;
 import com.gcl.demo1.service.mybatis.MBlogService;
+import com.gcl.demo1.service.mybatis.MTagService;
 import com.gcl.demo1.service.mybatis.MTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -31,11 +32,8 @@ public class IndexController {
     @Autowired
     private MTypeService mTypeService;
 
-//    @Autowired
-//    private TypeService typeService;
-
     @Autowired
-    private TagService tagService;
+    private MTagService mTagService;
 
     /**
      * 主页
@@ -50,7 +48,7 @@ public class IndexController {
                         Model model) {
         model.addAttribute("page",mBlogService.listBlog(pageNum,size));
         model.addAttribute("types", mTypeService.listTypeTop(6));
-        model.addAttribute("tags", tagService.listTagTop(10));
+        model.addAttribute("tags", mTagService.listTagTop(10));
         model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
         return "index";
     }

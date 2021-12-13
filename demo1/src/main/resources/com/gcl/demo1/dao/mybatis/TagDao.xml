@@ -6,7 +6,11 @@
 <mapper namespace="com.gcl.demo1.dao.mybatis.MTagDao">
 
     <select id="findTagByBlogId" resultType="com.gcl.demo1.entity.mybatis.Tag">
-        select * from t_tag where id = (select tags_id from t_blog_tags where blogs_id = #{blogId})
+        select * from t_tag where id in (select tags_id from t_blog_tags where blogs_id = #{blogId})
+    </select>
+
+    <select id="findAllTag" resultType="com.gcl.demo1.entity.mybatis.Tag">
+        select * from t_tag
     </select>
 
 </mapper>

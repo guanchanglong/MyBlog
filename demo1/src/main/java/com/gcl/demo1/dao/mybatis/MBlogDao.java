@@ -20,4 +20,6 @@ public interface MBlogDao {
     void updateViews(@Param("blogId") int blogId);
 
     List<Blog> findBlogByTypeId(@Param("typeId") int typeId);
+
+    List<Blog> findBlogByTag(@Param("tagId") int tagId);
 }

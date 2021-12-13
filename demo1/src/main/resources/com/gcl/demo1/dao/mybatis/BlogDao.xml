@@ -24,7 +24,7 @@
     </resultMap>
 
     <select id="findAllByPublished" resultMap="blogMap">
-        select * from t_blog
+        select * from t_blog where published = 1
     </select>
 
     <select id="findBlogById" resultMap="blogMap">
@@ -36,7 +36,11 @@
     </update>
 
     <select id="findBlogByTypeId" resultMap="blogMap">
-        select * from t_blog where type_id = #{typeId}
+        select * from t_blog where type_id = #{typeId} and published = 1
+    </select>
+
+    <select id="findBlogByTag" resultMap="blogMap">
+        select * from t_blog where id in (select blogs_id from t_blog_tags where tags_id = #{tagId}) and published = 1
     </select>
 
 </mapper>

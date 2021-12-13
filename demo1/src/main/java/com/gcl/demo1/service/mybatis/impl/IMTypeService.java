@@ -25,16 +25,16 @@ public class IMTypeService implements MTypeService {
 
     @Override
     public List<Type> listTypeTop(int size){
-        List<Type> result = new ArrayList<>();
-        List<Type> list = mTypeDao.findAllType();
-        for (Type type:list){
+        List<Type> result = new ArrayList<>(size);
+        List<Type> types = mTypeDao.findAllType();
+        for (Type type:types){
             List<Blog> blogs = mBlogDao.findBlogByTypeId(type.getId());
             type.setBlogs(blogs);
         }
         //排序
-        Collections.sort(list);
+        Collections.sort(types);
 
-        for (Type type:list){
+        for (Type type:types){
             if (size!=0){
                 result.add(type);
             }else{

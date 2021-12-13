@@ -7,7 +7,7 @@ import java.util.List;
  * @author 小关同学
  * @create 2021/12/7
  */
-public class Tag {
+public class Tag implements Comparable<Tag>{
 
     private int id;
     //标签名称
@@ -37,5 +37,11 @@ public class Tag {
 
     public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
+    }
+
+    @Override
+    public int compareTo(Tag tag) {
+        //降序排序
+        return tag.getBlogs().size() - blogs.size();
     }
 }
