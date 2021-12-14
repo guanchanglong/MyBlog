@@ -1,8 +1,6 @@
 package com.gcl.demo1.controller;
 
 import com.gcl.demo1.service.jpa.BlogService;
-import com.gcl.demo1.service.jpa.TagService;
-import com.gcl.demo1.service.jpa.TypeService;
 import com.gcl.demo1.service.mybatis.MBlogService;
 import com.gcl.demo1.service.mybatis.MTagService;
 import com.gcl.demo1.service.mybatis.MTypeService;
@@ -49,7 +47,7 @@ public class IndexController {
         model.addAttribute("page",mBlogService.listBlog(pageNum,size));
         model.addAttribute("types", mTypeService.listTypeTop(6));
         model.addAttribute("tags", mTagService.listTagTop(10));
-        model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
+        model.addAttribute("recommendBlogs", mBlogService.listBlog(1,8));
         return "index";
     }
 
