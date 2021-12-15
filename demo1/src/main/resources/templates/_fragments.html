@@ -32,9 +32,9 @@
       <a href="http://www.xiaoguantongxue.com/statistics/getDateCounts" th:href="@{/statistics/getDateCounts}" class="m-item item m-mobile-hide" th:classappend="${n==6} ? 'active'"><i class="mini icon chart pie"></i>&nbsp;流量统计</a>
       <a href="http://www.xiaoguantongxue.com/about" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==7} ? 'active'"><i class="mini info icon"></i>&nbsp;关于我</a>
       <div class="right m-item item m-mobile-hide">
-        <form name="search" action="http://www.xiaoguantongxue.com/search" th:action="@{/search}" method="post" target="_blank">
+        <form name="search" action="http://www.xiaoguantongxue.com/search" th:action="@{/search}" method="get" target="_blank">
           <div class="ui icon inverted transparent input m-margin-tb-tiny">
-            <input type="text" name="query" placeholder="Search...." th:value="${query}">
+            <input type="text" name="content" placeholder="Search...." th:value="${content}">
             <i onclick="document.forms['search'].submit()" class="search link icon"></i>
           </div>
         </form>
@@ -66,10 +66,10 @@
       </div>
       <div class="three wide column" >
         <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
-        <div id="newblog-container">
-          <div class="ui inverted link list" th:fragment="newblogList">
+        <div id="newBlog-container">
+          <div class="ui inverted link list" th:fragment="newBlogList">
             <!--href里面是博客的跳转地址-->
-            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item m-text-thin" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事（User Story）</a>
+            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item m-text-thin" th:each="blog : ${newBlogs}" th:text="${blog.title}">用户故事（User Story）</a>
             <!--/*-->
             <a href="#" class="item m-text-thin">用户故事（User Story）</a>
             <a href="#" class="item m-text-thin">用户故事（User Story）</a>
@@ -146,7 +146,7 @@
   <script src="../static/js/emoji.list.js" th:src="@{/js/emoji.list.js}"></script>
 
   <script>
-    $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    $('#newBlog-container').load(/*[[@{/footer/newBlog}]]*/"/footer/newBlog");
   </script>
 
 

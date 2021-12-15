@@ -45,7 +45,7 @@
             <h3 class="ui teal header">搜索结果</h3>
           </div>
           <div class="right aligned column">
-            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> 个
+            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.getTotal()}"> 14 </h2> 个
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
 
 
       <div class="ui top attached teal segment">
-        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
+        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.getList()}">
           <div class="ui middle aligned mobile reversed stackable grid" >
             <div class="eleven wide column">
               <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
@@ -90,13 +90,13 @@
       </div>
 
       <!--footer-->
-      <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+      <div class="ui bottom attached segment" th:if="${page.getPages()}>1">
         <div class="ui middle aligned two column grid">
           <div class="column">
-            <a href="#" th:href="@{/(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+            <a href="#" th:href="'?pageNum=' + ${page.getPrePage()} + '&content=' + ${content}"  th:unless="${page.isFirstPage}" class="ui mini teal basic button">上一页</a>
           </div>
           <div class="right aligned column">
-            <a href="#" th:href="@{/(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+            <a href="#" th:href="'?pageNum=' + ${page.getNextPage()} + '&content=' + ${content}"  th:unless="${page.isIsLastPage()}" class="ui mini teal basic button">下一页</a>
           </div>
         </div>
       </div>

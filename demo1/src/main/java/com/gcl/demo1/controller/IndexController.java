@@ -1,18 +1,13 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.service.jpa.BlogService;
 import com.gcl.demo1.service.mybatis.MBlogService;
 import com.gcl.demo1.service.mybatis.MTagService;
 import com.gcl.demo1.service.mybatis.MTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -21,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class IndexController {
-    @Autowired
-    private BlogService blogService;
 
     @Autowired
     private MBlogService mBlogService;
@@ -53,16 +46,19 @@ public class IndexController {
 
     /**
      * 文章查找
-     * @param pageable
-     * @param query
+     * @param pageNum
+     * @param size
+     * @param content
      * @param model
      * @return
      */
-    @PostMapping("/search")
-    public String search(@PageableDefault(size = 8, sort = {"createTime"}, direction = Sort.Direction.DESC) Pageable pageable,
-                         @RequestParam String query, Model model) {
-        model.addAttribute("page", blogService.listBlog("%"+query+"%", pageable));
-        model.addAttribute("query", query);
+    @GetMapping("/search")
+    public String search(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                         @RequestParam(value = "size",defaultValue = "8") int size,
+                         @RequestParam(value = "content") String content,
+                         Model model) {
+        model.addAttribute("page", mBlogService.listBlog(pageNum, size, content));
+        model.addAttribute("content", content);
         return "search";
     }
 
@@ -83,10 +79,10 @@ public class IndexController {
      * @param model
      * @return
      */
-    @GetMapping("/footer/newblog")
-    public String newblogs(Model model) {
+    @GetMapping("/footer/newBlog")
+    public String newBlogs(Model model) {
         //返回前3篇博客内容到用户故事专栏
-        model.addAttribute("newblogs", blogService.listRecommendBlogTop(3));
-        return "_fragments :: newblogList";
+        model.addAttribute("newBlogs", mBlogService.listRecommendBlogTop(3));
+        return "_fragments :: newBlogList";
     }
 }

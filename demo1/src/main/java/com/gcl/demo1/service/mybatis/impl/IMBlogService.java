@@ -38,16 +38,16 @@ public class IMBlogService implements MBlogService {
 
     @Override
     public PageInfo<Blog> listBlog(int pageNum, int size) {
-        //按照博客创建时间排序
-        PageHelper.startPage(pageNum,size,"create_time");
-        List<Blog> list = mBlogDao.findAllByPublished();
-        for (Blog blog:list){
+        //按照博客创建时间倒序排序
+        PageHelper.startPage(pageNum,size,"create_time desc");
+        List<Blog> blogs = mBlogDao.findAllByPublished();
+        for (Blog blog:blogs){
             //设置博客的作者
             blog.setUser(mUserDao.findUserById(blog.getUserId()));
             //设置博客的类型
             blog.setType(mTypeDao.findTypeById(blog.getTypeId()));
         }
-        return new PageInfo<>(list);
+        return new PageInfo<>(blogs);
     }
 
     @Override
@@ -77,4 +77,31 @@ public class IMBlogService implements MBlogService {
         return blog;
     }
 
+    @Override
+    public PageInfo<Blog> listBlog(int pageNum,
+                                   int size,
+                                   String content){
+        PageHelper.startPage(pageNum,size,"create_time desc");
+        List<Blog> blogs = mBlogDao.findBlogByContent("%"+content+"%");
+        for (Blog blog:blogs){
+            //设置博客的作者
+            blog.setUser(mUserDao.findUserById(blog.getUserId()));
+            //设置博客的类型
+            blog.setType(mTypeDao.findTypeById(blog.getTypeId()));
+        }
+        return new PageInfo<>(blogs);
+    }
+
+    /**
+     * 返回前几页的推荐博客列表
+     * @param size 数目
+     * @return 返回博客列表
+     */
+    @Override
+    public List<Blog> listRecommendBlogTop(int size){
+        //倒序排序
+        PageHelper.startPage(1,size,"create_time desc");
+        List<Blog> blogs = mBlogDao.findRecommendBlog();
+        return new PageInfo<>(blogs).getList();
+    }
 }

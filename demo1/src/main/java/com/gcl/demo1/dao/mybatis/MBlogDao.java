@@ -22,4 +22,8 @@ public interface MBlogDao {
     List<Blog> findBlogByTypeId(@Param("typeId") int typeId);
 
     List<Blog> findBlogByTag(@Param("tagId") int tagId);
+
+    List<Blog> findBlogByContent(@Param("content") String content);
+
+    List<Blog> findRecommendBlog();
 }
