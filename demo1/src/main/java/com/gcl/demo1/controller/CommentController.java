@@ -1,9 +1,11 @@
 package com.gcl.demo1.controller;
 
+import com.gcl.demo1.dao.mybatis.MCommentDao;
 import com.gcl.demo1.entity.jpa.Comment;
 import com.gcl.demo1.entity.jpa.User;
 import com.gcl.demo1.service.jpa.BlogService;
 import com.gcl.demo1.service.jpa.CommentService;
+import com.gcl.demo1.service.mybatis.MCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.servlet.http.HttpSession;
 
 /**
- * @author：小关同学爱吃汉堡
+ * @author：小关同学
  * @date: 2020/12/16 17:41
  */
 @Controller
@@ -23,6 +25,9 @@ public class CommentController {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private MCommentService mCommentService;
 
     @Autowired
     private BlogService blogService;
@@ -37,8 +42,8 @@ public class CommentController {
      * @return
      */
     @GetMapping("/comments/{blogId}")
-    public String comments(@PathVariable Long blogId, Model model) {
-        model.addAttribute("comments", commentService.listCommentByBlogId(blogId));
+    public String comments(@PathVariable int blogId, Model model) {
+        model.addAttribute("comments", mCommentService.listCommentByBlogId(blogId));
         return "blog :: commentList";
     }
 
@@ -65,5 +70,3 @@ public class CommentController {
     }
 
 }
-
-//

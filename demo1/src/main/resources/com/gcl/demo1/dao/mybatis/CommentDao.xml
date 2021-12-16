@@ -24,5 +24,9 @@
         select * from t_comment where id = #{id}
     </select>
 
+    <select id="findChildCommentById" resultMap="commentMap">
+        select * from t_comment where id in (select child_comment_id from t_comment_relation where father_comment_id = #{fatherCommentId})
+    </select>
+
 
 </mapper>

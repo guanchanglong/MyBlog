@@ -26,4 +26,8 @@ public interface MBlogDao {
     List<Blog> findBlogByContent(@Param("content") String content);
 
     List<Blog> findRecommendBlog();
+
+    List<Blog> findGroupYear();
+
+    List<Blog> findByYear(@Param("year") String year);
 }

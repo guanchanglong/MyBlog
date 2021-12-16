@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 /**
- * @author：小关同学爱吃汉堡
+ * @author：小关同学
  * @date: 2020/12/16 17:43
  */
 @Controller

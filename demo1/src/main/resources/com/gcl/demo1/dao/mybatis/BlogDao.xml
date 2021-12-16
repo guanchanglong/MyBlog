@@ -21,6 +21,7 @@
         <result property="typeId" column="type_id"/>
         <result property="description" column="description"/>
         <result property="userId" column="user_id"/>
+        <result property="year" column="year"/>
     </resultMap>
 
     <select id="findAllByPublished" resultMap="blogMap">
@@ -49,6 +50,14 @@
 
     <select id="findRecommendBlog" resultMap="blogMap">
         select * from t_blog where published = 1 and recommend = 1
+    </select>
+
+    <select id="findGroupYear" resultMap="blogMap">
+        select DATE_FORMAT(create_time,'%Y') as year from t_blog group by DATE_FORMAT(create_time,'%Y') order by year desc
+    </select>
+
+    <select id="findByYear" resultMap="blogMap">
+        select * from t_blog where published = 1 and DATE_FORMAT(create_time,'%Y') = #{year}
     </select>
 
 </mapper>

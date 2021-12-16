@@ -21,5 +21,8 @@ public interface MBlogService {
 
     List<Blog> listRecommendBlogTop(int size);
 
+    Map<String,List<Blog>> archiveBlog();
+
+    int countBlog();
 
 }

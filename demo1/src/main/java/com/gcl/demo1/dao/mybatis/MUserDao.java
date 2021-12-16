@@ -13,7 +13,5 @@ public interface MUserDao {
 
     User findUserById(@Param("userId") int userId);
 
-    User findByUsernameAndPassword(String username,String password);
-
-    User findAllByUsername(String name);
+    User findUserByUsername(@Param("username") String username);
 }

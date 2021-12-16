@@ -8,7 +8,7 @@ import java.util.List;
  * @author 小关同学
  * @create 2021/12/7
  */
-public class Comment {
+public class Comment implements Comparable<Comment>{
 
     private int id;
     //昵称
@@ -140,4 +140,8 @@ public class Comment {
                 '}';
     }
 
+    @Override
+    public int compareTo(Comment comment) {
+        return (int)(createTime.getTime()-comment.getCreateTime().getTime());
+    }
 }

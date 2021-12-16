@@ -17,4 +17,6 @@ public interface MCommentDao {
 
     Comment findCommentById(@Param("id") int id);
 
+    List<Comment> findChildCommentById(@Param("fatherCommentId") int fatherCommentId);
+
 }

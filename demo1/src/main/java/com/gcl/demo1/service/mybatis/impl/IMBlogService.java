@@ -12,7 +12,9 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 小关同学
@@ -103,5 +105,20 @@ public class IMBlogService implements MBlogService {
         PageHelper.startPage(1,size,"create_time desc");
         List<Blog> blogs = mBlogDao.findRecommendBlog();
         return new PageInfo<>(blogs).getList();
+    }
+
+    @Override
+    public Map<String,List<Blog>> archiveBlog(){
+        List<Blog> years = mBlogDao.findGroupYear();
+        Map<String,List<Blog>> map = new HashMap<>();
+        for (Blog year:years){
+            map.put(year.getYear(),mBlogDao.findByYear(year.getYear()));
+        }
+        return map;
+    }
+
+    @Override
+    public int countBlog(){
+        return mBlogDao.findAllByPublished().size();
     }
 }
