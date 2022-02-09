@@ -8,7 +8,6 @@ import com.gcl.demo1.service.mybatis.MTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,22 +26,30 @@ public class IMTagService implements MTagService {
 
     @Override
     public List<Tag> listTagTop(int size){
-        List<Tag> result = new ArrayList<>(size);
         List<Tag> tags = mTagDao.findAllTag();
-        for (Tag tag:tags){
-            List<Blog> blogs = mBlogDao.findBlogByTag(tag.getId());
-            tag.setBlogs(blogs);
-        }
         //排序
         Collections.sort(tags);
         for (Tag tag:tags){
-            if (size!=0){
-                result.add(tag);
-            }else{
+            List<Blog> blogs = mBlogDao.findBlogByTag(tag.getId());
+            tag.setBlogs(blogs);
+            if (size==0){
                 break;
             }
             size--;
         }
-        return result;
+        return tags;
     }
+
+    //    @Override
+    //    public Page<Blog> listBlog(Long tagId, Pageable pageable) {
+    //        return blogDao.findAll(new Specification<Blog>() {
+    //            @Override
+    //            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+    //                Join join = root.join("tags");
+    //                return cb.equal(join.get("id"),tagId);
+    //            }
+    //        },pageable);
+    //    }
+
+
 }

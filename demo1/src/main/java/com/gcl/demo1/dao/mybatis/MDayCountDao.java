@@ -1,6 +1,6 @@
 package com.gcl.demo1.dao.mybatis;
 
-import com.gcl.demo1.entity.jpa.DayCount;
+import com.gcl.demo1.entity.mybatis.DayCount;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,7 +19,6 @@ public interface MDayCountDao {
 
     void updateNewestDay(@Param("dayId") int dayId);
 
-    List<Long> getCounts();
-
+    List<DayCount> getCounts();
 
 }

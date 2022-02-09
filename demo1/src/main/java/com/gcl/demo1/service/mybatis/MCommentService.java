@@ -2,6 +2,7 @@ package com.gcl.demo1.service.mybatis;
 
 
 import com.gcl.demo1.entity.mybatis.Comment;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -12,5 +13,9 @@ import java.util.List;
 public interface MCommentService {
 
     List<Comment> listCommentByBlogId(int blogId);
+
+    void insertComment(Comment comment);
+
+    PageInfo<Comment> listMessage(int pageNum, int size);
 
 }

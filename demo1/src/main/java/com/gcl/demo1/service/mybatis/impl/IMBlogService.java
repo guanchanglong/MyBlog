@@ -52,6 +52,23 @@ public class IMBlogService implements MBlogService {
         return new PageInfo<>(blogs);
     }
 
+
+    @Override
+    public PageInfo<Blog> listBlog(int pageNum, int size, int tagId) {
+        //按照博客创建时间倒序排序
+        PageHelper.startPage(pageNum,size,"create_time desc");
+        List<Blog> blogs = mBlogDao.findBlogByTag(tagId);
+        for (Blog blog:blogs){
+            //设置博客的标签信息
+            blog.setTags(mTagDao.findTagByBlogId(blog.getId()));
+            //设置博客的作者
+            blog.setUser(mUserDao.findUserById(blog.getUserId()));
+            //设置博客的类型
+            blog.setType(mTypeDao.findTypeById(blog.getTypeId()));
+        }
+        return new PageInfo<>(blogs);
+    }
+
     @Override
     public Blog getAndConvert(int id) {
 

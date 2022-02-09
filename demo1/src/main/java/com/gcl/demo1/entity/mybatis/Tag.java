@@ -41,7 +41,7 @@ public class Tag implements Comparable<Tag>{
 
     @Override
     public int compareTo(Tag tag) {
-        //降序排序
+        //按照博客数量降序排序
         return tag.getBlogs().size() - blogs.size();
     }
 }

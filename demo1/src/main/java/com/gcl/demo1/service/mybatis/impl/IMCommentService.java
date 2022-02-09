@@ -3,13 +3,12 @@ package com.gcl.demo1.service.mybatis.impl;
 import com.gcl.demo1.dao.mybatis.MCommentDao;
 import com.gcl.demo1.entity.mybatis.Comment;
 import com.gcl.demo1.service.mybatis.MCommentService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author 小关同学
@@ -32,7 +31,7 @@ public class IMCommentService implements MCommentService {
         Iterator<Comment> iterable = comments.iterator();
         while(iterable.hasNext()){
             Comment comment = iterable.next();
-            if (comment.getParentCommentId()!=0){
+            if (comment.getParentCommentId()!=-1){
                 iterable.remove();
             }else{
                 comment.setReplyComments(findChildComment(comment,new ArrayList<Comment>()));
@@ -58,5 +57,44 @@ public class IMCommentService implements MCommentService {
         }
         Collections.sort(original);
         return original;
+    }
+
+
+    /**
+     * 插入评论
+     * @param comment 新增的评论
+     */
+    @Override
+    public void insertComment(Comment comment){
+        mCommentDao.insertComment(comment);
+        //设置插入后的主键
+        comment.setId(mCommentDao.findCommentByCreateTime(comment.getCreateTime()).getId());
+        if (comment.getParentCommentId()!=-1){
+            mCommentDao.saveCommentRelation(comment);
+        }
+    }
+
+
+    /**
+     * 留言板显示留言信息
+     * @param pageNum
+     * @param size
+     * @return
+     */
+    @Override
+    public PageInfo<Comment> listMessage(int pageNum, int size) {
+        PageHelper.startPage(pageNum,size,"create_time");
+        List<Comment> comments = mCommentDao.findAllMessageComment();
+        List<Comment> result = new ArrayList<>(comments.size());
+        Iterator<Comment> iterable = comments.iterator();
+        while(iterable.hasNext()){
+            Comment comment = iterable.next();
+            if (comment.getParentCommentId()!=-1){
+                iterable.remove();
+            }else{
+                comment.setReplyComments(findChildComment(comment,new ArrayList<Comment>()));
+            }
+        }
+        return new PageInfo<>(result);
     }
 }

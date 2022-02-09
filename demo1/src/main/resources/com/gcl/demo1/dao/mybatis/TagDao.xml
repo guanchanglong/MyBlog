@@ -5,12 +5,17 @@
 
 <mapper namespace="com.gcl.demo1.dao.mybatis.MTagDao">
 
-    <select id="findTagByBlogId" resultType="com.gcl.demo1.entity.mybatis.Tag">
-        select * from t_tag where id in (select tags_id from t_blog_tags where blogs_id = #{blogId})
+    <resultMap id="tagMap" type="com.gcl.demo1.entity.mybatis.Tag">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <select id="findTagByBlogId" resultMap="tagMap">
+        select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = #{blogId})
     </select>
 
-    <select id="findAllTag" resultType="com.gcl.demo1.entity.mybatis.Tag">
-        select * from t_tag
+    <select id="findAllTag" resultMap="tagMap">
+        select * from b_tag
     </select>
 
 </mapper>

@@ -17,15 +17,42 @@
     </resultMap>
 
     <select id="findCommentByBlogId" resultMap="commentMap">
-        select * from t_comment where blog_id = #{blogId}
+        select *
+          from b_comment
+              where blog_id = #{blogId}
     </select>
 
     <select id="findCommentById" resultMap="commentMap">
-        select * from t_comment where id = #{id}
+        select *
+          from b_comment
+              where id = #{id}
     </select>
 
     <select id="findChildCommentById" resultMap="commentMap">
-        select * from t_comment where id in (select child_comment_id from t_comment_relation where father_comment_id = #{fatherCommentId})
+        select *
+          from b_comment
+              where id in (select child_comment_id from b_comment_relation where father_comment_id = #{fatherCommentId})
+    </select>
+
+    <insert id="insertComment" parameterType="com.gcl.demo1.entity.mybatis.Comment">
+        insert into b_comment(avatar,content,create_time,email,nickname,blog_id,parent_comment_id,role)
+            values(#{comment.avatar},#{comment.content},#{comment.createTime},#{comment.email},#{comment.nickname},#{comment.blogId},#{comment.parentCommentId},#{comment.role})
+    </insert>
+    
+    <insert id="saveCommentRelation" parameterType="com.gcl.demo1.entity.mybatis.Comment">
+        insert into b_comment_relation(child_comment_id,father_comment_id)
+            values(#{comment.id},#{comment.parentCommentId})
+    </insert>
+
+    <select id="findCommentByCreateTime" resultMap="commentMap">
+        select *
+          from b_comment
+            where create_time = #{createTime}
+    </select>
+
+    <select id="findAllMessageComment" resultMap="commentMap">
+        select *
+          from b_comment
     </select>
 
 

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>标签</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css}">
-  <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}">
+  <link rel="stylesheet" href="../static/css/semantic.min.css">
+  <link rel="stylesheet" href="../static/css/me.css">
   <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
@@ -51,17 +51,17 @@
       </div>
 
       <div class="ui attached segment m-padded-tb-large">
-        <a href="#" th:href="@{/tags/{id}(id=${tag.id})}"  class="ui basic left pointing large label m-margin-tb-tiny" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${tags}">
+        <a href="#" th:href="'/tags?tagId='+${tag.id} + '&pageNum=1'"  class="ui basic left pointing large label m-margin-tb-tiny" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${tags}">
           <span th:text="${tag.name}">方法论</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
         </a>
       </div>
 
       <div class="ui top attached teal segment">
-        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
+        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.getList()}">
           <div class="ui middle aligned mobile reversed stackable grid" >
             <div class="eleven wide column">
               <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
-              <p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+              <p class="m-text" th:text="${blog.description} + '......'">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
               <div class="ui grid">
                 <div class="row">
                   <div class="eleven wide column">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="row">
                   <div class="column">
-                    <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" class="ui  basic left pointing label m-padded-mini m-text-thin" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
+                    <a href="#" th:href="'/tags?tagId='+${tag.id} + '&pageNum=1'" class="ui basic left pointing label m-padded-mini m-text-thin" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
                   </div>
                 </div>
               </div>
@@ -102,13 +102,13 @@
       </div>
 
       <!--footer-->
-      <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+      <div class="ui bottom attached segment" th:if="${page.getPages()}>1">
         <div class="ui middle aligned two column grid">
           <div class="column">
-            <a href="#" th:href="@{'/tags/'+${activeTagId}(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+            <a href="#" th:href="'/tags?tagId='+${activeTagId} + '&pageNum=' + ${page.getLastPage()}"  th:unless="${page.isIsFirstPage()}" class="ui mini teal basic button">上一页</a>
           </div>
           <div class="right aligned column">
-            <a href="#" th:href="@{'/tags/'+${activeTagId}(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+            <a href="#" th:href="'/tags?tagId='+${activeTagId} + '&pageNum=' + ${page.getNextPage()}"  th:unless="${page.isIsLastPage()}" class="ui mini teal basic button">下一页</a>
           </div>
         </div>
       </div>
@@ -156,8 +156,8 @@
 
   </footer>
   <!--/*/<th:block th:replace="_fragments :: script">/*/-->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js}"></script>
-  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js}"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/semantic.min.js"></script>
   <!--/*/</th:block>/*/-->
 
   <script>

@@ -4,8 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.gcl.demo1.dao.mybatis.MDayCountDao">
+
+    <resultMap id="dayCountMap" type="com.gcl.demo1.entity.mybatis.DayCount">
+        <id property="id" column="id"/>
+        <result property="day" column="day"/>
+        <result property="count" column="count"/>
+    </resultMap>
+
     <update id="updateNewestDay">
-        update t_day_count set count = count+1 where id = #{dayId}
+        update b_day_count set count = count+1 where id = #{dayId}
     </update>
+
+    <select id="getCounts" resultMap="dayCountMap">
+        select *
+          from b_day_count
+    </select>
 
 </mapper>

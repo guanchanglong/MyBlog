@@ -1,6 +1,6 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.service.jpa.DayCountService;
+import com.gcl.demo1.service.mybatis.MDayCountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,14 +19,14 @@ import java.util.List;
 public class StatisticsController {
 
     @Autowired
-    private DayCountService dayCountService;
+    private MDayCountService mDayCountService;
 
     @GetMapping("/getDateCounts")
     public String archives(Model model) {
-        List<Long> list = dayCountService.getCounts();
-        model.addAttribute("todayCount",list.get(list.size()-1));
+        List<Integer> nums = mDayCountService.getCounts();
+        model.addAttribute("todayCount",nums.get(nums.size()-1));
         //返回一个int类型的数组，长度为7
-        model.addAttribute("countList", list);
+        model.addAttribute("countList", nums);
         return "statistics";
     }
 }

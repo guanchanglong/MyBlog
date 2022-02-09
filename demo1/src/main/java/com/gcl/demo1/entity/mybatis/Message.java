@@ -8,7 +8,7 @@ import java.util.List;
  * @author 小关同学
  * @create 2021/12/7
  */
-public class Comment implements Comparable<Comment>{
+public class Message implements Comparable<Message>{
 
     private int id;
     //昵称
@@ -21,37 +21,15 @@ public class Comment implements Comparable<Comment>{
     private String avatar;
     //评论时间
     private Date createTime;
-    //评论对应的博客
-    //一对一
-    //一个评论对应一篇博客
-    private int blogId;
     //如果存在父评论，则有父评论id，默认值为-1
-    private int parentCommentId;
+    private int parentMessageId;
     //子评论
     //一个父评论对应多个子评论
-    private List<Comment> replyComments = new ArrayList<>();
+    private List<Message> replyMessages = new ArrayList<>();
     //对应的父评论
-    private Comment parentComment;
+    private Message parentMessage;
     //角色
     private int role;
-
-
-
-    public int getParentCommentId() {
-        return parentCommentId;
-    }
-
-    public void setParentCommentId(int parentCommentId) {
-        this.parentCommentId = parentCommentId;
-    }
-
-    public int getBlogId() {
-        return blogId;
-    }
-
-    public void setBlogId(int blogId) {
-        this.blogId = blogId;
-    }
 
     public int getId() {
         return id;
@@ -101,20 +79,28 @@ public class Comment implements Comparable<Comment>{
         this.createTime = createTime;
     }
 
-    public List<Comment> getReplyComments() {
-        return replyComments;
+    public int getParentMessageId() {
+        return parentMessageId;
     }
 
-    public void setReplyComments(List<Comment> replyComments) {
-        this.replyComments = replyComments;
+    public void setParentMessageId(int parentMessageId) {
+        this.parentMessageId = parentMessageId;
     }
 
-    public Comment getParentComment() {
-        return parentComment;
+    public List<Message> getReplyMessages() {
+        return replyMessages;
     }
 
-    public void setParentComment(Comment parentComment) {
-        this.parentComment = parentComment;
+    public void setReplyMessages(List<Message> replyMessages) {
+        this.replyMessages = replyMessages;
+    }
+
+    public Message getParentMessage() {
+        return parentMessage;
+    }
+
+    public void setParentMessage(Message parentMessage) {
+        this.parentMessage = parentMessage;
     }
 
     public int getRole() {
@@ -125,7 +111,7 @@ public class Comment implements Comparable<Comment>{
         this.role = role;
     }
 
-    @Override
+        @Override
     public String toString() {
         return "Comment{" +
                 "id=" + id +
@@ -134,15 +120,13 @@ public class Comment implements Comparable<Comment>{
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", createTime=" + createTime +
-                ", blogId=" + blogId +
-                ", parentCommentId=" + parentCommentId +
                 ", role=" + role +
                 '}';
     }
 
     @Override
-    public int compareTo(Comment comment) {
+    public int compareTo(Message message) {
         //按照评论创建时间正序排序
-        return (int)(createTime.getTime()-comment.getCreateTime().getTime());
+        return (int)(createTime.getTime()-message.getCreateTime().getTime());
     }
 }

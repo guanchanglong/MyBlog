@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>留言板</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/jquery.emoji.css" th:href="@{/static/css/jquery.emoji.css}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.emoji.css">
+    <link rel="stylesheet" href="../static/css/semantic.min.css">
     <link rel="stylesheet" href="../static/css/me.css">
     <link rel="icon" href="../static/favicon.ico">
 </head>
@@ -103,17 +103,17 @@
                 <div th:fragment="messageList">
                     <div class="ui threaded comments" style="max-width: 100%;">
 
-                        <div class="comment" th:each="message : ${messages.content}" th:if="!${message.parentMessage}">
+                        <div class="comment" th:each="message : ${messages.getList()}" th:if="${message.getParentMessageId()}==-1">
                                 <a class="avatar">
                                     <img th:src="@{${message.avatar}}" src="../static/images/avatar.png">
                                 </a>
                                 <div class="content">
                                     <a class="author">
                                         <span th:text="${message.nickname}">小关同学</span>
-                                        <div class="ui mini basic adminComment left pointing label m-padded-mini" th:if="${message.adminMessage}==2">博主</div>
-                                        <span class="ui mini basic visitComment left pointing label m-padded-mini" th:if="${message.adminMessage}==1">访客</span>
-                                        <span class="ui mini basic touristComment left pointing label m-padded-mini" th:if="${message.adminMessage}==0">游客</span>
-                                        <span class="ui small basic githubComment left pointing label m-padded-mini" th:if="${message.adminMessage}==3">gayhub</span>
+                                        <div class="ui mini basic adminComment left pointing label m-padded-mini" th:if="${message.getRole()}==0">博主</div>
+                                        <span class="ui mini basic visitComment left pointing label m-padded-mini" th:if="${message.getRole()}==1">访客</span>
+                                        <span class="ui mini basic touristComment left pointing label m-padded-mini" th:if="${message.getRole()}==2">游客</span>
+                                        <span class="ui small basic githubComment left pointing label m-padded-mini" th:if="${message.getRole()}==3">gayhub</span>
                                     </a>
                                     <div class="metadata">
                                         <span class="date" th:text="${#dates.format(message.createTime,'yyyy-MM-dd HH:mm:ss')}">2020-03-17 22:54</span>
@@ -124,19 +124,19 @@
                                     </div>
                                 </div>
 
-                            <div class="comments" th:if="${#arrays.length(message.replyMessages)}>0">
-                                <div class="comment" th:each="reply : ${message.replyMessages}">
+                            <div class="comments" th:if="${#arrays.length(message.getReplyMessages().size())}>0">
+                                <div class="comment" th:each="reply : ${message.getReplyMessages()}">
                                     <a class="avatar">
                                         <img src="https://unsplash.it/100/100?image=1005" th:src="@{${reply.avatar}}">
                                     </a>
                                     <div class="content">
-                                        <a class="author" >
+                                        <a class="author">
                                             <span th:text="${reply.nickname}">小红</span>
-                                            <div class="ui mini basic adminComment left pointing label m-padded-mini" th:if="${reply.adminMessage}==2">博主</div>
-                                            <span class="ui mini basic visitComment left pointing label m-padded-mini" th:if="${reply.adminMessage}==1">访客</span>
-                                            <span class="ui mini basic touristComment left pointing label m-padded-mini" th:if="${reply.adminMessage}==0">游客</span>
-                                            <span class="ui small basic githubComment left pointing label m-padded-mini" th:if="${message.adminMessage}==3">gayhub</span>
-                                            &nbsp;<span th:text="|@ ${reply.parentMessage.nickname}|" class="m-teal">@ 小白</span>
+                                            <div class="ui mini basic adminComment left pointing label m-padded-mini" th:if="${reply.getRole()}==0">博主</div>
+                                            <span class="ui mini basic visitComment left pointing label m-padded-mini" th:if="${reply.getRole()}==1">访客</span>
+                                            <span class="ui mini basic touristComment left pointing label m-padded-mini" th:if="${reply.getRole()}==2">游客</span>
+                                            <span class="ui small basic githubComment left pointing label m-padded-mini" th:if="${reply.getRole()}==3">gayhub</span>
+                                            &nbsp;<span th:text="'@' + ${reply.getParentMessage().getNickname()}" class="m-teal">@ 小白</span>
                                         </a>
                                         <div class="metadata">
                                             <span class="date" th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
@@ -155,28 +155,28 @@
                     <!--分页组件-->
                     <div class="ui center aligned segment">
                         <div class="ui pagination menu">
-                            <a class="item active teal" href="/messages?page=1">
+                            <a class="item teal" href="/messages?page=1">
                                 首页
                             </a>
-                            <a class="item" th:if="${a}" th:href="@{/messages?page={num}(num=${messages.number})}" href="/messages?page=2">
+                            <a class="item" th:if="${messages.getList().size()!=0}" th:href="@{'/messages?pageNum=' + ${messages.getPrePage()}}" href="/messages?page=2">
                                 上一页
                             </a>
                             <a class="item">
-                                当前第<h3 class="ui orange header m-inline-block m-text-thin" th:text="${messages.number}+1">1</h3>页
+                                当前第<h3 class="ui orange header m-inline-block m-text-thin" th:text="${messages.getPageNum()}">1</h3>页
                             </a>
-                            <a class="item" th:if="${b}" th:href="@{/messages?page={num}(num=${messages.number}+2)}" href="/messages?page=2">
+                            <a class="item" th:if="${messages.getList().size()!=0}" th:href="@{'/messages?pageNum=' + ${messages.getNextPage()}}" href="/messages?page=2">
                                 下一页
                             </a>
-                            <a class="item" th:href="@{/messages?page={num}(num=${messages.totalPages})}" href="/messages?page=2">
+                            <a class="item" th:if="${messages.getList().size()!=0}" th:href="@{'/messages?pageNum=' + ${messages.getPages()}}" href="/messages?page=2">
                                 尾页
                             </a>
                             <a class="item">
-                                共<h3 class="ui red header m-inline-block m-text-thin" th:text="${messages.totalPages}">20</h3>页
+                                共<h3 class="ui red header m-inline-block m-text-thin" th:text="${messages.getPages()}">20</h3>页
                             </a>
                             <a class="item">
-                                共<h3 class="ui red header m-inline-block m-text-thin" th:text="${messages.totalElements}">200</h3>条
+                                共<h3 class="ui red header m-inline-block m-text-thin" th:text="${messages.getTotal()}">200</h3>条
                             </a>
-                            <form name="pageForm" class="right item" action="/messages" method="get">
+                            <form name="pageForm" class="right item" action="/messages" method="get" th:if="${messages.getList().size()!=0}">
                                 <div class="ui right labeled input">
                                     <div class="ui basic label">Go</div>
                                     <input type="text" name="page" placeholder="页码..."
@@ -235,13 +235,13 @@
 
 </footer>
 
-<!--/*/<th:block th:replace="_fragments :: script">/*/-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
-<script src="../static/js/jquery.emoji.js" th:src="@{/static/js/jquery.emoji.js}"></script>
-<script src="../static/js/emoji.list.js" th:src="@{/static/js/emoji.list.js}"></script>
-<!--/*/</th:block>/*/-->
+    <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/semantic.min.js"></script>
+        <script src="../static/js/jquery.scrollTo.min.js"></script>
+        <script src="../static/js/jquery.emoji.js"></script>
+        <script src="../static/js/emoji.list.js"></script>
+    <!--/*/</th:block>/*/-->
 
 <script th:inline="javascript">
 
@@ -345,16 +345,16 @@
         $.ajax({
             cache:true,//保留缓存数据
             type:"POST",
-            url:"/saveMessages",
+            url:"/message/saveMessages",
             headers:{
                 'x-source':"message-boardPost"
             },
             data:{
-                "parentMessage.id" : $("[name='parentMessage.id']").val(),
+                "parentMessageId" : $("[name='parentMessage.id']").val(),
                 "nickname": $("[name='nickname']").val(),
                 "email"   : $("[name='email']").val(),
-                "content" : document.getElementById("commentEditor").innerHTML,
-                "replyInform" : $("[name='open-mail']").hasClass("checked") ? true : false
+                "content" : document.getElementById("commentEditor").innerHTML
+                // "replyInform" : $("[name='open-mail']").hasClass("checked") ? true : false
             },
             async:true,//异步
             error:function(request){

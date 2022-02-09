@@ -11,11 +11,11 @@
     </resultMap>
 
     <select id="findTypeById" resultMap="typeMap">
-        select * from t_type where id = #{typeId}
+        select * from b_type where id = #{typeId}
     </select>
 
     <select id="findAllType" resultMap="typeMap">
-        select * from t_type
+        select * from b_type
     </select>
 
 </mapper>

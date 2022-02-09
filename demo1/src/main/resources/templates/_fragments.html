@@ -2,17 +2,22 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <!--头部-->
 <head th:fragment="head(title)">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <!--自动将http的不安全请求升级为https-->
+<!--  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--标记用于指定用户是否可以缩放Web页面-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
   <title th:replace="${title}">博客详情</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css}">
-  <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/static/css/typo.css}">
-  <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/static/css/animate.css}">
-  <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/static/lib/prism/prism.css}">
-  <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/static/lib/tocbot/tocbot.css}">
-  <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}">
-  <link rel="stylesheet" type="text/css" href="../static/css/jquery.emoji.css" th:href="@{/static/css/jquery.emoji.css}">
+  <link rel="stylesheet" href="../static/css/semantic.min.css">
+  <link rel="stylesheet" href="../static/css/typo.css">
+  <link rel="stylesheet" href="../static/css/animate.css">
+  <link rel="stylesheet" href="../static/lib/prism/prism.css">
+  <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
+  <link rel="stylesheet" href="../static/css/me.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/jquery.emoji.css">
   <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
@@ -26,9 +31,10 @@
       <h2 class="ui teal header item">Blog</h2>
       <a href="http://www.xiaoguantongxue.com" th:href="@{/}" class="m-item item m-mobile-hide " th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>&nbsp;首页</a>
       <a href="http://www.xiaoguantongxue.com/types/-1" th:href="@{/types/-1}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>&nbsp;分类</a>
-      <a href="http://www.xiaoguantongxue.com/tags/-1" th:href="@{/tags/-1}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>&nbsp;标签</a>
+      <a href="http://www.xiaoguantongxue.com/tags?tagId=-1" th:href="'tags?tagId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>&nbsp;标签</a>
       <a href="http://www.xiaoguantongxue.com/archives" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>&nbsp;归档</a>
-      <a href="http://www.xiaoguantongxue.com/messages" th:href="@{/messages}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini envelope outline icon"></i>&nbsp;留言</a>
+      <!--这个等什么时候申请了评论再弄-->
+      <!--<a href="http://www.xiaoguantongxue.com/messages" th:href="@{/messages}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini envelope outline icon"></i>&nbsp;留言</a>-->
       <a href="http://www.xiaoguantongxue.com/statistics/getDateCounts" th:href="@{/statistics/getDateCounts}" class="m-item item m-mobile-hide" th:classappend="${n==6} ? 'active'"><i class="mini icon chart pie"></i>&nbsp;流量统计</a>
       <a href="http://www.xiaoguantongxue.com/about" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==7} ? 'active'"><i class="mini info icon"></i>&nbsp;关于我</a>
       <div class="right m-item item m-mobile-hide">
@@ -133,17 +139,16 @@
 
 
 <th:block th:fragment="script">
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js}"></script>
-  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js}"></script>
-  <script src="../static/lib/prism/prism.js" th:src="@{/static/lib/prism/prism.js}"></script>
-  <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/static/lib/tocbot/tocbot.min.js}"></script>
-  <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/static/lib/qrcode/qrcode.min.js}"></script>
-  <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/static/lib/waypoints/jquery.waypoints.min.js}"></script>
-  <script src="../static/js/me.js" th:src="@{/static/js/me.js}"></script>
-  <script src="../static/js/jquery.emoji.js" th:src="@{/js/jquery.emoji.js}"></script>
-  <script src="../static/js/emoji.list.js" th:src="@{/js/emoji.list.js}"></script>
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/semantic.min.js"></script>
+  <script src="../static/js/jquery.scrollTo.min.js"></script>
+  <script src="../static/lib/prism/prism.js"></script>
+  <script src="../static/lib/tocbot/tocbot.min.js"></script>
+  <script src="../static/lib/qrcode/qrcode.min.js"></script>
+  <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/js/me.js"></script>
+  <script src="../static/js/jquery.emoji.js"></script>
+  <script src="../static/js/emoji.list.js"></script>
 
   <script>
     $('#newBlog-container').load(/*[[@{/footer/newBlog}]]*/"/footer/newBlog");

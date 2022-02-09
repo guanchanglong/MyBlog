@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>博客</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css}">
-  <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}">
+  <link rel="stylesheet" href="../static/css/semantic.min.css">
+  <link rel="stylesheet" href="../static/css/me.css">
   <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
@@ -469,12 +469,12 @@
                   <i class="tags icon"></i>标签
                 </div>
                 <div class="right aligned column">
-                  <a href="#" th:href="@{tags/-1}" target="_blank">more <i class="angle double right icon"></i></a>
+                  <a href="#" th:href="'/tags?tagId=-1'" target="_blank">more <i class="angle double right icon"></i></a>
                 </div>
               </div>
             </div>
             <div class="ui teal segment">
-              <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+              <a href="#" th:href="'/tags?tagId='+${tag.getId()}+'&pageNum=1'" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
                 <span th:text="${tag.name}">方法论</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
               </a>
               <!--/*-->
@@ -593,10 +593,11 @@
     </div>
 
   </footer>
-<!--/*/<th:block th:replace="_fragments :: script">/*/-->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js}"></script>
-  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js}"></script>
-<!--/*/</th:block>/*/-->
+
+  <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/semantic.min.js"></script>
+  <!--/*/</th:block>/*/-->
 
   <script>
     $('.menu.toggle').click(function () {

@@ -9,7 +9,7 @@ public class DayCount {
 
     private String day;
 
-    private long count;
+    private int count;
 
     public int getId() {
         return id;
@@ -27,11 +27,11 @@ public class DayCount {
         this.day = day;
     }
 
-    public long getCount() {
+    public int getCount() {
         return count;
     }
 
-    public void setCount(long count) {
+    public void setCount(int count) {
         this.count = count;
     }
 }

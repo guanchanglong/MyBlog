@@ -1,10 +1,7 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.dao.mybatis.MCommentDao;
-import com.gcl.demo1.entity.jpa.Comment;
-import com.gcl.demo1.entity.jpa.User;
-import com.gcl.demo1.service.jpa.BlogService;
-import com.gcl.demo1.service.jpa.CommentService;
+import com.gcl.demo1.entity.mybatis.Comment;
+import com.gcl.demo1.entity.mybatis.User;
 import com.gcl.demo1.service.mybatis.MCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 /**
  * @author：小关同学
@@ -24,13 +22,7 @@ import javax.servlet.http.HttpSession;
 public class CommentController {
 
     @Autowired
-    private CommentService commentService;
-
-    @Autowired
     private MCommentService mCommentService;
-
-    @Autowired
-    private BlogService blogService;
 
     @Value("${comment.avatar}")
     private String avatar;
@@ -56,17 +48,22 @@ public class CommentController {
      */
     @PostMapping("/comments")
     public String post(Comment comment, HttpSession session) {
-        Long blogId = comment.getBlog().getId();
-        comment.setBlog(blogService.getBlog(blogId));
+        comment.setCreateTime(new Date());
+        int blogId = comment.getBlogId();
         User user = (User) session.getAttribute("user");
         if (user != null) {
             comment.setAvatar(user.getAvatar());
-            comment.setAdminComment(true);
+            comment.setRole(0);
         } else {
             comment.setAvatar(avatar);
+            comment.setRole(1);
         }
-        commentService.saveComment(comment);
+        System.out.println(comment.getAvatar());
+        System.out.println(comment.getContent());
+        System.out.println(comment.getEmail());
+        System.out.println(comment.getNickname());
+        //表单判空验证问题还未解决
+//        mCommentService.insertComment(comment);
         return "redirect:/comments/" + blogId;
     }
-
 }

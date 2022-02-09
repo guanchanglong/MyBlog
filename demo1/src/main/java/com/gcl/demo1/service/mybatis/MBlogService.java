@@ -15,6 +15,8 @@ public interface MBlogService {
 
     PageInfo<Blog> listBlog(int pageNum, int size);
 
+    PageInfo<Blog> listBlog(int pageNum, int size, int tagId);
+
     Blog getAndConvert(int id);
 
     PageInfo<Blog> listBlog(int pageNum, int size, String content);

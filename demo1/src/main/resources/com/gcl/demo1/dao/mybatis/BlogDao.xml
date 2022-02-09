@@ -9,7 +9,6 @@
         <result property="title" column="title"/>
         <result property="content" column="content"/>
         <result property="firstPicture" column="first_picture"/>
-        <result property="flag" column="flag"/>
         <result property="view" column="view"/>
         <result property="appreciation" column="appreciation"/>
         <result property="shareStatement" column="share_statement"/>
@@ -25,39 +24,41 @@
     </resultMap>
 
     <select id="findAllByPublished" resultMap="blogMap">
-        select * from t_blog where published = 1
+        select * from b_blog where published = 1
     </select>
 
     <select id="findBlogById" resultMap="blogMap">
-        select * from t_blog where id = #{blogId}
+        select * from b_blog where id = #{blogId}
     </select>
 
     <update id="updateViews">
-        update t_blog set views = views+1 where id = #{blogId}
+        update b_blog set views = views+1 where id = #{blogId}
     </update>
 
     <select id="findBlogByTypeId" resultMap="blogMap">
-        select * from t_blog where type_id = #{typeId} and published = 1
+        select * from b_blog where type_id = #{typeId} and published = 1
     </select>
 
     <select id="findBlogByTag" resultMap="blogMap">
-        select * from t_blog where id in (select blogs_id from t_blog_tags where tags_id = #{tagId}) and published = 1
+        select * from b_blog where id in (select blog_id from b_blog_tag where tag_id = #{tagId}) and published = 1
     </select>
 
     <select id="findBlogByContent" resultMap="blogMap">
-        select * from t_blog where published = 1 and (title like #{content} or content like #{content})
+        select * from b_blog where published = 1 and (title like #{content} or content like #{content})
     </select>
 
     <select id="findRecommendBlog" resultMap="blogMap">
-        select * from t_blog where published = 1 and recommend = 1
+        select * from b_blog where published = 1 and recommend = 1
     </select>
 
     <select id="findGroupYear" resultMap="blogMap">
-        select DATE_FORMAT(create_time,'%Y') as year from t_blog group by DATE_FORMAT(create_time,'%Y') order by year desc
+        select DATE_FORMAT(create_time,'%Y') as year from b_blog group by DATE_FORMAT(create_time,'%Y') order by year desc
     </select>
 
     <select id="findByYear" resultMap="blogMap">
-        select * from t_blog where published = 1 and DATE_FORMAT(create_time,'%Y') = #{year}
+        select * from b_blog where published = 1 and DATE_FORMAT(create_time,'%Y') = #{year}
     </select>
+
+
 
 </mapper>

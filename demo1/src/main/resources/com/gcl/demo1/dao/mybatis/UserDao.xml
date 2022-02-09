@@ -19,11 +19,11 @@
     </resultMap>
 
     <select id="findUserById" resultMap="userMap">
-        select * from t_user where id = #{userId}
+        select * from b_user where id = #{userId}
     </select>
 
     <select id="findUserByUsername" resultMap="userMap">
-        select * from t_user where username = #{username}
+        select * from b_user where username = #{username}
     </select>
 
 
