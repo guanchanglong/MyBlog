@@ -51,7 +51,7 @@
       </div>
 
       <div class="ui attached segment m-padded-tb-large">
-        <a href="#" th:href="'/tags?tagId='+${tag.id} + '&pageNum=1'"  class="ui basic left pointing large label m-margin-tb-tiny" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${tags}">
+        <a href="#" th:href="'/tags?tagId='+${tag.id}" class="ui basic left pointing large label m-margin-tb-tiny" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${tags}">
           <span th:text="${tag.name}">方法论</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
         </a>
       </div>
@@ -79,12 +79,12 @@
                     </div>
                   </div>
                   <div class="right aligned five wide column">
-                    <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                    <a href="#" th:href="'/types?typeId='+${blog.getType().getId()}" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
                   </div>
                 </div>
                 <div class="row">
                   <div class="column">
-                    <a href="#" th:href="'/tags?tagId='+${tag.id} + '&pageNum=1'" class="ui basic left pointing label m-padded-mini m-text-thin" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
+                    <a href="#" th:href="'/tags?tagId='+${tag.id}" class="ui basic left pointing label m-padded-mini m-text-thin" th:classappend="${tag.id==activeTagId} ? 'teal'" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
       <div class="ui bottom attached segment" th:if="${page.getPages()}>1">
         <div class="ui middle aligned two column grid">
           <div class="column">
-            <a href="#" th:href="'/tags?tagId='+${activeTagId} + '&pageNum=' + ${page.getLastPage()}"  th:unless="${page.isIsFirstPage()}" class="ui mini teal basic button">上一页</a>
+            <a href="#" th:href="'/tags?tagId='+${activeTagId} + '&pageNum=' + ${page.getPrePage()}"  th:unless="${page.isIsFirstPage()}" class="ui mini teal basic button">上一页</a>
           </div>
           <div class="right aligned column">
             <a href="#" th:href="'/tags?tagId='+${activeTagId} + '&pageNum=' + ${page.getNextPage()}"  th:unless="${page.isIsLastPage()}" class="ui mini teal basic button">下一页</a>

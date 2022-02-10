@@ -12,6 +12,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,10 +55,18 @@ public class IMBlogService implements MBlogService {
 
 
     @Override
-    public PageInfo<Blog> listBlog(int pageNum, int size, int tagId) {
+    public PageInfo<Blog> listBlog(int pageNum, int size, int id, String type) {
+        List<Blog> blogs = new ArrayList<>();
         //按照博客创建时间倒序排序
         PageHelper.startPage(pageNum,size,"create_time desc");
-        List<Blog> blogs = mBlogDao.findBlogByTag(tagId);
+        switch (type){
+            case "tag":
+                blogs = mBlogDao.findBlogByTag(id);
+                break;
+            case "type":
+                blogs = mBlogDao.findBlogByTypeId(id);
+                break;
+        }
         for (Blog blog:blogs){
             //设置博客的标签信息
             blog.setTags(mTagDao.findTagByBlogId(blog.getId()));

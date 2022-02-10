@@ -26,13 +26,6 @@ public class TagShowController {
     @Autowired
     private MBlogService mBlogService;
 
-    /**
-     * 按标签显示博客内容
-     * @param pageable
-     * @param id
-     * @param model
-     * @return
-     */
     @GetMapping("/tags")
     public String tags(@RequestParam(value = "tagId") int tagId,
                        @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
@@ -43,7 +36,7 @@ public class TagShowController {
             tagId = tags.get(0).getId();
         }
         model.addAttribute("tags", tags);
-        model.addAttribute("page", mBlogService.listBlog(pageNum, size, tagId));
+        model.addAttribute("page", mBlogService.listBlog(pageNum, size, tagId, "tag"));
         model.addAttribute("activeTagId", tagId);
         return "tags";
     }

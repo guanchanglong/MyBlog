@@ -2,7 +2,6 @@ package com.gcl.demo1.service.mybatis.impl;
 
 import com.gcl.demo1.dao.mybatis.MBlogDao;
 import com.gcl.demo1.dao.mybatis.MTagDao;
-import com.gcl.demo1.entity.mybatis.Blog;
 import com.gcl.demo1.entity.mybatis.Tag;
 import com.gcl.demo1.service.mybatis.MTagService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +29,7 @@ public class IMTagService implements MTagService {
         //排序
         Collections.sort(tags);
         for (Tag tag:tags){
-            List<Blog> blogs = mBlogDao.findBlogByTag(tag.getId());
-            tag.setBlogs(blogs);
+            tag.setBlogs(mBlogDao.findBlogByTag(tag.getId()));
             if (size==0){
                 break;
             }
@@ -39,17 +37,4 @@ public class IMTagService implements MTagService {
         }
         return tags;
     }
-
-    //    @Override
-    //    public Page<Blog> listBlog(Long tagId, Pageable pageable) {
-    //        return blogDao.findAll(new Specification<Blog>() {
-    //            @Override
-    //            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
-    //                Join join = root.join("tags");
-    //                return cb.equal(join.get("id"),tagId);
-    //            }
-    //        },pageable);
-    //    }
-
-
 }

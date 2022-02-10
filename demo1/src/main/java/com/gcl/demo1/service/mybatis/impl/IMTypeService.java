@@ -2,13 +2,13 @@ package com.gcl.demo1.service.mybatis.impl;
 
 import com.gcl.demo1.dao.mybatis.MBlogDao;
 import com.gcl.demo1.dao.mybatis.MTypeDao;
-import com.gcl.demo1.entity.mybatis.Blog;
 import com.gcl.demo1.entity.mybatis.Type;
 import com.gcl.demo1.service.mybatis.MTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author 小关同学
@@ -25,23 +25,16 @@ public class IMTypeService implements MTypeService {
 
     @Override
     public List<Type> listTypeTop(int size){
-        List<Type> result = new ArrayList<>(size);
         List<Type> types = mTypeDao.findAllType();
-        for (Type type:types){
-            List<Blog> blogs = mBlogDao.findBlogByTypeId(type.getId());
-            type.setBlogs(blogs);
-        }
         //排序
         Collections.sort(types);
-
         for (Type type:types){
-            if (size!=0){
-                result.add(type);
-            }else{
+            type.setBlogs(mBlogDao.findBlogByTypeId(type.getId()));
+            if (size==0){
                 break;
             }
             size--;
         }
-        return result;
+        return types;
     }
 }

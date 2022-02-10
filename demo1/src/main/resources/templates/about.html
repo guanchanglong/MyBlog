@@ -66,7 +66,7 @@
             <!--*/-->
           </div>
           <div class="ui attached segment">
-            <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+            <a href="#" th:href="'/tags?tagId=' + ${tag.getId()}" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
               <span th:text="${tag.name}">方法论</span>
             </a>
             <!--/*-->
@@ -80,7 +80,7 @@
             <!--*/-->
           </div>
           <div class="ui bottom attached segment">
-            <a href="https://github.com/guanchanglong" class="ui circular icon button"><i class="github icon"></i></a>
+            <a href="https://github.com/guanchanglong" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>
             <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
             <a href="#" class="ui qq circular icon button" data-content="506921079" data-position="bottom center"><i class="qq icon"></i></a>
           </div>
