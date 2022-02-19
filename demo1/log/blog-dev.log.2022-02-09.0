@@ -230,7 +230,7 @@
 2022-02-09 09:28:45.126 DEBUG 14760 --- [http-nio-8888-exec-8] c.g.d.d.mybatis.MDayCountDao.getCounts   : ==> Parameters: 
 2022-02-09 09:28:45.215 ERROR 14760 --- [http-nio-8888-exec-8] c.g.d.h.ControllerExceptionHandler       : Request URL : /statistics/getDateCounts,Exception : {}
 
-org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.gcl.demo1.dao.mybatis.MDayCountDao.getCounts'.  It's likely that neither a Result Type nor a Result Map was specified.
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.gcl.demo1.dao.DayCountDao.getCounts'.  It's likely that neither a Result Type nor a Result Map was specified.
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
 	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
@@ -240,7 +240,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy95.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:22)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:22)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:26)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -311,7 +311,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.gcl.demo1.dao.mybatis.MDayCountDao.getCounts'.  It's likely that neither a Result Type nor a Result Map was specified.
+Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.gcl.demo1.dao.DayCountDao.getCounts'.  It's likely that neither a Result Type nor a Result Map was specified.
 	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.validateResultMapsCount(DefaultResultSetHandler.java:289)
 	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:191)
 	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
@@ -331,7 +331,7 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
 	... 78 common frames omitted
 
-2022-02-09 09:28:45.216  WARN 14760 --- [http-nio-8888-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.gcl.demo1.dao.mybatis.MDayCountDao.getCounts'.  It's likely that neither a Result Type nor a Result Map was specified.]
+2022-02-09 09:28:45.216  WARN 14760 --- [http-nio-8888-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.gcl.demo1.dao.DayCountDao.getCounts'.  It's likely that neither a Result Type nor a Result Map was specified.]
 2022-02-09 09:31:31.956  INFO 14552 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 14552 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
 2022-02-09 09:31:31.958 DEBUG 14552 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
 2022-02-09 09:31:31.958  INFO 14552 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
@@ -370,7 +370,7 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 2022-02-09 09:35:33.462 DEBUG 14552 --- [http-nio-8888-exec-1] c.g.d.d.mybatis.MDayCountDao.getCounts   : ==> Parameters: 
 2022-02-09 09:35:33.475 ERROR 14552 --- [http-nio-8888-exec-1] c.g.d.h.ControllerExceptionHandler       : Request URL : /statistics/getDateCounts,Exception : {}
 
-org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
 	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
@@ -380,7 +380,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy95.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:22)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:22)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:26)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -451,7 +451,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.instantiateClass(DefaultObjectFactory.java:88)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.create(DefaultObjectFactory.java:53)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.create(DefaultObjectFactory.java:45)
@@ -479,13 +479,13 @@ Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
 	... 78 common frames omitted
-Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at java.lang.Class.getConstructor0(Class.java:3082)
 	at java.lang.Class.getDeclaredConstructor(Class.java:2178)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.instantiateClass(DefaultObjectFactory.java:60)
 	... 103 common frames omitted
 
-2022-02-09 09:35:33.477  WARN 14552 --- [http-nio-8888-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()]
+2022-02-09 09:35:33.477  WARN 14552 --- [http-nio-8888-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()]
 2022-02-09 09:57:57.388  INFO 2684 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 2684 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
 2022-02-09 09:57:57.390 DEBUG 2684 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
 2022-02-09 09:57:57.390  INFO 2684 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
@@ -690,7 +690,7 @@ Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountD
 2022-02-09 10:05:10.902 DEBUG 2684 --- [http-nio-8888-exec-7] c.g.d.d.mybatis.MDayCountDao.getCounts   : ==> Parameters: 
 2022-02-09 10:05:10.909 ERROR 2684 --- [http-nio-8888-exec-7] c.g.d.h.ControllerExceptionHandler       : Request URL : /statistics/getDateCounts,Exception : {}
 
-org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
 	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
@@ -700,7 +700,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy95.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:22)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:22)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:26)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -771,7 +771,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.instantiateClass(DefaultObjectFactory.java:88)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.create(DefaultObjectFactory.java:53)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.create(DefaultObjectFactory.java:45)
@@ -798,13 +798,13 @@ Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
 	... 78 common frames omitted
-Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at java.lang.Class.getConstructor0(Class.java:3082)
 	at java.lang.Class.getDeclaredConstructor(Class.java:2178)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.instantiateClass(DefaultObjectFactory.java:60)
 	... 102 common frames omitted
 
-2022-02-09 10:05:10.910  WARN 2684 --- [http-nio-8888-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()]
+2022-02-09 10:05:10.910  WARN 2684 --- [http-nio-8888-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()]
 2022-02-09 10:08:45.544  INFO 1968 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 1968 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
 2022-02-09 10:08:45.545 DEBUG 1968 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
 2022-02-09 10:08:45.546  INFO 1968 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
@@ -843,7 +843,7 @@ Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountD
 2022-02-09 10:08:53.462 DEBUG 1968 --- [http-nio-8888-exec-1] c.g.d.d.mybatis.MDayCountDao.getCounts   : ==> Parameters: 
 2022-02-09 10:08:53.474 ERROR 1968 --- [http-nio-8888-exec-1] c.g.d.h.ControllerExceptionHandler       : Request URL : /statistics/getDateCounts,Exception : {}
 
-org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
 	at com.sun.proxy.$Proxy88.selectList(Unknown Source)
@@ -853,7 +853,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy95.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:24)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:24)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:26)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -924,7 +924,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.instantiateClass(DefaultObjectFactory.java:88)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.create(DefaultObjectFactory.java:53)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.create(DefaultObjectFactory.java:45)
@@ -952,13 +952,13 @@ Caused by: org.apache.ibatis.reflection.ReflectionException: Error instantiating
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
 	... 78 common frames omitted
-Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()
+Caused by: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()
 	at java.lang.Class.getConstructor0(Class.java:3082)
 	at java.lang.Class.getDeclaredConstructor(Class.java:2178)
 	at org.apache.ibatis.reflection.factory.DefaultObjectFactory.instantiateClass(DefaultObjectFactory.java:60)
 	... 103 common frames omitted
 
-2022-02-09 10:08:53.476  WARN 1968 --- [http-nio-8888-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.mybatis.MDayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.mybatis.MDayCountDao.<init>()]
+2022-02-09 10:08:53.476  WARN 1968 --- [http-nio-8888-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: Error instantiating interface com.gcl.demo1.dao.DayCountDao with invalid types () or values (). Cause: java.lang.NoSuchMethodException: com.gcl.demo1.dao.DayCountDao.<init>()]
 2022-02-09 10:11:07.702  INFO 9620 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9620 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
 2022-02-09 10:11:07.704 DEBUG 9620 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
 2022-02-09 10:11:07.704  INFO 9620 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
@@ -1206,7 +1206,7 @@ java.lang.IllegalArgumentException: argument type mismatch
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy94.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:20)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:20)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:24)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -1326,7 +1326,7 @@ java.lang.IllegalArgumentException: argument type mismatch
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy95.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:20)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:20)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:24)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -1446,7 +1446,7 @@ java.lang.IllegalArgumentException: argument type mismatch
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
 	at com.sun.proxy.$Proxy95.getCounts(Unknown Source)
-	at com.gcl.demo1.service.mybatis.impl.IMDayCountService.getCounts(IMDayCountService.java:20)
+	at com.gcl.demo1.service.impl.IMDayCountService.getCounts(IMDayCountService.java:20)
 	at com.gcl.demo1.controller.StatisticsController.archives(StatisticsController.java:24)
 	at com.gcl.demo1.controller.StatisticsController$$FastClassBySpringCGLIB$$28392c86.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)

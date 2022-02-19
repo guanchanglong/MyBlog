@@ -5,6 +5,7 @@ package com.gcl.demo1.vo;
  * @date: 2020/12/14 12:55
  */
 public class BlogQuery {
+
     private String title;
     private Long typeId;
     private boolean recommend;
@@ -34,5 +35,14 @@ public class BlogQuery {
 
     public void setRecommend(boolean recommend) {
         this.recommend = recommend;
+    }
+
+    @Override
+    public String toString() {
+        return "BlogQuery{" +
+                "title='" + title + '\'' +
+                ", typeId=" + typeId +
+                ", recommend=" + recommend +
+                '}';
     }
 }

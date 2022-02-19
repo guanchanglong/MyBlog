@@ -66,7 +66,7 @@ public class LogAspect {
         //因为传递的参数可能会有点多，所以我们使用对象数组来储存请求的参数
         private Object[] args;
 
-        public RequestLog(String url, String ip, String classMethod, Object[] args) {
+        RequestLog(String url, String ip, String classMethod, Object[] args) {
             this.url = url;
             this.ip = ip;
             this.classMethod = classMethod;

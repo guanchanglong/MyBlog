@@ -682,7 +682,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -695,7 +695,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 12:21:28.960 ERROR 5008 --- [http-nio-8888-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3068,7 +3068,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3081,7 +3081,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 20:32:51.851 ERROR 12292 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3332,7 +3332,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3345,7 +3345,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 20:42:44.125 ERROR 12348 --- [http-nio-8888-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3596,7 +3596,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3609,7 +3609,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 20:43:51.558 ERROR 19220 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3860,7 +3860,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4035,7 +4035,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4048,7 +4048,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 20:46:41.082 ERROR 11972 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4301,7 +4301,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4314,7 +4314,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 20:47:28.871 ERROR 17732 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4567,7 +4567,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4742,7 +4742,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4916,7 +4916,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -4929,7 +4929,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 20:51:07.432 ERROR 17384 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -5182,7 +5182,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -5356,7 +5356,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -5533,7 +5533,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -5707,7 +5707,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -5881,7 +5881,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -5894,7 +5894,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 21:00:25.194 ERROR 7716 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -6144,7 +6144,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getList() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getList() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95)
@@ -6161,7 +6161,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 21:01:59.701 ERROR 18756 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getList() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getList() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95)
@@ -6415,7 +6415,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -6428,7 +6428,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 21:03:23.323 ERROR 19036 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -6684,7 +6684,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -6697,7 +6697,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-07 21:12:29.002 ERROR 12000 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)

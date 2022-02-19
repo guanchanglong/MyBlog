@@ -1,10 +1,8 @@
 package com.gcl.demo1.controller;
 
-//import com.gcl.demo1.entity.jpa.Tag;
-
-import com.gcl.demo1.entity.mybatis.Tag;
-import com.gcl.demo1.service.mybatis.MBlogService;
-import com.gcl.demo1.service.mybatis.MTagService;
+import com.gcl.demo1.entity.Tag;
+import com.gcl.demo1.service.BlogService;
+import com.gcl.demo1.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,22 +19,22 @@ import java.util.List;
 public class TagShowController {
 
     @Autowired
-    private MTagService mTagService;
+    private TagService tagService;
 
     @Autowired
-    private MBlogService mBlogService;
+    private BlogService blogService;
 
     @GetMapping("/tags")
     public String tags(@RequestParam(value = "tagId") int tagId,
                        @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                        @RequestParam(value = "size",defaultValue = "8") int size,
                        Model model) {
-        List<Tag> tags = mTagService.listTagTop(10000);
+        List<Tag> tags = tagService.listTagTop(10000);
         if (tagId == -1) {
             tagId = tags.get(0).getId();
         }
         model.addAttribute("tags", tags);
-        model.addAttribute("page", mBlogService.listBlog(pageNum, size, tagId, "tag"));
+        model.addAttribute("page", blogService.listBlog(pageNum, size, tagId, "tag","", null));
         model.addAttribute("activeTagId", tagId);
         return "tags";
     }

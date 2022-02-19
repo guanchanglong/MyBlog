@@ -1,8 +1,8 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.entity.mybatis.Message;
-import com.gcl.demo1.entity.mybatis.User;
-import com.gcl.demo1.service.mybatis.MMessageService;
+import com.gcl.demo1.entity.Message;
+import com.gcl.demo1.entity.User;
+import com.gcl.demo1.service.MessageService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,7 +24,7 @@ import java.util.Date;
 public class MessageController {
 
     @Autowired
-    private MMessageService mMessageService;
+    private MessageService messageService;
 
     @Value("${comment.avatar}")
     private String avatar;
@@ -45,7 +45,7 @@ public class MessageController {
             message.setAvatar(avatar);
             message.setRole(1);
         }
-        mMessageService.saveMessage(message);
+        messageService.saveMessage(message);
         return "redirect:/message";
     }
 
@@ -53,7 +53,7 @@ public class MessageController {
     public String Message_board(@RequestParam(value = "pageNum",defaultValue = "1")Integer pageNum,
                                 @RequestParam(value = "size",defaultValue = "8")Integer size,
                                 Model model) {
-        PageInfo<Message> messages = mMessageService.listMessage(pageNum,size);
+        PageInfo<Message> messages = messageService.listMessage(pageNum,size);
         model.addAttribute("messages",messages);
         return "message_board";
     }
@@ -62,7 +62,7 @@ public class MessageController {
     public String message(@RequestParam(value = "pageNum",defaultValue = "1")Integer pageNum,
                           @RequestParam(value = "size",defaultValue = "8")Integer size,
                           Model model) {
-        PageInfo<Message> messages = mMessageService.listMessage(pageNum,size);
+        PageInfo<Message> messages = messageService.listMessage(pageNum,size);
         model.addAttribute("messages",messages);
         return "message_board :: messageList";//将数据返回message_board页面的th:fragment="messageList"片段，实现局部刷新
     }

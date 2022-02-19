@@ -1,8 +1,8 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.entity.mybatis.Comment;
-import com.gcl.demo1.entity.mybatis.User;
-import com.gcl.demo1.service.mybatis.MCommentService;
+import com.gcl.demo1.entity.Comment;
+import com.gcl.demo1.entity.User;
+import com.gcl.demo1.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ import java.util.Date;
 public class CommentController {
 
     @Autowired
-    private MCommentService mCommentService;
+    private CommentService commentService;
 
     @Value("${comment.avatar}")
     private String avatar;
@@ -35,7 +35,7 @@ public class CommentController {
      */
     @GetMapping("/comments/{blogId}")
     public String comments(@PathVariable int blogId, Model model) {
-        model.addAttribute("comments", mCommentService.listCommentByBlogId(blogId));
+        model.addAttribute("comments", commentService.listCommentByBlogId(blogId));
         return "blog :: commentList";
     }
 
@@ -63,7 +63,8 @@ public class CommentController {
         System.out.println(comment.getEmail());
         System.out.println(comment.getNickname());
         //表单判空验证问题还未解决
-//        mCommentService.insertComment(comment);
+        //昵称、邮箱、内容都可以为空，这不合理，得在前端解决
+//        commentService.insertComment(comment);
         return "redirect:/comments/" + blogId;
     }
 }

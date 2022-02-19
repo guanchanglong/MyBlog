@@ -1,18 +1,12 @@
 package com.gcl.demo1.controller.admin;
 
-import com.gcl.demo1.entity.jpa.Tag;
-import com.gcl.demo1.service.jpa.TagService;
+import com.gcl.demo1.entity.Tag;
+import com.gcl.demo1.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -24,19 +18,23 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/admin/tags")
 public class TagController {
+
     @Autowired
     private TagService tagService;
 
+
     /**
      * 列出所有的标签
-     * @param pageable
+     * @param pageNum
+     * @param size
      * @param model
      * @return
      */
     @GetMapping("/list")
-    public String tags(@PageableDefault(size = 10,sort = {"id"},direction = Sort.Direction.DESC)
-                               Pageable pageable, Model model) {
-        model.addAttribute("page",tagService.listTag(pageable));
+    public String tags(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                       @RequestParam(value = "size",defaultValue = "8")int size,
+                       Model model) {
+        model.addAttribute("page", tagService.listTag(pageNum,size));
         return "admin/tags";
     }
 
@@ -58,8 +56,8 @@ public class TagController {
      * @return
      */
     @GetMapping("/{id}/input")
-    public String editInput(@PathVariable Long id, Model model) {
-        model.addAttribute("tag", tagService.getTag(id));
+    public String editInput(@PathVariable int id, Model model) {
+        model.addAttribute("tag", tagService.findTagById(id));
         return "admin/tags-input";
     }
 
@@ -72,20 +70,18 @@ public class TagController {
      * @return
      */
     @PostMapping("/add")
-    public String post(@Valid Tag tag,BindingResult result, RedirectAttributes attributes) {
-        Tag tag1 = tagService.getTagByName(tag.getName());
+    public String post(@Valid Tag tag,
+                       BindingResult result,
+                       RedirectAttributes attributes) {
+        Tag tag1 = tagService.findTagByName(tag.getName());
         if (tag1 != null) {
             result.rejectValue("name","nameError","不能添加重复的分类");
         }
         if (result.hasErrors()) {
             return "admin/tags-input";
         }
-        Tag t = tagService.saveTag(tag);
-        if (t == null ) {
-            attributes.addFlashAttribute("message", "新增失败");
-        } else {
-            attributes.addFlashAttribute("message", "新增成功");
-        }
+        tagService.insertTag(tag.getName());
+        attributes.addFlashAttribute("message", "新增成功");
         return "redirect:/admin/tags/list";
     }
 
@@ -99,20 +95,19 @@ public class TagController {
      * @return
      */
     @PostMapping("/{id}/update")
-    public String editPost(@Valid Tag tag, BindingResult result, @PathVariable Long id, RedirectAttributes attributes) {
-        Tag tag1 = tagService.getTagByName(tag.getName());
+    public String editPost(@Valid Tag tag,
+                           BindingResult result,
+                           @PathVariable int id,
+                           RedirectAttributes attributes) {
+        Tag tag1 = tagService.findTagByName(tag.getName());
         if (tag1 != null) {
             result.rejectValue("name","nameError","不能添加重复的分类");
         }
         if (result.hasErrors()) {
             return "admin/tags-input";
         }
-        Tag t = tagService.updateTag(id,tag);
-        if (t == null ) {
-            attributes.addFlashAttribute("message", "更新失败");
-        } else {
-            attributes.addFlashAttribute("message", "更新成功");
-        }
+        tagService.updateTag(tag.getName(), id);
+        attributes.addFlashAttribute("message", "更新成功");
         return "redirect:/admin/tags/list";
     }
 
@@ -123,9 +118,14 @@ public class TagController {
      * @return
      */
     @GetMapping("/{id}/delete")
-    public String delete(@PathVariable Long id,RedirectAttributes attributes) {
-        tagService.deleteTag(id);
-        attributes.addFlashAttribute("message", "删除成功");
+    public String delete(@PathVariable int id,
+                         RedirectAttributes attributes) {
+        if (tagService.findRelationByTagId(id).size() > 0){
+            attributes.addFlashAttribute("message", "删除失败，该标签关联着相应的博客！！！");
+        }else{
+            tagService.deleteTagById(id);
+            attributes.addFlashAttribute("message", "删除成功");
+        }
         return "redirect:/admin/tags/list";
     }
 }

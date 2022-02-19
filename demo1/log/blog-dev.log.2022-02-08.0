@@ -541,7 +541,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getParentCommentId() cannot be found on type com.gcl.demo1.entity.mybatis.Message
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getParentCommentId() cannot be found on type com.gcl.demo1.entity.Message
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -554,7 +554,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-08 11:51:06.616 ERROR 11840 --- [http-nio-8888-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getParentCommentId() cannot be found on type com.gcl.demo1.entity.mybatis.Message
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getParentCommentId() cannot be found on type com.gcl.demo1.entity.Message
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -3425,7 +3425,7 @@ org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method cal
 2022-02-08 21:23:28.045 ERROR 17300 --- [http-nio-8888-exec-4] c.g.d.h.ControllerExceptionHandler       : Request URL : /message/saveMessages,Exception : {}
 
 java.lang.NullPointerException: null
-	at com.gcl.demo1.service.mybatis.impl.IMMessageService.saveMessage(IMMessageService.java:83)
+	at com.gcl.demo1.service.impl.IMMessageService.saveMessage(IMMessageService.java:83)
 	at com.gcl.demo1.controller.MessageController.post(MessageController.java:46)
 	at com.gcl.demo1.controller.MessageController$$FastClassBySpringCGLIB$$ca0228fc.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)

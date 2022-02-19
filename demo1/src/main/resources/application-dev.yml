@@ -1,17 +1,23 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: root
     password: 20001114
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: true
+  redis:
+    database: 0             # redis数据库索引（默认为0）
+    host: 175.178.65.191    # redis的服务器地址
+    port: 6379              # redis的服务器端口号
+    password: 20001114      # redis连接密码
+    jedis:
+      pool:
+        max-idle: 8         # 连接池中的最大空闲连接
+        min-idle: 0         # 连接池中的最小空闲连接
+    timeout: 300
 
 mybatis:
-  config-location: classpath:SqlMapConfig.xml
-  mapper-locations: classpath:com/gcl/demo1/dao/mybatis/*Dao.xml
+  mapper-locations: classpath:mapping/*Dao.xml
+  type-aliases-package: com.gcl.demo1.entity
 
 logging:
   level:
@@ -22,3 +28,6 @@ logging:
 
 server:
   port: 8888
+  servlet:
+    session:
+      timeout: 864000

@@ -1,18 +1,13 @@
 package com.gcl.demo1.controller.admin;
 
-import com.gcl.demo1.entity.jpa.Type;
-import com.gcl.demo1.service.jpa.TypeService;
+import com.gcl.demo1.entity.Type;
+import com.gcl.demo1.service.BlogService;
+import com.gcl.demo1.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -28,19 +23,21 @@ public class TypeController {
     @Autowired
     private TypeService typeService;
 
+    @Autowired
+    private BlogService blogService;
+
     /**
      * 列表页面入口
-     * @param pageable
+     * @param pageNum
+     * @param size
      * @param model
      * @return
      */
     @GetMapping("/list")
-    // @PageableDefault是设置默认分页的相关值的注解，
-    // size = 10指定一页放10条数据，sort = {"id"}指定根据主键id来排序，
-    // direction = Sort.Direction.DESC来指定按照倒序的方式来排序
-    public String types(@PageableDefault(size = 10,sort = {"id"},direction = Sort.Direction.DESC)
-                                Pageable pageable, Model model){
-        model.addAttribute("page",typeService.listType(pageable));
+    public String types(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                        @RequestParam(value = "size",defaultValue = "8")int size,
+                        Model model){
+        model.addAttribute("page", typeService.listType(pageNum, size));
         return "admin/types";
     }
 
@@ -62,8 +59,9 @@ public class TypeController {
      * @return
      */
     @GetMapping("/{id}/input")
-    public String editInput(@PathVariable Long id, Model model){
-        model.addAttribute("type",typeService.getType(id));
+    public String editInput(@PathVariable int id,
+                            Model model){
+        model.addAttribute("type", typeService.findTypeById(id));
         return "admin/types-input";
     }
 
@@ -75,25 +73,18 @@ public class TypeController {
      * @return
      */
     @PostMapping("/add")
-    public String post(@Valid Type type, BindingResult result, RedirectAttributes attributes){
-        Type type1 = typeService.getTypeByName(type.getName());
-
+    public String post(@Valid Type type,
+                       BindingResult result,
+                       RedirectAttributes attributes){
+        Type type1 = typeService.findTypeByName(type.getName());
         if (type1 != null){
             result.rejectValue("name","nameError","不能添加重复的分类");
         }
-
         if (result.hasErrors()){
             return "admin/types-input";
         }
-        Type t = typeService.saveType(type);
-        //没保存成功
-        if (t == null){
-            attributes.addFlashAttribute("message","新增失败");
-        }
-        //保存成功
-        else{
-            attributes.addFlashAttribute("message","新增成功");
-        }
+        typeService.insertType(type.getName());
+        attributes.addFlashAttribute("message","新增成功");
         //返回分类列表
         return "redirect:/admin/types/list";
     }
@@ -107,22 +98,19 @@ public class TypeController {
      * @return
      */
     @PostMapping("/update/{id}")
-    public String editPost(@Valid Type type,BindingResult result,@PathVariable Long id,RedirectAttributes attributes){
-        System.out.println("进入成功");
-        Type type1 = typeService.getTypeByName(type.getName());
+    public String editPost(@Valid Type type,
+                           BindingResult result,
+                           @PathVariable int id,
+                           RedirectAttributes attributes){
+        Type type1 = typeService.findTypeByName(type.getName());
         if (type1 != null){
             result.rejectValue("name","nameError","不能添加重复的分类");
         }
         if (result.hasErrors()){
             return "admin/types-input";
         }
-        Type type2 = typeService.updateType(id,type);
-        if (type2 == null){
-            attributes.addFlashAttribute("message","更新失败");
-        }
-        else{
-            attributes.addFlashAttribute("message","更新成功");
-        }
+        typeService.updateTypeById(type.getName(), id);
+        attributes.addFlashAttribute("message","更新成功");
         return "redirect:/admin/types/list";
     }
 
@@ -133,9 +121,14 @@ public class TypeController {
      * @return
      */
     @GetMapping("/{id}/delete")
-    public String delete(@PathVariable Long id,RedirectAttributes attributes) {
-        typeService.deleteType(id);
-        attributes.addFlashAttribute("message", "删除成功");
+    public String delete(@PathVariable int id,
+                         RedirectAttributes attributes) {
+        if (blogService.findBlogByTypeId(id).size() > 0){
+            attributes.addFlashAttribute("message", "删除失败，该类型关联着相应的博客！！！");
+        }else{
+            typeService.deleteTypeById(id);
+            attributes.addFlashAttribute("message", "删除成功");
+        }
         return "redirect:/admin/types/list";
     }
 }

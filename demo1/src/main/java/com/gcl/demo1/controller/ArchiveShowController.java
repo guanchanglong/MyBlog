@@ -1,6 +1,6 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.service.mybatis.MBlogService;
+import com.gcl.demo1.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ArchiveShowController {
 
     @Autowired
-    private MBlogService mBlogService;
+    private BlogService blogService;
 
     /**
      * 归档展示
@@ -23,8 +23,8 @@ public class ArchiveShowController {
      */
     @GetMapping("/archives")
     public String archives(Model model) {
-        model.addAttribute("archiveMap", mBlogService.archiveBlog());
-        model.addAttribute("blogCount", mBlogService.countBlog());
+        model.addAttribute("archiveMap", blogService.archiveBlog());
+        model.addAttribute("blogCount", blogService.countBlog());
         return "archives";
     }
 }

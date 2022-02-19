@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gcl.demo1.dao.BlogDao">
+    <resultMap id="blogMap" type="com.gcl.demo1.entity.Blog">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="firstPicture" column="first_picture"/>
+        <result property="view" column="view"/>
+        <result property="appreciation" column="appreciation"/>
+        <result property="shareStatement" column="share_statement"/>
+        <result property="commentable" column="commentable"/>
+        <result property="published" column="published"/>
+        <result property="recommend" column="recommend"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="typeId" column="type_id"/>
+        <result property="description" column="description"/>
+        <result property="userId" column="user_id"/>
+        <result property="year" column="year"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="blogMap">
+        select *
+          from b_blog
+    </select>
+
+    <select id="findAllByPublished" resultMap="blogMap">
+        select *
+          from b_blog
+            where published = 1
+    </select>
+
+    <select id="findBlogById" resultMap="blogMap">
+        select *
+          from b_blog
+            where id = #{blogId}
+    </select>
+
+    <update id="updateViews">
+        update b_blog
+          set views = views+1
+            where id = #{blogId}
+    </update>
+
+    <select id="findBlogByTypeId" resultMap="blogMap">
+        select *
+          from b_blog
+            where type_id = #{typeId} and published = 1
+    </select>
+
+    <select id="findBlogByTypeIdByAdmin" resultMap="blogMap">
+        select *
+          from b_blog
+            where type_id = #{typeId}
+    </select>
+
+    <select id="findBlogByTag" resultMap="blogMap">
+        select *
+          from b_blog
+            where id in (select blog_id from b_blog_tag where tag_id = #{tagId}) and published = 1
+    </select>
+
+    <select id="findBlogByContent" resultMap="blogMap">
+        select *
+          from b_blog
+            where published = 1 and (title like #{content} or content like #{content})
+    </select>
+
+    <select id="findRecommendBlog" resultMap="blogMap">
+        select *
+          from b_blog
+            where published = 1 and recommend = 1
+    </select>
+
+    <select id="findGroupYear" resultMap="blogMap">
+        select DATE_FORMAT(create_time,'%Y') as year
+          from b_blog group by DATE_FORMAT(create_time,'%Y') order by year desc
+    </select>
+
+    <select id="findByYear" resultMap="blogMap">
+        select *
+          from b_blog
+            where published = 1 and DATE_FORMAT(create_time,'%Y') = #{year}
+    </select>
+
+    <insert id="insertBlog" parameterType="com.gcl.demo1.entity.Blog" useGeneratedKeys="true" keyProperty="id">
+        insert into b_blog(appreciation,commentable,published,recommend,share_statement,title,create_time,update_time,content,first_picture,views,type_id,user_id,description)
+          values(#{blog.appreciation},#{blog.commentable},#{blog.published},#{blog.recommend},#{blog.shareStatement},#{blog.title},#{blog.createTime},#{blog.updateTime},#{blog.content},#{blog.firstPicture},#{blog.views},#{blog.type.id},#{blog.user.id},#{blog.description})
+    </insert>
+
+    <update id="updateBlog" parameterType="com.gcl.demo1.entity.Blog">
+        update b_blog
+          set appreciation = #{blog.appreciation},
+              commentable = #{blog.commentable},
+              published = #{blog.published},
+              recommend = #{blog.recommend},
+              share_statement = #{blog.shareStatement},
+              title = #{blog.title},
+              create_time = #{blog.createTime},
+              update_time = #{blog.updateTime},
+              content = #{blog.content},
+              first_picture = #{blog.firstPicture},
+              views = #{blog.views},
+              type_id = #{blog.type.id},
+              user_id = #{blog.user.id},
+              description = #{blog.description}
+            where id = #{blog.id}
+    </update>
+
+    <delete id="deleteBlogById">
+        delete from b_blog
+          where id = #{blogId};
+        alter table b_blog drop id;
+        alter table b_blog add id int not null primary key auto_increment first;
+    </delete>
+
+    <select id="findBlogByBlogQuery" parameterType="com.gcl.demo1.vo.BlogQuery" resultMap="blogMap">
+        select *
+          from b_blog
+            <where>
+              <if test="blogQuery.title != null">
+                  and title like #{blogQuery.title}
+              </if>
+              <if test="blogQuery.typeId != null">
+                  and type_id = #{blogQuery.typeId}
+              </if>
+              <if test="blogQuery.recommend != false">
+                  and recommend = #{blogQuery.recommend}
+              </if>
+            </where>
+    </select>
+
+</mapper>

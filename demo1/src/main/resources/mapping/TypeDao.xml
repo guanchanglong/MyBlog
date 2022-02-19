@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gcl.demo1.dao.TypeDao">
+
+    <resultMap id="typeMap" type="com.gcl.demo1.entity.Type">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <select id="findTypeById" resultMap="typeMap">
+        select *
+          from b_type
+            where id = #{typeId}
+    </select>
+
+    <select id="findAllByName" resultMap="typeMap">
+        select *
+          from b_type
+            where name = #{name}
+    </select>
+
+    <select id="findAllType" resultMap="typeMap">
+        select *
+          from b_type
+    </select>
+
+    <insert id="insertType">
+        insert into b_type(name)
+          values(#{name})
+    </insert>
+
+    <update id="updateTypeById">
+        update b_type
+          set name = #{name}
+            where id = #{id}
+    </update>
+
+    <delete id="deleteTypeById">
+        delete from b_type
+          where id = #{id};
+        alter table b_type drop id;
+        alter table b_type add id int not null primary key auto_increment first;
+    </delete>
+
+</mapper>

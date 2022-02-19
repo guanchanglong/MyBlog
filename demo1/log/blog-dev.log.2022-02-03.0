@@ -538,7 +538,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'replyMessages' cannot be found on object of type 'com.gcl.demo1.entity.mybatis.Comment' - maybe not public or not valid?
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'replyMessages' cannot be found on object of type 'com.gcl.demo1.entity.Comment' - maybe not public or not valid?
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
@@ -555,7 +555,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:
 
 2022-02-03 21:36:23.181 ERROR 14672 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'replyMessages' cannot be found on object of type 'com.gcl.demo1.entity.mybatis.Comment' - maybe not public or not valid?
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'replyMessages' cannot be found on object of type 'com.gcl.demo1.entity.Comment' - maybe not public or not valid?
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
@@ -810,7 +810,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'parentMessage' cannot be found on object of type 'com.gcl.demo1.entity.mybatis.Comment' - maybe not public or not valid?
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'parentMessage' cannot be found on object of type 'com.gcl.demo1.entity.Comment' - maybe not public or not valid?
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:91)
@@ -823,7 +823,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:
 
 2022-02-03 22:01:33.798 ERROR 16808 --- [http-nio-8888-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'parentMessage' cannot be found on object of type 'com.gcl.demo1.entity.mybatis.Comment' - maybe not public or not valid?
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'parentMessage' cannot be found on object of type 'com.gcl.demo1.entity.Comment' - maybe not public or not valid?
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
 	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:91)
@@ -1074,7 +1074,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evalu
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 50 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
@@ -1087,7 +1087,7 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E:
 
 2022-02-03 22:04:44.986 ERROR 2340 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/message_board.html]")] with root cause
 
-org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.mybatis.Comment
+org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getNickName() cannot be found on type com.gcl.demo1.entity.Comment
 	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
 	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
 	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)

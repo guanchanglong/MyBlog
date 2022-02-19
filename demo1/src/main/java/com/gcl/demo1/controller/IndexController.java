@@ -1,8 +1,8 @@
 package com.gcl.demo1.controller;
 
-import com.gcl.demo1.service.mybatis.MBlogService;
-import com.gcl.demo1.service.mybatis.MTagService;
-import com.gcl.demo1.service.mybatis.MTypeService;
+import com.gcl.demo1.service.BlogService;
+import com.gcl.demo1.service.TagService;
+import com.gcl.demo1.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
 
     @Autowired
-    private MBlogService mBlogService;
+    private BlogService blogService;
 
     @Autowired
-    private MTypeService mTypeService;
+    private TypeService typeService;
 
     @Autowired
-    private MTagService mTagService;
+    private TagService tagService;
 
     /**
      * 主页
@@ -37,10 +37,10 @@ public class IndexController {
     public String index(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                         @RequestParam(value = "size",defaultValue = "8") int size,
                         Model model) {
-        model.addAttribute("page",mBlogService.listBlog(pageNum,size));
-        model.addAttribute("types", mTypeService.listTypeTop(6));
-        model.addAttribute("tags", mTagService.listTagTop(10));
-        model.addAttribute("recommendBlogs", mBlogService.listBlog(1,8));
+        model.addAttribute("page", blogService.listBlog(pageNum, size,0,"published","", null));
+        model.addAttribute("types", typeService.listTypeTop(6));
+        model.addAttribute("tags", tagService.listTagTop(10));
+        model.addAttribute("recommendBlogs", blogService.listBlog(1,8, 0,"published","", null));
         return "index";
     }
 
@@ -57,7 +57,7 @@ public class IndexController {
                          @RequestParam(value = "size",defaultValue = "8") int size,
                          @RequestParam(value = "content") String content,
                          Model model) {
-        model.addAttribute("page", mBlogService.listBlog(pageNum, size, content));
+        model.addAttribute("page", blogService.listBlog(pageNum, size,0, "search", content, null));
         model.addAttribute("content", content);
         return "search";
     }
@@ -70,7 +70,7 @@ public class IndexController {
      */
     @GetMapping("/blog/{id}")
     public String blog(@PathVariable int id, Model model) {
-        model.addAttribute("blog", mBlogService.getAndConvert(id));
+        model.addAttribute("blog", blogService.getAndConvert(id));
         return "blog";
     }
 
@@ -82,7 +82,7 @@ public class IndexController {
     @GetMapping("/footer/newBlog")
     public String newBlogs(Model model) {
         //返回前3篇博客内容到用户故事专栏
-        model.addAttribute("newBlogs", mBlogService.listRecommendBlogTop(3));
+        model.addAttribute("newBlogs", blogService.listRecommendBlogTop(3));
         return "_fragments :: newBlogList";
     }
 }
