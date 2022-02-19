@@ -48,6 +48,7 @@ public class AboutShowController {
         model.addAttribute("user", user);
         System.out.println("redis1获取到的数据"+user.toString());
 
+
         //从数据库取值的做法
 //        User user = userService.getUser("小关同学");
 //        user.setPassword(null);
