@@ -4,12 +4,12 @@
 <head th:fragment="head(title)">
 
   <!--自动将http的不安全请求升级为https-->
-<!--  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
   <!--标记用于指定用户是否可以缩放Web页面-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta charset="UTF-8">
   <title th:replace="${title}">博客详情</title>
   <link rel="stylesheet" href="../static/css/semantic.min.css">
   <link rel="stylesheet" href="../static/css/typo.css">
@@ -28,7 +28,7 @@
 <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
   <div id="message-position" class="ui container">
     <div class="ui inverted secondary stackable menu">
-      <h2 class="ui teal header item">我的知识记录</h2>
+      <h2 class="ui teal header item">小关同学的Blog</h2>
       <a href="http://www.xiaoguantongxue.com" th:href="@{/}" class="m-item item m-mobile-hide " th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>&nbsp;首页</a>
       <a href="http://www.xiaoguantongxue.com/types?typeId=-1" th:href="'/types?typeId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>&nbsp;分类</a>
       <a href="http://www.xiaoguantongxue.com/tags?tagId=-1" th:href="'/tags?tagId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>&nbsp;标签</a>

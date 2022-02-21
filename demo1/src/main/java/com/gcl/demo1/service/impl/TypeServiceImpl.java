@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,16 +30,20 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public List<Type> listTypeTop(int size){
         List<Type> types = typeDao.findAllType();
+        List<Type> result = new ArrayList<>(size);
+        for (Type type:types){
+            type.setBlogs(blogDao.findBlogByTypeId(type.getId()));
+        }
         //排序
         Collections.sort(types);
         for (Type type:types){
-            type.setBlogs(blogDao.findBlogByTypeId(type.getId()));
             if (size==0){
                 break;
             }
+            result.add(type);
             size--;
         }
-        return types;
+        return result;
     }
 
     @Override

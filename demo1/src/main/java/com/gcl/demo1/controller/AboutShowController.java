@@ -40,7 +40,6 @@ public class AboutShowController {
     public String about(Model model) {
         //获取Redis中的键
         String key = initRedisData.initAboutShow();
-
         //从Redis中获取用户信息
         User user = User.stringToUser(redisTemplate.opsForValue().get(key));
         user.setPassword(null);

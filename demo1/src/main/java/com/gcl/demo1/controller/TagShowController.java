@@ -29,7 +29,7 @@ public class TagShowController {
                        @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                        @RequestParam(value = "size",defaultValue = "8") int size,
                        Model model) {
-        List<Tag> tags = tagService.listTagTop(10000);
+        List<Tag> tags = tagService.listTagTop(100);
         if (tagId == -1) {
             tagId = tags.get(0).getId();
         }

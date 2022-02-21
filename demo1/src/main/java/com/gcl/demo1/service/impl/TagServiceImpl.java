@@ -31,16 +31,20 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<Tag> listTagTop(int size){
         List<Tag> tags = tagDao.findAllTag();
+        List<Tag> result = new ArrayList<>(size);
+        for (Tag tag:tags){
+            tag.setBlogs(blogDao.findBlogByTag(tag.getId()));
+        }
         //排序
         Collections.sort(tags);
         for (Tag tag:tags){
-            tag.setBlogs(blogDao.findBlogByTag(tag.getId()));
             if (size==0){
                 break;
             }
+            result.add(tag);
             size--;
         }
-        return tags;
+        return result;
     }
 
     @Override

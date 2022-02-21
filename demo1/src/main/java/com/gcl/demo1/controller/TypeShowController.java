@@ -29,7 +29,7 @@ public class TypeShowController {
                         @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                         @RequestParam(value = "size",defaultValue = "8") int size,
                         Model model) {
-        List<Type> types = typeService.listTypeTop(10000);
+        List<Type> types = typeService.listTypeTop(100);
         if (typeId == -1) {
             typeId = types.get(0).getId();
         }

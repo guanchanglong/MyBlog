@@ -9,7 +9,8 @@
         <result property="title" column="title"/>
         <result property="content" column="content"/>
         <result property="firstPicture" column="first_picture"/>
-        <result property="view" column="view"/>
+        <result property="flag" column="flag"/>
+        <result property="views" column="views"/>
         <result property="appreciation" column="appreciation"/>
         <result property="shareStatement" column="share_statement"/>
         <result property="commentable" column="commentable"/>
@@ -88,8 +89,8 @@
     </select>
 
     <insert id="insertBlog" parameterType="com.gcl.demo1.entity.Blog" useGeneratedKeys="true" keyProperty="id">
-        insert into b_blog(appreciation,commentable,published,recommend,share_statement,title,create_time,update_time,content,first_picture,views,type_id,user_id,description)
-          values(#{blog.appreciation},#{blog.commentable},#{blog.published},#{blog.recommend},#{blog.shareStatement},#{blog.title},#{blog.createTime},#{blog.updateTime},#{blog.content},#{blog.firstPicture},#{blog.views},#{blog.type.id},#{blog.user.id},#{blog.description})
+        insert into b_blog(appreciation,commentable,published,recommend,share_statement,title,create_time,update_time,content,first_picture,views,type_id,user_id,description,flag)
+          values(#{blog.appreciation},#{blog.commentable},#{blog.published},#{blog.recommend},#{blog.shareStatement},#{blog.title},#{blog.createTime},#{blog.updateTime},#{blog.content},#{blog.firstPicture},#{blog.views},#{blog.type.id},#{blog.user.id},#{blog.description},#{blog.flag})
     </insert>
 
     <update id="updateBlog" parameterType="com.gcl.demo1.entity.Blog">
@@ -100,14 +101,13 @@
               recommend = #{blog.recommend},
               share_statement = #{blog.shareStatement},
               title = #{blog.title},
-              create_time = #{blog.createTime},
               update_time = #{blog.updateTime},
               content = #{blog.content},
               first_picture = #{blog.firstPicture},
-              views = #{blog.views},
               type_id = #{blog.type.id},
               user_id = #{blog.user.id},
-              description = #{blog.description}
+              description = #{blog.description},
+              flag = #{blog.flag}
             where id = #{blog.id}
     </update>
 

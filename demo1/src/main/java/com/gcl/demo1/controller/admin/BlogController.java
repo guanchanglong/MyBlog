@@ -73,7 +73,7 @@ public class BlogController {
         setTypeAndTag(model);
         Blog blog = blogService.findBlogByBlogId(id);
         blog.init();
-        model.addAttribute("blog",blog);
+        model.addAttribute("blog", blog);
         return INPUT;
     }
 

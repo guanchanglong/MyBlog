@@ -183,13 +183,13 @@ public class BlogServiceImpl implements BlogService {
      */
     @Override
     @Transactional  //使用事务
-    public void updateBlog(int blogId,Blog blog){
+    public void updateBlog(int blogId, Blog blog){
         Blog b = blogDao.findBlogById(blogId);
         if (b==null){
             throw new NotFoundException("该博客不存在");
         }
         //如果存在就将blog对象里面的值赋给b
-        BeanUtils.copyProperties(blog,b, MyBeanUtils.getNullPropertyNames(blog));
+        BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
         //设置更新的时间日期
         b.setUpdateTime(new Date());
         //更新博客信息

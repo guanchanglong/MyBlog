@@ -58,7 +58,9 @@
 
     <delete id="deleteTagRelationById">
         delete from b_blog_tag
-          where id = #{id}
+          where id = #{id};
+        alter table b_blog_tag drop id;
+        alter table b_blog_tag add id int not null primary key auto_increment first;
     </delete>
 
     <delete id="deleteTagRelationByBlogId">

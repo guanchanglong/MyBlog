@@ -17,8 +17,8 @@ public class Blog {
     private String content;
     //博客的封面图片
     private String firstPicture;
-    //博客的
-    private String flag;
+    //博客的原创(0)、转载(1)和翻译(2)标识
+    private int flag;
     //博客的浏览人数
     private int views;
     //博客是否开启赞赏
@@ -93,11 +93,11 @@ public class Blog {
         this.firstPicture = firstPicture;
     }
 
-    public String getFlag() {
+    public int getFlag() {
         return flag;
     }
 
-    public void setFlag(String flag) {
+    public void setFlag(int flag) {
         this.flag = flag;
     }
 
@@ -239,6 +239,30 @@ public class Blog {
 
     public void init() {
         this.tagIds = tagsToIds(this.getTags());
+    }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", firstPicture='" + firstPicture + '\'' +
+                ", flag='" + flag + '\'' +
+                ", views=" + views +
+                ", appreciation=" + appreciation +
+                ", shareStatement=" + shareStatement +
+                ", commentable=" + commentable +
+                ", published=" + published +
+                ", recommend=" + recommend +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", userId=" + userId +
+                ", typeId=" + typeId +
+                ", tagIds='" + tagIds + '\'' +
+                ", description='" + description + '\'' +
+                ", year='" + year + '\'' +
+                '}';
     }
 
     //1,2,3
