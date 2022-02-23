@@ -3,6 +3,7 @@ package com.gcl.demo1.dao;
 import com.gcl.demo1.entity.Type;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @date: 2020/12/11 15:54
  */
 @Mapper
+@Repository
 public interface TypeDao {
     Type findTypeById(@Param("typeId") int id);
 

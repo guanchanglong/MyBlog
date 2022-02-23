@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.gcl.demo1.dao.BlogDao">
+
     <resultMap id="blogMap" type="com.gcl.demo1.entity.Blog">
         <id property="id" column="id"/>
         <result property="title" column="title"/>
@@ -25,12 +26,12 @@
     </resultMap>
 
     <select id="findAll" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
     </select>
 
     <select id="findAllByPublished" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where published = 1
     </select>
@@ -48,31 +49,31 @@
     </update>
 
     <select id="findBlogByTypeId" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where type_id = #{typeId} and published = 1
     </select>
 
     <select id="findBlogByTypeIdByAdmin" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where type_id = #{typeId}
     </select>
 
     <select id="findBlogByTag" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where id in (select blog_id from b_blog_tag where tag_id = #{tagId}) and published = 1
     </select>
 
     <select id="findBlogByContent" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where published = 1 and (title like #{content} or content like #{content})
     </select>
 
     <select id="findRecommendBlog" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where published = 1 and recommend = 1
     </select>
@@ -83,7 +84,7 @@
     </select>
 
     <select id="findByYear" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             where published = 1 and DATE_FORMAT(create_time,'%Y') = #{year}
     </select>
@@ -119,7 +120,7 @@
     </delete>
 
     <select id="findBlogByBlogQuery" parameterType="com.gcl.demo1.vo.BlogQuery" resultMap="blogMap">
-        select *
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
           from b_blog
             <where>
               <if test="blogQuery.title != null">

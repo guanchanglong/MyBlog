@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
  * @create 2021/10/16
  * JSON对象和String类型的相互转换类
  */
-class JSONToStringUtils {
+public class JSONToStringUtils {
 
     /**
      * 将数据库查询到的对象信息转化为字符串
@@ -15,10 +15,7 @@ class JSONToStringUtils {
      * @return 字符串
      */
     public static String JSONToString(Object param){
-        String result = JSON.toJSONString(param);
-        System.out.println("对象转字符串转化结果：");
-        System.out.println(result);
-        return result;
+        return JSON.toJSONString(param);
     }
 
 //    public static void main(String[] args) {

@@ -116,7 +116,7 @@ public class User {
      */
     public static User stringToUser(String param){
         JSONObject json = JSONObject.parseObject(param);
-        return JSON.toJavaObject(json,User.class);
+        return JSON.toJavaObject(json, User.class);
     }
 
     public void setBlogs(List<Blog> blogs) {

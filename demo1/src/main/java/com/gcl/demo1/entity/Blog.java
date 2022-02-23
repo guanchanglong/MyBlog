@@ -1,5 +1,6 @@
 package com.gcl.demo1.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
  * @author 小关同学
  * @create 2021/12/7
  */
-public class Blog {
+public class Blog implements Comparable<Blog>, Serializable {
     //博客的id
     private int id;
     //博客的标题
@@ -282,5 +283,10 @@ public class Blog {
         } else {
             return tagIds;
         }
+    }
+
+    @Override
+    public int compareTo(Blog blog) {
+        return (int)(createTime.getTime()-blog.getCreateTime().getTime());
     }
 }

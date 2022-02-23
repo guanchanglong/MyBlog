@@ -3,6 +3,7 @@ package com.gcl.demo1.dao;
 import com.gcl.demo1.entity.Comment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @date: 2020/12/16 17:13
  */
 @Mapper
+@Repository
 public interface CommentDao {
 
     List<Comment> findCommentByBlogId(@Param("blogId") int blogId);

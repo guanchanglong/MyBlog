@@ -4,6 +4,7 @@ import com.gcl.demo1.entity.BlogAndTag;
 import com.gcl.demo1.entity.Tag;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @date: 2020/12/13 22:20
  */
 @Mapper
+@Repository
 public interface TagDao {
 
     List<Tag> findTagByBlogId(@Param("blogId") int blogId);

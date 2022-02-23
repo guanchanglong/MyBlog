@@ -8,7 +8,7 @@ import com.gcl.demo1.entity.User;
  */
 public interface UserService {
 
-    User getUser(String nickname);
+    User getUserByNickname(String nickname);
 
     User login(String username,String password);
 

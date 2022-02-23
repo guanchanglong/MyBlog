@@ -26,24 +26,27 @@ public class ScheduleTask {
     //3.添加定时任务(每天0点执行一次任务)
     @Scheduled(cron = "0 0 0 */1 * ?")
     //或直接指定时间间隔，例如：5秒
-    //@Scheduled(fixedRate=5000)
-    private void configureTasks() {
+//    @Scheduled(fixedRate=30000)
+    private void task() {
+        changeDayCount();
+        System.err.println("执行定时任务时间: " + LocalDateTime.now());
+    }
+
+    private void changeDayCount(){
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
         List<DayCount> list = dayCountService.findAll();
         List<DayCount> listToSave = dayCountService.findAll();
-        for(int i = 0;i<7;i++){
+        for(int i = 0;i < 7;i++){
             Date date = new Date(System.currentTimeMillis() - i*24*60*60*1000);
+            listToSave.get(6-i).setDay(formatter.format(date));
             //今天浏览的
             if (i==0){
                 listToSave.get(6-i).setCount(0);
-                listToSave.get(6-i).setDay(formatter.format(date));
             }else{ //前6天
                 listToSave.get(6-i).setCount(list.get(6-i+1).getCount());
-                listToSave.get(6-i).setDay(formatter.format(date));
             }
             //保存已经修改过了的值
             dayCountService.updateCountById(listToSave.get(6-i));
         }
-        System.err.println("执行定时任务时间: " + LocalDateTime.now());
     }
 }

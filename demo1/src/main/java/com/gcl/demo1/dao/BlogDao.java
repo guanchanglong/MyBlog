@@ -2,8 +2,10 @@ package com.gcl.demo1.dao;
 
 import com.gcl.demo1.entity.Blog;
 import com.gcl.demo1.vo.BlogQuery;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,19 +14,20 @@ import java.util.List;
  * @date: 2020/12/14 12:27
  */
 @Mapper
+@Repository
 public interface BlogDao {
 
-    List<Blog> findAllByPublished();
+    Page<Blog> findAllByPublished();
 
     Blog findBlogById(@Param("blogId") int blogId);
 
     void updateViews(@Param("blogId") int blogId);
 
-    List<Blog> findBlogByTypeId(@Param("typeId") int typeId);
+    Page<Blog> findBlogByTypeId(@Param("typeId") int typeId);
 
-    List<Blog> findBlogByTag(@Param("tagId") int tagId);
+    Page<Blog> findBlogByTag(@Param("tagId") int tagId);
 
-    List<Blog> findBlogByContent(@Param("content") String content);
+    Page<Blog> findBlogByContent(@Param("content") String content);
 
     List<Blog> findRecommendBlog();
 
@@ -32,7 +35,7 @@ public interface BlogDao {
 
     List<Blog> findByYear(@Param("year") String year);
 
-    List<Blog> findAll();
+    Page<Blog> findAll();
 
     void insertBlog(@Param("blog") Blog blog);
 
@@ -40,7 +43,7 @@ public interface BlogDao {
 
     void deleteBlogById(@Param("blogId") int blogId);
 
-    List<Blog> findBlogByBlogQuery(@Param("blogQuery") BlogQuery blogQuery);
+    Page<Blog> findBlogByBlogQuery(@Param("blogQuery") BlogQuery blogQuery);
 
     List<Blog> findBlogByTypeIdByAdmin(@Param("typeId") int typeId);
 }
