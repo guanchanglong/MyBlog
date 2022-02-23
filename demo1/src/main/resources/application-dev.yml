@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://175.178.65.191:3306/myblog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: xiaoguan
-    password: ND5nry8j3xpZKKTs
+    password: xxx
     hikari:
       connection-timeout: 60000   # 数据库连接超时时间,默认30秒,即30000
       validation-timeout: 3000    # 指定验证连接有效性的超时时间(默认是5秒,最小不能小于250毫秒)
@@ -15,9 +15,9 @@ spring:
       read-only: false            # 当使用Hikari connection pool时,是否标记数据源只读
   redis:
     database: 0             # redis数据库索引（默认为0）
-    host: 175.178.65.191    # redis的服务器地址
+    host: xxx.xxx.xx.xxx    # redis的服务器地址
     port: 6379              # redis的服务器端口号
-    password: 20001114      # redis连接密码
+    password: xxxxxxxxx     # redis连接密码
     jedis:
       pool:
         max-idle: 8         # 连接池中的最大空闲连接
