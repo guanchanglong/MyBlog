@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author 小关同学
@@ -42,7 +41,7 @@ public class TypeServiceImpl implements TypeService {
      */
     private void dataInRedis(String key, String data){
         //设置每个存储的数据的有效时间为24小时
-        redisTemplate.opsForValue().set(key, data, 24, TimeUnit.HOURS);
+        redisTemplate.opsForValue().set(key, data);
     }
 
     @Override
@@ -77,6 +76,34 @@ public class TypeServiceImpl implements TypeService {
         return result;
     }
 
+
+
+
+    @Override
+    public List<Type> listTypeTopToUpdateRedis(int size){
+        List<Type> types = typeDao.findAllType();
+        redisTemplate.opsForValue().set("findAllType", JSONObject.toJSONString(types));
+        List<Type> result = new ArrayList<>(size);
+        assert types != null;
+        for (Type type: types){
+            List<Blog> blogs = blogDao.findBlogByTypeId(type.getId());
+            redisTemplate.opsForValue().set("findBlogByTypeId:" + type.getId(), JSONObject.toJSONString(blogs));
+            type.setBlogs(blogs);
+        }
+        //排序
+        Collections.sort(types);
+        for (Type type:types){
+            if (size==0){
+                break;
+            }
+            result.add(type);
+            size--;
+        }
+        return result;
+    }
+
+
+
     @Override
     public List<Type> listType(){
         return typeDao.findAllType();
@@ -89,7 +116,7 @@ public class TypeServiceImpl implements TypeService {
 
     @Override
     public PageInfo<Type> listType(int pageNum, int size){
-        PageHelper.startPage(pageNum,size);
+        PageHelper.startPage(pageNum, size);
         List<Type> types = typeDao.findAllType();
         return new PageInfo<>(types);
     }

@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author 小关同学
@@ -43,7 +42,7 @@ public class TagServiceImpl implements TagService {
      */
     private void dataInRedis(String key, String data){
         //设置每个存储的数据的有效时间为24小时
-        redisTemplate.opsForValue().set(key, data, 24, TimeUnit.HOURS);
+        redisTemplate.opsForValue().set(key, data);
     }
 
     @Override
@@ -64,6 +63,31 @@ public class TagServiceImpl implements TagService {
                 dataInRedis("findBlogByTag:" + tag.getId(), JSONObject.toJSONString(blogs));
             }
             List<Blog> blogs = JSON.parseArray(redisTemplate.opsForValue().get("findBlogByTag:"+tag.getId()), Blog.class);
+            tag.setBlogs(blogs);
+        }
+        //排序
+        Collections.sort(tags);
+        for (Tag tag:tags){
+            if (size==0){
+                break;
+            }
+            result.add(tag);
+            size--;
+        }
+        return result;
+    }
+
+
+    @Override
+    public List<Tag> listTagTopToUpdateRedis(int size){
+        List<Tag> tags = tagDao.findAllTag();
+        redisTemplate.opsForValue().set("findAllTag", JSONObject.toJSONString(tags));
+
+        List<Tag> result = new ArrayList<>(size);
+        assert tags != null;
+        for (Tag tag:tags){
+            List<Blog> blogs = blogDao.findBlogByTag(tag.getId());
+            redisTemplate.opsForValue().set("findBlogByTag:" + tag.getId(), JSONObject.toJSONString(blogs));
             tag.setBlogs(blogs);
         }
         //排序

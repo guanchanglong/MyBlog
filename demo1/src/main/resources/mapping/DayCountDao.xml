@@ -17,16 +17,28 @@
             where id = #{dayId}
     </update>
 
-    <update id="updateCountById" parameterType="com.gcl.demo1.entity.DayCount">
+    <update id="updateDayCountById" parameterType="com.gcl.demo1.entity.DayCount">
         update b_day_count
           set day = #{dayCount.day},
               count = #{dayCount.count}
             where id = #{dayCount.id}
     </update>
 
-    <select id="findAll" resultMap="dayCountMap">
+    <update id="updateDayCountOfCountById">
+        update b_day_count
+          set count = #{count}
+            where id = #{id}
+    </update>
+
+    <select id="findAllDayCount" resultMap="dayCountMap">
         select *
           from b_day_count
+    </select>
+
+    <select id="findDayCountByDay" resultMap="dayCountMap">
+        select *
+          from b_day_count
+            where day = #{day}
     </select>
 
 </mapper>

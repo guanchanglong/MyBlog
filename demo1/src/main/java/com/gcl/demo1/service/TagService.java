@@ -14,6 +14,8 @@ public interface TagService {
 
     List<Tag> listTagTop(int size);
 
+    List<Tag> listTagTopToUpdateRedis(int size);
+
     List<Tag> listTag();
 
     List<Tag> listTag(String ids);

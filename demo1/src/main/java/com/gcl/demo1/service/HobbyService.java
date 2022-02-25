@@ -11,4 +11,6 @@ import java.util.List;
 public interface HobbyService {
 
     List<Hobby> findHobbyByUserId(int userId);
+
+    void findHobbyByUserIdToUpdateRedis(int userId);
 }

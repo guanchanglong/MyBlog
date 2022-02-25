@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * @author 小关同学
  * @create 2021/12/16
@@ -30,7 +28,7 @@ public class UserServiceImpl implements UserService {
      * @param data 待保存的数据
      */
     private void dataInRedis(String key, String data){
-        redisTemplate.opsForValue().set(key, data, 24, TimeUnit.HOURS);
+        redisTemplate.opsForValue().set(key, data);
     }
 
 
@@ -53,6 +51,15 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+
+    @Override
+    public User getUserByNicknameToUpdateRedis(String username){
+        User user = userDao.findUserByNickname(username);
+        user.setPassword(null);     //设置密码为空
+        user.setBlogs(null);
+        dataInRedis("adminUser", JSONToStringUtils.JSONToString(user));
+        return user;
+    }
 
 
     @Override

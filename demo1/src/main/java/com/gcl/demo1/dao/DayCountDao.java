@@ -19,8 +19,12 @@ public interface DayCountDao {
 
     void updateNewestDay(@Param("dayId") int dayId);
 
-    List<DayCount> findAll();
+    List<DayCount> findAllDayCount();
 
-    void updateCountById(@Param("dayCount") DayCount dayCount);
+    void updateDayCountById(@Param("dayCount") DayCount dayCount);
+
+    void updateDayCountOfCountById(@Param("id") int id, @Param("count") int count);
+
+    DayCount findDayCountByDay(@Param("day") String day);
 
 }

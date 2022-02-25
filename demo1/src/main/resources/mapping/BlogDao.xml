@@ -42,9 +42,15 @@
             where id = #{blogId}
     </select>
 
-    <update id="updateViews">
+    <update id="incrOneViews">
         update b_blog
           set views = views+1
+            where id = #{blogId}
+    </update>
+
+    <update id="updateBlogOfViewsById">
+        update b_blog
+          set views = #{views}
             where id = #{blogId}
     </update>
 

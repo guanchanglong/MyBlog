@@ -10,6 +10,8 @@ public interface UserService {
 
     User getUserByNickname(String nickname);
 
+    User getUserByNicknameToUpdateRedis(String username);
+
     User login(String username,String password);
 
 }

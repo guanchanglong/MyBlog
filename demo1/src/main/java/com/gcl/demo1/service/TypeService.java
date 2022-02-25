@@ -14,6 +14,8 @@ public interface TypeService {
 
     List<Type> listTypeTop(int size);
 
+    List<Type> listTypeTopToUpdateRedis(int size);
+
     List<Type> listType();
 
     Type findTypeById(int id);

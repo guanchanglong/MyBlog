@@ -11,7 +11,13 @@ import java.util.List;
 public interface DayCountService {
     List<Integer> getCounts();
 
+    void getCountsToUpdateRedis();
+
     List<DayCount> findAll();
 
-    void updateCountById(DayCount dayCount);
+    void updateDayCountById(DayCount dayCount);
+
+    void updateDayCountOfCountById(int id, int count);
+
+    DayCount findDayCountByDay(String day);
 }

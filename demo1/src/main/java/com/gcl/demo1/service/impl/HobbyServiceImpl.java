@@ -9,7 +9,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author 小关同学
@@ -31,7 +30,7 @@ public class HobbyServiceImpl implements HobbyService {
      */
     private void dataInRedis(String key, String data){
         //设置每个存储的数据的有效时间为24小时
-        redisTemplate.opsForValue().set(key, data, 24, TimeUnit.HOURS);
+        redisTemplate.opsForValue().set(key, data);
     }
 
     @Override
@@ -43,5 +42,12 @@ public class HobbyServiceImpl implements HobbyService {
         }
         List<Hobby> hobbies = JSONObject.parseArray(redisTemplate.opsForValue().get("findHobbyByUserId:" + userId), Hobby.class);
         return hobbies;
+    }
+
+
+    @Override
+    public void findHobbyByUserIdToUpdateRedis(int userId){
+        List<Hobby> hobbies = hobbyDao.findHobbyByUserId(userId);
+        redisTemplate.opsForValue().set("findHobbyByUserId:" + userId, JSONObject.toJSONString(hobbies));
     }
 }

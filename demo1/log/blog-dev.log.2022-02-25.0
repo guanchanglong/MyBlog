@@ -1,0 +1,1059 @@
+2022-02-25 12:59:23.197  INFO 10512 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 10512 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-02-25 12:59:23.207 DEBUG 10512 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-02-25 12:59:23.207  INFO 10512 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-02-25 12:59:23.270  INFO 10512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-25 12:59:23.272  INFO 10512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-25 12:59:24.600  INFO 10512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 12:59:24.613  INFO 10512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 12:59:24.717  INFO 10512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 0 Redis repository interfaces.
+2022-02-25 12:59:25.594  INFO 10512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-02-25 12:59:25.602  INFO 10512 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 12:59:25.602  INFO 10512 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-02-25 12:59:25.681  INFO 10512 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 12:59:25.681  INFO 10512 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2408 ms
+2022-02-25 12:59:27.070  INFO 10512 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 12:59:27.169  INFO 10512 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-25 12:59:27.630  INFO 10512 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-02-25 12:59:28.118  INFO 10512 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-25 12:59:28.142  INFO 10512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-02-25 12:59:28.170  INFO 10512 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 5.529 seconds (JVM running for 6.711)
+2022-02-25 12:59:29.209 ERROR 10512 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Integer.java:542)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at com.gcl.demo1.utils.ScheduleTask.updateDayCountToShow(ScheduleTask.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-02-25 12:59:33.385  INFO 10512 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-02-25 12:59:33.389  INFO 10512 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-25 12:59:33.390  INFO 10512 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-25 12:59:33.391  INFO 10512 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-25 12:59:33.423  INFO 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 12:59:33.653  INFO 10512 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-25 12:59:35.647  INFO 10512 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-25 12:59:35.655 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:35.673 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 34(Integer)
+2022-02-25 12:59:35.717 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:35.773 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 12:59:35.773 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-02-25 12:59:35.798 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 12:59:35.951 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:35.952 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 33(Integer)
+2022-02-25 12:59:35.978 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 12:59:36.027 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 12:59:36.028 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 4(Integer)
+2022-02-25 12:59:36.055 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 12:59:36.204 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:36.205 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 32(Integer)
+2022-02-25 12:59:36.232 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:36.401 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:36.402 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 31(Integer)
+2022-02-25 12:59:36.429 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:36.480 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 12:59:36.481 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 2(Integer)
+2022-02-25 12:59:36.508 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 12:59:36.660 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:36.661 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 30(Integer)
+2022-02-25 12:59:36.690 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:36.741 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 12:59:36.741 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-02-25 12:59:36.767 DEBUG 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 12:59:36.911 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:36.912 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 29(Integer)
+2022-02-25 12:59:36.937 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:37.097 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:37.097 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 28(Integer)
+2022-02-25 12:59:37.121 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:37.289 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 12:59:37.289 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 27(Integer)
+2022-02-25 12:59:37.314 DEBUG 10512 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 12:59:37.325  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 12:59:39.463  INFO 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 12:59:40.588  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 12:59:41.107  INFO 10512 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 12:59:41.156  INFO 10512 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 12:59:50.366  INFO 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 12:59:50.443 DEBUG 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.BlogDao.findBlogById   : ==>  Preparing: select * from b_blog where id = ?
+2022-02-25 12:59:50.443 DEBUG 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.BlogDao.findBlogById   : ==> Parameters: 34(Integer)
+2022-02-25 12:59:50.475 DEBUG 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.BlogDao.findBlogById   : <==      Total: 1
+2022-02-25 12:59:50.599 DEBUG 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-02-25 12:59:50.599 DEBUG 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-02-25 12:59:50.624 DEBUG 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-02-25 12:59:50.840  INFO 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 12:59:51.297  INFO 10512 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 12:59:51.349  INFO 10512 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:00:02.771  INFO 10512 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:00:05.891  INFO 10512 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:00:06.389  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:00:06.437  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:00:09.785  INFO 10512 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:00:10.138  INFO 10512 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:00:10.647  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:00:10.691  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:00:15.745  INFO 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:00:18.852  INFO 10512 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:00:19.283  INFO 10512 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:00:19.330  INFO 10512 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:00:23.688  INFO 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:00:24.058  INFO 10512 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:00:24.527  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:00:24.574  INFO 10512 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:00:26.448  INFO 10512 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:00:29.546  INFO 10512 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:00:29.982  INFO 10512 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:00:30.027  INFO 10512 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:00:31.114  INFO 10512 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:00:31.466  INFO 10512 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:00:31.941  INFO 10512 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:00:31.985  INFO 10512 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:01:06.907  INFO 10512 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:01:10.014  INFO 10512 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:01:10.516  INFO 10512 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:01:10.561  INFO 10512 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:01:12.050  INFO 10512 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:01:12.396  INFO 10512 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:01:12.825  INFO 10512 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:01:12.869  INFO 10512 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:10:43.784  INFO 3808 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 3808 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-02-25 13:10:43.785 DEBUG 3808 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-02-25 13:10:43.786  INFO 3808 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-02-25 13:10:43.822  INFO 3808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-25 13:10:43.822  INFO 3808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-25 13:10:44.350  INFO 3808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 13:10:44.352  INFO 3808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 13:10:44.372  INFO 3808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-02-25 13:10:45.035  INFO 3808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-02-25 13:10:45.041  INFO 3808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 13:10:45.041  INFO 3808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-02-25 13:10:45.115  INFO 3808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 13:10:45.116  INFO 3808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1293 ms
+2022-02-25 13:10:45.919  INFO 3808 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 13:10:46.005  INFO 3808 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-25 13:10:46.270  INFO 3808 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-02-25 13:10:46.604  INFO 3808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-25 13:10:46.643  INFO 3808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-02-25 13:10:46.653  INFO 3808 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 3.243 seconds (JVM running for 4.177)
+2022-02-25 13:10:47.546  INFO 3808 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-25 13:10:47.942  INFO 3808 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-25 13:10:48.043 DEBUG 3808 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==>  Preparing: update b_day_count set count = ? where id = ?
+2022-02-25 13:10:48.086 DEBUG 3808 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==> Parameters: 5(Integer), 7(Integer)
+2022-02-25 13:10:48.129 DEBUG 3808 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : <==    Updates: 1
+2022-02-25 13:10:48.191 DEBUG 3808 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog
+2022-02-25 13:10:48.193 DEBUG 3808 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==> Parameters: 
+2022-02-25 13:10:48.244 DEBUG 3808 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : <==      Total: 34
+2022-02-25 13:10:49.198 DEBUG 3808 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 13:10:49.198 DEBUG 3808 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 19(Integer), 34(Integer)
+2022-02-25 13:10:49.248 DEBUG 3808 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 13:29:32.635  INFO 13892 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 13892 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-02-25 13:29:32.637 DEBUG 13892 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-02-25 13:29:32.638  INFO 13892 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-02-25 13:29:32.686  INFO 13892 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-25 13:29:32.687  INFO 13892 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-25 13:29:33.257  INFO 13892 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 13:29:33.259  INFO 13892 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 13:29:33.282  INFO 13892 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2022-02-25 13:29:33.882  INFO 13892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-02-25 13:29:33.888  INFO 13892 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 13:29:33.888  INFO 13892 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-02-25 13:29:33.943  INFO 13892 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 13:29:33.944  INFO 13892 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2022-02-25 13:29:34.816  INFO 13892 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 13:29:34.905  INFO 13892 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-25 13:29:35.225  INFO 13892 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-02-25 13:29:35.535  INFO 13892 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-25 13:29:35.557  INFO 13892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-02-25 13:29:35.568  INFO 13892 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 3.344 seconds (JVM running for 4.164)
+2022-02-25 13:29:36.478  INFO 13892 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-25 13:29:36.886  INFO 13892 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-25 13:29:36.898 DEBUG 13892 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : ==>  Preparing: select * from b_day_count where day = ?
+2022-02-25 13:29:36.931 DEBUG 13892 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : ==> Parameters: 2022-02-25(String)
+2022-02-25 13:29:36.965 DEBUG 13892 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : <==      Total: 1
+2022-02-25 13:29:37.050 DEBUG 13892 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==>  Preparing: update b_day_count set count = ? where id = ?
+2022-02-25 13:29:37.051 DEBUG 13892 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==> Parameters: 5(Integer), 7(Integer)
+2022-02-25 13:29:37.096 DEBUG 13892 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : <==    Updates: 1
+2022-02-25 13:29:37.148 DEBUG 13892 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog
+2022-02-25 13:29:37.148 DEBUG 13892 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==> Parameters: 
+2022-02-25 13:29:37.217 DEBUG 13892 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : <==      Total: 34
+2022-02-25 13:29:39.042 DEBUG 13892 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 13:29:39.042 DEBUG 13892 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 20(Integer), 34(Integer)
+2022-02-25 13:29:39.090 DEBUG 13892 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 13:30:57.607  INFO 13892 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-02-25 13:30:57.612  INFO 13892 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-25 13:30:57.613  INFO 13892 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-25 13:30:57.615  INFO 13892 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-25 13:30:57.639  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:31:01.557  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:31:02.087  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:31:05.984  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:31:06.476  INFO 13892 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:06.527  INFO 13892 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:31:17.977  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:31:18.385  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:31:18.765  INFO 13892 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:18.815  INFO 13892 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:31:20.766  INFO 13892 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:31:25.055  INFO 13892 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:31:25.531  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:25.581  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:31:27.432  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:31:27.816  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:31:28.331  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:28.388  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:31:33.335  INFO 13892 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:31:37.626  INFO 13892 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:31:38.041  INFO 13892 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:38.094  INFO 13892 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:31:48.255  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[2, 8, {}]}
+2022-02-25 13:31:48.768 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:48.768 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 26(Integer)
+2022-02-25 13:31:48.793 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:48.973 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:48.974 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 25(Integer)
+2022-02-25 13:31:48.998 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 13:31:49.176 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:49.177 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 24(Integer)
+2022-02-25 13:31:49.202 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:49.385 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:49.385 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 23(Integer)
+2022-02-25 13:31:49.412 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:49.587 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:49.588 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 22(Integer)
+2022-02-25 13:31:49.613 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:49.791 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:49.792 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 21(Integer)
+2022-02-25 13:31:49.817 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:49.999 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:50.000 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 20(Integer)
+2022-02-25 13:31:50.027 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:50.206 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 13:31:50.206 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 19(Integer)
+2022-02-25 13:31:50.232 DEBUG 13892 --- [http-nio-8888-exec-2] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 13:31:52.990  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:31:53.431  INFO 13892 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:53.489  INFO 13892 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:31:57.635  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/24', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[24, {}]}
+2022-02-25 13:31:57.708 DEBUG 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.dao.BlogDao.findBlogById   : ==>  Preparing: select * from b_blog where id = ?
+2022-02-25 13:31:57.709 DEBUG 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.dao.BlogDao.findBlogById   : ==> Parameters: 24(Integer)
+2022-02-25 13:31:57.735 DEBUG 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.dao.BlogDao.findBlogById   : <==      Total: 1
+2022-02-25 13:31:58.067  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:31:58.572  INFO 13892 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:31:58.623  INFO 13892 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:32:01.634  INFO 13892 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[2, 8, {}]}
+2022-02-25 13:32:05.892  INFO 13892 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:32:06.239  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:32:06.289  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:32:33.805  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:32:34.175  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:32:34.646  INFO 13892 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:32:34.697  INFO 13892 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:32:37.488  INFO 13892 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:32:41.733  INFO 13892 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:32:42.170  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:32:42.221  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:32:47.974  INFO 13892 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:32:52.263  INFO 13892 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:32:52.893  INFO 13892 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:32:52.945  INFO 13892 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:33:01.284  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, {}]}
+2022-02-25 13:33:01.648  INFO 13892 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-02-25 13:33:02.089  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:33:02.138  INFO 13892 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 13:33:04.767  INFO 13892 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 13:33:09.001  INFO 13892 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 13:33:09.425  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 13:33:09.479  INFO 13892 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:40:47.790  INFO 10668 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 10668 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-02-25 21:40:47.794 DEBUG 10668 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-02-25 21:40:47.795  INFO 10668 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-02-25 21:40:47.852  INFO 10668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-25 21:40:47.852  INFO 10668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-25 21:40:48.485  INFO 10668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 21:40:48.487  INFO 10668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 21:40:48.514  INFO 10668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-02-25 21:40:49.152  INFO 10668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-02-25 21:40:49.158  INFO 10668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 21:40:49.159  INFO 10668 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-02-25 21:40:49.215  INFO 10668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 21:40:49.215  INFO 10668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
+2022-02-25 21:40:51.644  INFO 10668 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 21:40:51.733  INFO 10668 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-25 21:40:52.045  INFO 10668 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-02-25 21:40:52.391  INFO 10668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-25 21:40:52.413  INFO 10668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-02-25 21:40:52.424  INFO 10668 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 5.118 seconds (JVM running for 6.034)
+2022-02-25 21:40:52.464  INFO 10668 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-25 21:40:52.853  INFO 10668 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-25 21:40:52.859 DEBUG 10668 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : ==>  Preparing: select * from b_day_count where day = ?
+2022-02-25 21:40:52.877 DEBUG 10668 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : ==> Parameters: 2022-02-25(String)
+2022-02-25 21:40:52.913 DEBUG 10668 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : <==      Total: 1
+2022-02-25 21:40:52.994 DEBUG 10668 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==>  Preparing: update b_day_count set count = ? where id = ?
+2022-02-25 21:40:52.995 DEBUG 10668 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==> Parameters: 25(Integer), 7(Integer)
+2022-02-25 21:40:53.039 DEBUG 10668 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : <==    Updates: 1
+2022-02-25 21:40:53.094 DEBUG 10668 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog
+2022-02-25 21:40:53.095 DEBUG 10668 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==> Parameters: 
+2022-02-25 21:40:53.134 DEBUG 10668 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : <==      Total: 34
+2022-02-25 21:40:53.181 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.181 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 150(Integer), 1(Integer)
+2022-02-25 21:40:53.228 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:53.300 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.300 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 99(Integer), 2(Integer)
+2022-02-25 21:40:53.348 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:53.416 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.417 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 120(Integer), 3(Integer)
+2022-02-25 21:40:53.470 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:53.541 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.542 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 119(Integer), 4(Integer)
+2022-02-25 21:40:53.592 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:53.662 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.662 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 125(Integer), 5(Integer)
+2022-02-25 21:40:53.712 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:53.785 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.785 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 141(Integer), 6(Integer)
+2022-02-25 21:40:53.846 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:53.914 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:53.915 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 165(Integer), 7(Integer)
+2022-02-25 21:40:53.962 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.029 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.029 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 111(Integer), 8(Integer)
+2022-02-25 21:40:54.075 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.143 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.144 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 149(Integer), 9(Integer)
+2022-02-25 21:40:54.195 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.264 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.264 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 166(Integer), 10(Integer)
+2022-02-25 21:40:54.327 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.393 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.393 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 149(Integer), 11(Integer)
+2022-02-25 21:40:54.441 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.510 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.511 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 127(Integer), 12(Integer)
+2022-02-25 21:40:54.569 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.643 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.644 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 157(Integer), 13(Integer)
+2022-02-25 21:40:54.695 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.764 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.765 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 137(Integer), 14(Integer)
+2022-02-25 21:40:54.814 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:54.881 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:54.881 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 143(Integer), 15(Integer)
+2022-02-25 21:40:54.938 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.018 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.018 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 220(Integer), 16(Integer)
+2022-02-25 21:40:55.066 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.132 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.132 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 168(Integer), 17(Integer)
+2022-02-25 21:40:55.179 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.247 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.248 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 157(Integer), 18(Integer)
+2022-02-25 21:40:55.295 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.361 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.361 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 215(Integer), 19(Integer)
+2022-02-25 21:40:55.415 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.480 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.480 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 174(Integer), 20(Integer)
+2022-02-25 21:40:55.528 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.596 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.597 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 141(Integer), 21(Integer)
+2022-02-25 21:40:55.647 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.712 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.712 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 206(Integer), 22(Integer)
+2022-02-25 21:40:55.760 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.829 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.830 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 112(Integer), 23(Integer)
+2022-02-25 21:40:55.881 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:55.952 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:55.953 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 254(Integer), 24(Integer)
+2022-02-25 21:40:56.003 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.068 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.069 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 178(Integer), 25(Integer)
+2022-02-25 21:40:56.118 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.184 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.184 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 309(Integer), 26(Integer)
+2022-02-25 21:40:56.234 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.300 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.301 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 194(Integer), 27(Integer)
+2022-02-25 21:40:56.353 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.425 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.426 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 185(Integer), 28(Integer)
+2022-02-25 21:40:56.476 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.553 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.553 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 130(Integer), 29(Integer)
+2022-02-25 21:40:56.604 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.692 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.692 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 153(Integer), 30(Integer)
+2022-02-25 21:40:56.743 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.811 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.811 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 158(Integer), 31(Integer)
+2022-02-25 21:40:56.859 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:56.929 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:56.929 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 8(Integer), 32(Integer)
+2022-02-25 21:40:56.977 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:57.042 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:57.042 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 12(Integer), 33(Integer)
+2022-02-25 21:40:57.094 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:40:57.159 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:40:57.160 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 24(Integer), 34(Integer)
+2022-02-25 21:40:57.211 DEBUG 10668 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:41:05.749  INFO 10668 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-02-25 21:41:05.755  INFO 10668 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-25 21:41:05.755  INFO 10668 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-25 21:41:05.757  INFO 10668 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-25 21:41:05.779  INFO 10668 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-02-25 21:41:09.592  INFO 10668 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-02-25 21:41:10.297  INFO 10668 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:41:10.343  INFO 10668 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:41:11.778  INFO 10668 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[-1, 1, 8, {}]}
+2022-02-25 21:41:12.706 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:41:12.706 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 17(Integer)
+2022-02-25 21:41:12.729 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:41:12.901 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:41:12.902 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 16(Integer)
+2022-02-25 21:41:12.925 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:41:13.082 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:41:13.082 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 15(Integer)
+2022-02-25 21:41:13.106 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:41:13.263 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:41:13.263 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 10(Integer)
+2022-02-25 21:41:13.293 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:41:13.447 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:41:13.448 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 9(Integer)
+2022-02-25 21:41:13.486 DEBUG 10668 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:41:13.623  INFO 10668 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:41:14.067  INFO 10668 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:41:14.133  INFO 10668 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:43:40.071  INFO 6412 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 6412 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-02-25 21:43:40.073 DEBUG 6412 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-02-25 21:43:40.073  INFO 6412 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-02-25 21:43:40.147  INFO 6412 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-25 21:43:40.147  INFO 6412 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-25 21:43:40.827  INFO 6412 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 21:43:40.830  INFO 6412 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 21:43:40.856  INFO 6412 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-02-25 21:43:41.477  INFO 6412 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-02-25 21:43:41.484  INFO 6412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 21:43:41.485  INFO 6412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-02-25 21:43:41.541  INFO 6412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 21:43:41.541  INFO 6412 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1392 ms
+2022-02-25 21:43:44.059  INFO 6412 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 21:43:44.146  INFO 6412 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-25 21:43:44.464  INFO 6412 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-02-25 21:43:44.798  INFO 6412 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-25 21:43:44.818  INFO 6412 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-02-25 21:43:44.830  INFO 6412 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 5.255 seconds (JVM running for 6.164)
+2022-02-25 21:43:44.873  INFO 6412 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-25 21:43:45.244  INFO 6412 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-25 21:43:45.250 DEBUG 6412 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : ==>  Preparing: select * from b_day_count where day = ?
+2022-02-25 21:43:45.266 DEBUG 6412 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : ==> Parameters: 2022-02-25(String)
+2022-02-25 21:43:45.302 DEBUG 6412 --- [scheduling-1] c.g.d.dao.DayCountDao.findDayCountByDay  : <==      Total: 1
+2022-02-25 21:43:45.391 DEBUG 6412 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==>  Preparing: update b_day_count set count = ? where id = ?
+2022-02-25 21:43:45.392 DEBUG 6412 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : ==> Parameters: 25(Integer), 7(Integer)
+2022-02-25 21:43:45.436 DEBUG 6412 --- [scheduling-1] c.g.d.d.D.updateDayCountOfCountById      : <==    Updates: 1
+2022-02-25 21:43:45.489 DEBUG 6412 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog
+2022-02-25 21:43:45.489 DEBUG 6412 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : ==> Parameters: 
+2022-02-25 21:43:45.534 DEBUG 6412 --- [scheduling-1] com.gcl.demo1.dao.BlogDao.findAll        : <==      Total: 34
+2022-02-25 21:43:45.587 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:45.588 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 150(Integer), 1(Integer)
+2022-02-25 21:43:45.646 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:45.742 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:45.743 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 99(Integer), 2(Integer)
+2022-02-25 21:43:45.791 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:45.865 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:45.865 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 120(Integer), 3(Integer)
+2022-02-25 21:43:45.915 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:45.990 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:45.991 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 119(Integer), 4(Integer)
+2022-02-25 21:43:46.038 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.115 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.115 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 125(Integer), 5(Integer)
+2022-02-25 21:43:46.163 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.242 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.243 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 141(Integer), 6(Integer)
+2022-02-25 21:43:46.296 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.376 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.377 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 165(Integer), 7(Integer)
+2022-02-25 21:43:46.429 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.504 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.504 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 111(Integer), 8(Integer)
+2022-02-25 21:43:46.554 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.628 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.628 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 149(Integer), 9(Integer)
+2022-02-25 21:43:46.676 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.757 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.757 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 166(Integer), 10(Integer)
+2022-02-25 21:43:46.804 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:46.880 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:46.880 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 149(Integer), 11(Integer)
+2022-02-25 21:43:46.927 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.001 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.002 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 127(Integer), 12(Integer)
+2022-02-25 21:43:47.049 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.129 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.129 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 157(Integer), 13(Integer)
+2022-02-25 21:43:47.178 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.254 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.255 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 137(Integer), 14(Integer)
+2022-02-25 21:43:47.305 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.379 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.380 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 143(Integer), 15(Integer)
+2022-02-25 21:43:47.428 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.503 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.503 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 220(Integer), 16(Integer)
+2022-02-25 21:43:47.550 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.631 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.631 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 168(Integer), 17(Integer)
+2022-02-25 21:43:47.680 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.754 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.754 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 157(Integer), 18(Integer)
+2022-02-25 21:43:47.807 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:47.882 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:47.882 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 215(Integer), 19(Integer)
+2022-02-25 21:43:47.939 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.014 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.014 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 174(Integer), 20(Integer)
+2022-02-25 21:43:48.067 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.141 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.141 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 141(Integer), 21(Integer)
+2022-02-25 21:43:48.192 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.271 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.271 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 206(Integer), 22(Integer)
+2022-02-25 21:43:48.318 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.393 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.394 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 112(Integer), 23(Integer)
+2022-02-25 21:43:48.449 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.523 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.524 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 254(Integer), 24(Integer)
+2022-02-25 21:43:48.574 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.652 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.652 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 178(Integer), 25(Integer)
+2022-02-25 21:43:48.714 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.789 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.789 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 309(Integer), 26(Integer)
+2022-02-25 21:43:48.844 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:48.919 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:48.919 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 194(Integer), 27(Integer)
+2022-02-25 21:43:48.974 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.048 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.048 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 185(Integer), 28(Integer)
+2022-02-25 21:43:49.096 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.173 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.174 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 130(Integer), 29(Integer)
+2022-02-25 21:43:49.225 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.300 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.301 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 153(Integer), 30(Integer)
+2022-02-25 21:43:49.356 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.431 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.431 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 158(Integer), 31(Integer)
+2022-02-25 21:43:49.481 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.557 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.557 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 8(Integer), 32(Integer)
+2022-02-25 21:43:49.604 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.679 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.680 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 12(Integer), 33(Integer)
+2022-02-25 21:43:49.729 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:49.804 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==>  Preparing: update b_blog set views = ? where id = ?
+2022-02-25 21:43:49.804 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : ==> Parameters: 24(Integer), 34(Integer)
+2022-02-25 21:43:49.858 DEBUG 6412 --- [scheduling-1] c.g.d.dao.BlogDao.updateBlogOfViewsById  : <==    Updates: 1
+2022-02-25 21:43:56.852  INFO 6412 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-02-25 21:43:56.856  INFO 6412 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-25 21:43:56.856  INFO 6412 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-25 21:43:56.857  INFO 6412 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-25 21:43:56.881  INFO 6412 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[-1, 1, 8, {}]}
+2022-02-25 21:43:58.603  INFO 6412 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:43:59.280  INFO 6412 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:43:59.331  INFO 6412 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:46:41.953  INFO 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[-1, 1, 8, {}]}
+2022-02-25 21:46:42.002 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TagDao.findAllTag      : ==>  Preparing: select * from b_tag
+2022-02-25 21:46:42.002 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TagDao.findAllTag      : ==> Parameters: 
+2022-02-25 21:46:42.043 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TagDao.findAllTag      : <==      Total: 12
+2022-02-25 21:46:42.122 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.122 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 1(Integer)
+2022-02-25 21:46:42.147 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 8
+2022-02-25 21:46:42.227 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.227 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 2(Integer)
+2022-02-25 21:46:42.253 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 6
+2022-02-25 21:46:42.339 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.339 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 3(Integer)
+2022-02-25 21:46:42.363 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 3
+2022-02-25 21:46:42.438 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.438 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 4(Integer)
+2022-02-25 21:46:42.461 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:46:42.538 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.538 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 5(Integer)
+2022-02-25 21:46:42.562 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 5
+2022-02-25 21:46:42.641 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.641 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 6(Integer)
+2022-02-25 21:46:42.665 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 5
+2022-02-25 21:46:42.742 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.742 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 7(Integer)
+2022-02-25 21:46:42.765 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 4
+2022-02-25 21:46:42.840 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.840 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 8(Integer)
+2022-02-25 21:46:42.867 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:46:42.942 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:42.943 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 9(Integer)
+2022-02-25 21:46:42.969 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:46:43.044 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:43.045 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 10(Integer)
+2022-02-25 21:46:43.069 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 2
+2022-02-25 21:46:43.146 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:43.147 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 11(Integer)
+2022-02-25 21:46:43.170 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:46:43.250 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:46:43.250 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 12(Integer)
+2022-02-25 21:46:43.276 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 2
+2022-02-25 21:46:43.420 DEBUG 6412 --- [http-nio-8888-exec-9] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==>  Preparing: SELECT count(0) FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1
+2022-02-25 21:46:43.421 DEBUG 6412 --- [http-nio-8888-exec-9] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==> Parameters: 1(Integer)
+2022-02-25 21:46:43.444 DEBUG 6412 --- [http-nio-8888-exec-9] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : <==      Total: 1
+2022-02-25 21:46:43.447 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1 order by create_time desc LIMIT ?
+2022-02-25 21:46:43.447 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 1(Integer), 8(Integer)
+2022-02-25 21:46:43.471 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 8
+2022-02-25 21:46:44.214 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:44.214 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 33(Integer)
+2022-02-25 21:46:44.237 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:46:44.287 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:46:44.287 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 4(Integer)
+2022-02-25 21:46:44.310 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:46:44.410 DEBUG 6412 --- [http-nio-8888-exec-9] c.g.d.dao.UserDao.findUserByNickname     : ==>  Preparing: select * from b_user where nickname = ?
+2022-02-25 21:46:44.410 DEBUG 6412 --- [http-nio-8888-exec-9] c.g.d.dao.UserDao.findUserByNickname     : ==> Parameters: 小关同学(String)
+2022-02-25 21:46:44.434 DEBUG 6412 --- [http-nio-8888-exec-9] c.g.d.dao.UserDao.findUserByNickname     : <==      Total: 1
+2022-02-25 21:46:44.511 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:44.511 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 32(Integer)
+2022-02-25 21:46:44.536 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:44.586 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:46:44.586 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-02-25 21:46:44.609 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:46:44.768 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:44.768 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 29(Integer)
+2022-02-25 21:46:44.791 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:44.844 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:46:44.844 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-02-25 21:46:44.867 DEBUG 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:46:45.024 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:45.024 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 23(Integer)
+2022-02-25 21:46:45.049 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:45.226 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:45.226 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 22(Integer)
+2022-02-25 21:46:45.249 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:45.434 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:45.434 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 21(Integer)
+2022-02-25 21:46:45.458 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:45.663 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:45.664 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 14(Integer)
+2022-02-25 21:46:45.687 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:45.875 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:46:45.875 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 1(Integer)
+2022-02-25 21:46:45.898 DEBUG 6412 --- [http-nio-8888-exec-9] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:46:46.046  INFO 6412 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:46:46.472  INFO 6412 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:46:46.519 DEBUG 6412 --- [http-nio-8888-exec-3] c.g.d.d.BlogDao.findRecommendBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND recommend = 1
+2022-02-25 21:46:46.520 DEBUG 6412 --- [http-nio-8888-exec-3] c.g.d.d.BlogDao.findRecommendBlog_COUNT  : ==> Parameters: 
+2022-02-25 21:46:46.547 DEBUG 6412 --- [http-nio-8888-exec-3] c.g.d.d.BlogDao.findRecommendBlog_COUNT  : <==      Total: 1
+2022-02-25 21:46:46.548 DEBUG 6412 --- [http-nio-8888-exec-3] c.g.demo1.dao.BlogDao.findRecommendBlog  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE published = 1 AND recommend = 1 order by create_time desc LIMIT ?
+2022-02-25 21:46:46.548 DEBUG 6412 --- [http-nio-8888-exec-3] c.g.demo1.dao.BlogDao.findRecommendBlog  : ==> Parameters: 3(Integer)
+2022-02-25 21:46:46.572 DEBUG 6412 --- [http-nio-8888-exec-3] c.g.demo1.dao.BlogDao.findRecommendBlog  : <==      Total: 3
+2022-02-25 21:46:46.629  INFO 6412 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:46:58.044  INFO 6412 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[2, 1, 8, {}]}
+2022-02-25 21:47:00.380  INFO 6412 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:47:00.767  INFO 6412 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:47:00.853  INFO 6412 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:47:20.674  INFO 6412 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[5, 1, 8, {}]}
+2022-02-25 21:47:23.016  INFO 6412 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:47:23.398  INFO 6412 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:47:23.449  INFO 6412 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:50:53.779  INFO 11268 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 11268 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-02-25 21:50:53.781 DEBUG 11268 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-02-25 21:50:53.781  INFO 11268 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-02-25 21:50:53.819  INFO 11268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-25 21:50:53.820  INFO 11268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-25 21:50:54.366  INFO 11268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 21:50:54.367  INFO 11268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 21:50:54.395  INFO 11268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-02-25 21:50:54.941  INFO 11268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-02-25 21:50:54.947  INFO 11268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 21:50:54.948  INFO 11268 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-02-25 21:50:54.999  INFO 11268 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 21:50:55.000  INFO 11268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1180 ms
+2022-02-25 21:50:56.471  INFO 11268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-25 21:50:56.894  INFO 11268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-25 21:50:56.917 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.TagDao.findAllTag      : ==>  Preparing: select * from b_tag
+2022-02-25 21:50:56.959 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.TagDao.findAllTag      : ==> Parameters: 
+2022-02-25 21:50:56.999 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.TagDao.findAllTag      : <==      Total: 12
+2022-02-25 21:50:57.154 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.155 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 1(Integer)
+2022-02-25 21:50:57.185 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 8
+2022-02-25 21:50:57.271 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.272 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 2(Integer)
+2022-02-25 21:50:57.300 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 6
+2022-02-25 21:50:57.384 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.385 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 3(Integer)
+2022-02-25 21:50:57.415 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 3
+2022-02-25 21:50:57.496 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.497 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 4(Integer)
+2022-02-25 21:50:57.524 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:50:57.602 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.602 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 5(Integer)
+2022-02-25 21:50:57.629 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 5
+2022-02-25 21:50:57.707 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.708 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 6(Integer)
+2022-02-25 21:50:57.735 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 5
+2022-02-25 21:50:57.813 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.814 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 7(Integer)
+2022-02-25 21:50:57.846 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 4
+2022-02-25 21:50:57.930 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:57.931 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 8(Integer)
+2022-02-25 21:50:57.960 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:50:58.037 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:58.037 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 9(Integer)
+2022-02-25 21:50:58.064 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:50:58.143 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:58.143 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 10(Integer)
+2022-02-25 21:50:58.170 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 2
+2022-02-25 21:50:58.248 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:58.249 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 11(Integer)
+2022-02-25 21:50:58.275 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 1
+2022-02-25 21:50:58.361 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where id in (select blog_id from b_blog_tag where tag_id = ?) and published = 1
+2022-02-25 21:50:58.361 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 12(Integer)
+2022-02-25 21:50:58.390 DEBUG 11268 --- [restartedMain] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 2
+2022-02-25 21:50:58.651  INFO 11268 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-25 21:50:58.730  INFO 11268 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-25 21:50:59.001  INFO 11268 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-02-25 21:50:59.320  INFO 11268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-25 21:50:59.338  INFO 11268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-02-25 21:50:59.348  INFO 11268 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 5.944 seconds (JVM running for 6.745)
+2022-02-25 21:50:59.401 ERROR 11268 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Integer.java:542)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at com.gcl.demo1.utils.ScheduleTask.updateDataToShow(ScheduleTask.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-02-25 21:51:22.826  INFO 11268 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-02-25 21:51:22.831  INFO 11268 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-25 21:51:22.831  INFO 11268 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-25 21:51:22.832  INFO 11268 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-25 21:51:22.857  INFO 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[1, 1, 8, {}]}
+2022-02-25 21:51:23.620 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==>  Preparing: SELECT count(0) FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1
+2022-02-25 21:51:23.621 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==> Parameters: 1(Integer)
+2022-02-25 21:51:23.652 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : <==      Total: 1
+2022-02-25 21:51:23.654 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1 order by create_time desc LIMIT ?
+2022-02-25 21:51:23.655 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 1(Integer), 8(Integer)
+2022-02-25 21:51:23.699 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 8
+2022-02-25 21:51:24.457 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:24.458 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 33(Integer)
+2022-02-25 21:51:24.484 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:51:24.537 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:51:24.537 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 4(Integer)
+2022-02-25 21:51:24.576 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:51:24.685 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.dao.UserDao.findUserByNickname     : ==>  Preparing: select * from b_user where nickname = ?
+2022-02-25 21:51:24.685 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.dao.UserDao.findUserByNickname     : ==> Parameters: 小关同学(String)
+2022-02-25 21:51:24.712 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.dao.UserDao.findUserByNickname     : <==      Total: 1
+2022-02-25 21:51:24.795 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:24.795 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 32(Integer)
+2022-02-25 21:51:24.822 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:24.875 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:51:24.876 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-02-25 21:51:24.905 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:51:25.094 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:25.095 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 29(Integer)
+2022-02-25 21:51:25.123 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:25.185 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:51:25.186 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-02-25 21:51:25.220 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:51:25.385 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:25.385 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 23(Integer)
+2022-02-25 21:51:25.411 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:25.611 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:25.611 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 22(Integer)
+2022-02-25 21:51:25.645 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:25.836 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:25.836 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 21(Integer)
+2022-02-25 21:51:25.871 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:26.058 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:26.058 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 14(Integer)
+2022-02-25 21:51:26.084 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:26.293 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:26.293 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 1(Integer)
+2022-02-25 21:51:26.320 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:26.494  INFO 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:51:27.269  INFO 11268 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:51:27.322 DEBUG 11268 --- [http-nio-8888-exec-5] c.g.d.d.BlogDao.findRecommendBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND recommend = 1
+2022-02-25 21:51:27.323 DEBUG 11268 --- [http-nio-8888-exec-5] c.g.d.d.BlogDao.findRecommendBlog_COUNT  : ==> Parameters: 
+2022-02-25 21:51:27.349 DEBUG 11268 --- [http-nio-8888-exec-5] c.g.d.d.BlogDao.findRecommendBlog_COUNT  : <==      Total: 1
+2022-02-25 21:51:27.350 DEBUG 11268 --- [http-nio-8888-exec-5] c.g.demo1.dao.BlogDao.findRecommendBlog  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE published = 1 AND recommend = 1 order by create_time desc LIMIT ?
+2022-02-25 21:51:27.350 DEBUG 11268 --- [http-nio-8888-exec-5] c.g.demo1.dao.BlogDao.findRecommendBlog  : ==> Parameters: 3(Integer)
+2022-02-25 21:51:27.376 DEBUG 11268 --- [http-nio-8888-exec-5] c.g.demo1.dao.BlogDao.findRecommendBlog  : <==      Total: 3
+2022-02-25 21:51:27.428  INFO 11268 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:51:38.798  INFO 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[2, 1, 8, {}]}
+2022-02-25 21:51:39.584 DEBUG 11268 --- [http-nio-8888-exec-3] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==>  Preparing: SELECT count(0) FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1
+2022-02-25 21:51:39.584 DEBUG 11268 --- [http-nio-8888-exec-3] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==> Parameters: 2(Integer)
+2022-02-25 21:51:39.611 DEBUG 11268 --- [http-nio-8888-exec-3] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : <==      Total: 1
+2022-02-25 21:51:39.613 DEBUG 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1 order by create_time desc LIMIT ?
+2022-02-25 21:51:39.613 DEBUG 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 2(Integer), 8(Integer)
+2022-02-25 21:51:39.662 DEBUG 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 6
+2022-02-25 21:51:40.313 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:40.314 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 28(Integer)
+2022-02-25 21:51:40.342 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:40.530 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:40.531 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 25(Integer)
+2022-02-25 21:51:40.562 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:51:40.761 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:40.762 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 17(Integer)
+2022-02-25 21:51:40.796 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:51:40.898 DEBUG 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-02-25 21:51:40.898 DEBUG 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 2(Integer)
+2022-02-25 21:51:40.926 DEBUG 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-02-25 21:51:41.107 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:41.107 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 16(Integer)
+2022-02-25 21:51:41.169 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:51:41.386 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:41.386 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 15(Integer)
+2022-02-25 21:51:41.420 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:51:41.641 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:41.641 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 9(Integer)
+2022-02-25 21:51:41.679 DEBUG 11268 --- [http-nio-8888-exec-3] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-02-25 21:51:41.902  INFO 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:51:42.340  INFO 11268 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:51:42.401  INFO 11268 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:51:49.231  INFO 11268 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TagShowController.tags', args=[5, 1, 8, {}]}
+2022-02-25 21:51:50.385 DEBUG 11268 --- [http-nio-8888-exec-7] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==>  Preparing: SELECT count(0) FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1
+2022-02-25 21:51:50.385 DEBUG 11268 --- [http-nio-8888-exec-7] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : ==> Parameters: 5(Integer)
+2022-02-25 21:51:50.411 DEBUG 11268 --- [http-nio-8888-exec-7] c.g.d.dao.BlogDao.findBlogByTag_COUNT    : <==      Total: 1
+2022-02-25 21:51:50.414 DEBUG 11268 --- [http-nio-8888-exec-7] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE id IN (SELECT blog_id FROM b_blog_tag WHERE tag_id = ?) AND published = 1 order by create_time desc LIMIT ?
+2022-02-25 21:51:50.414 DEBUG 11268 --- [http-nio-8888-exec-7] com.gcl.demo1.dao.BlogDao.findBlogByTag  : ==> Parameters: 5(Integer), 8(Integer)
+2022-02-25 21:51:50.473 DEBUG 11268 --- [http-nio-8888-exec-7] com.gcl.demo1.dao.BlogDao.findBlogByTag  : <==      Total: 5
+2022-02-25 21:51:51.297 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:51.298 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 7(Integer)
+2022-02-25 21:51:51.324 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:51.710 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:51.710 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 6(Integer)
+2022-02-25 21:51:51.737 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:52.016 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:52.016 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 5(Integer)
+2022-02-25 21:51:52.058 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:52.286 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:52.286 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 4(Integer)
+2022-02-25 21:51:52.313 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:53.341 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:51:53.342 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 3(Integer)
+2022-02-25 21:51:53.422 DEBUG 11268 --- [http-nio-8888-exec-7] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:51:53.820  INFO 11268 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：tags
+2022-02-25 21:51:54.595  INFO 11268 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:51:55.180 ERROR 11268 --- [http-nio-8888-exec-2] c.g.d.h.ControllerExceptionHandler       : Request URL : /footer/newBlog,Exception : {}
+
+org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 300 millisecond(s)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:272)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.convertLettuceAccessException(LettuceStringCommands.java:800)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:70)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.get(DefaultedRedisConnection.java:267)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:406)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:57)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:60)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:229)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
+	at com.gcl.demo1.service.impl.BlogServiceImpl.listRecommendBlogTop(BlogServiceImpl.java:264)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$6f27ab09.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$15200b37.listRecommendBlogTop(<generated>)
+	at com.gcl.demo1.controller.IndexController.newBlogs(IndexController.java:85)
+	at com.gcl.demo1.controller.IndexController$$FastClassBySpringCGLIB$$dfe53a47.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.gcl.demo1.controller.IndexController$$EnhancerBySpringCGLIB$$4d138619.newBlogs(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:807)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 300 millisecond(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:53)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:75)
+	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:80)
+	at com.sun.proxy.$Proxy101.get(Unknown Source)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:68)
+	... 83 common frames omitted
+
+2022-02-25 21:51:55.180  WARN 11268 --- [http-nio-8888-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 300 millisecond(s)]
+2022-02-25 21:52:01.143  INFO 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/types', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TypeShowController.types', args=[-1, 1, 8, {}]}
+2022-02-25 21:52:01.198 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findAllType    : ==>  Preparing: select * from b_type
+2022-02-25 21:52:01.198 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findAllType    : ==> Parameters: 
+2022-02-25 21:52:01.225 DEBUG 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.TypeDao.findAllType    : <==      Total: 4
+2022-02-25 21:52:01.302 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where type_id = ? and published = 1
+2022-02-25 21:52:01.302 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 1(Integer)
+2022-02-25 21:52:01.329 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 4
+2022-02-25 21:52:01.409 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where type_id = ? and published = 1
+2022-02-25 21:52:01.409 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 2(Integer)
+2022-02-25 21:52:01.437 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 18
+2022-02-25 21:52:01.522 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where type_id = ? and published = 1
+2022-02-25 21:52:01.523 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 3(Integer)
+2022-02-25 21:52:01.549 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 7
+2022-02-25 21:52:01.628 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id from b_blog where type_id = ? and published = 1
+2022-02-25 21:52:01.628 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 4(Integer)
+2022-02-25 21:52:01.654 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 4
+2022-02-25 21:52:01.733 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : ==>  Preparing: SELECT count(0) FROM b_blog WHERE type_id = ? AND published = 1
+2022-02-25 21:52:01.733 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : ==> Parameters: 2(Integer)
+2022-02-25 21:52:01.760 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : <==      Total: 1
+2022-02-25 21:52:01.761 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE type_id = ? AND published = 1 order by create_time desc LIMIT ?
+2022-02-25 21:52:01.761 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 2(Integer), 8(Integer)
+2022-02-25 21:52:01.790 DEBUG 11268 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 8
+2022-02-25 21:52:02.452 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:02.452 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 31(Integer)
+2022-02-25 21:52:02.477 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:02.655 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:02.656 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 20(Integer)
+2022-02-25 21:52:02.684 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:02.863 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:02.863 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 19(Integer)
+2022-02-25 21:52:02.890 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:03.072 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:03.072 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 18(Integer)
+2022-02-25 21:52:03.099 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:03.780 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:03.780 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 13(Integer)
+2022-02-25 21:52:03.806 DEBUG 11268 --- [http-nio-8888-exec-1] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:03.961  INFO 11268 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：types
+2022-02-25 21:52:04.366  INFO 11268 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:52:04.417  INFO 11268 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:52:20.384  INFO 11268 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/types', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TypeShowController.types', args=[2, 2, 8, {}]}
+2022-02-25 21:52:20.695 DEBUG 11268 --- [http-nio-8888-exec-4] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : ==>  Preparing: SELECT count(0) FROM b_blog WHERE type_id = ? AND published = 1
+2022-02-25 21:52:20.695 DEBUG 11268 --- [http-nio-8888-exec-4] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : ==> Parameters: 2(Integer)
+2022-02-25 21:52:20.721 DEBUG 11268 --- [http-nio-8888-exec-4] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : <==      Total: 1
+2022-02-25 21:52:20.723 DEBUG 11268 --- [http-nio-8888-exec-4] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE type_id = ? AND published = 1 order by create_time desc LIMIT ?, ?
+2022-02-25 21:52:20.723 DEBUG 11268 --- [http-nio-8888-exec-4] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 2(Integer), 8(Integer), 8(Integer)
+2022-02-25 21:52:20.746 DEBUG 11268 --- [http-nio-8888-exec-4] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 8
+2022-02-25 21:52:21.330 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:21.330 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 12(Integer)
+2022-02-25 21:52:21.356 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:21.540 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:21.541 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 11(Integer)
+2022-02-25 21:52:21.563 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:21.751 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:21.751 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 10(Integer)
+2022-02-25 21:52:21.774 DEBUG 11268 --- [http-nio-8888-exec-4] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:22.747  INFO 11268 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：types
+2022-02-25 21:52:23.208  INFO 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:52:23.258  INFO 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:52:28.000  INFO 11268 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/types', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TypeShowController.types', args=[3, 1, 8, {}]}
+2022-02-25 21:52:28.323 DEBUG 11268 --- [http-nio-8888-exec-6] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : ==>  Preparing: SELECT count(0) FROM b_blog WHERE type_id = ? AND published = 1
+2022-02-25 21:52:28.323 DEBUG 11268 --- [http-nio-8888-exec-6] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : ==> Parameters: 3(Integer)
+2022-02-25 21:52:28.345 DEBUG 11268 --- [http-nio-8888-exec-6] c.g.d.d.BlogDao.findBlogByTypeId_COUNT   : <==      Total: 1
+2022-02-25 21:52:28.347 DEBUG 11268 --- [http-nio-8888-exec-6] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id FROM b_blog WHERE type_id = ? AND published = 1 order by create_time desc LIMIT ?
+2022-02-25 21:52:28.347 DEBUG 11268 --- [http-nio-8888-exec-6] c.g.demo1.dao.BlogDao.findBlogByTypeId   : ==> Parameters: 3(Integer), 8(Integer)
+2022-02-25 21:52:28.373 DEBUG 11268 --- [http-nio-8888-exec-6] c.g.demo1.dao.BlogDao.findBlogByTypeId   : <==      Total: 7
+2022-02-25 21:52:28.941 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:28.942 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 34(Integer)
+2022-02-25 21:52:28.963 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:29.328 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:29.328 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 27(Integer)
+2022-02-25 21:52:29.351 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:29.538 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:29.539 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 26(Integer)
+2022-02-25 21:52:29.566 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:29.748 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-02-25 21:52:29.749 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 24(Integer)
+2022-02-25 21:52:29.771 DEBUG 11268 --- [http-nio-8888-exec-6] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-02-25 21:52:30.247  INFO 11268 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：types
+2022-02-25 21:52:30.661  INFO 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:52:30.712  INFO 11268 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-02-25 21:53:08.914  INFO 11268 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/types', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TypeShowController.types', args=[2, 1, 8, {}]}
+2022-02-25 21:53:10.888  INFO 11268 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：types
+2022-02-25 21:53:11.277  INFO 11268 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-02-25 21:53:11.331  INFO 11268 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList

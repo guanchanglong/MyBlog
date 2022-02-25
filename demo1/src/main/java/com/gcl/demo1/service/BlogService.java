@@ -16,13 +16,23 @@ public interface BlogService {
 
     PageInfo<Blog> listBlog(int pageNum, int size, int id, String type, String content, BlogQuery blogQuery);
 
+    PageInfo<Blog> listBlogToUpdateRedis(int pageNum, int size, int id, String type);
+
     Blog getAndConvert(int id);
+
+    void getAndConvertToUpdateRedis(int id);
 
     List<Blog> listRecommendBlogTop(int size);
 
+    void listRecommendBlogTopToUpdateRedis(int size);
+
     Map<String,List<Blog>> archiveBlog();
 
+    void archiveBlogToUpdateRedis();
+
     int countBlog();
+
+    void countBlogToUpdateRedis();
 
     Blog findBlogByBlogId(int blogId);
 
@@ -33,5 +43,9 @@ public interface BlogService {
     void deleteBlog(int blogId);
 
     List<Blog> findBlogByTypeId(int typeId);
+
+    void updateBlogOfViewsById(int blogId, int views);
+
+    List<Blog> findAll();
 
 }

@@ -21,7 +21,9 @@ public interface BlogDao {
 
     Blog findBlogById(@Param("blogId") int blogId);
 
-    void updateViews(@Param("blogId") int blogId);
+    void incrOneViews(@Param("blogId") int blogId);
+
+    void updateBlogOfViewsById(@Param("blogId") int blogId, @Param("views") int views);
 
     Page<Blog> findBlogByTypeId(@Param("typeId") int typeId);
 
