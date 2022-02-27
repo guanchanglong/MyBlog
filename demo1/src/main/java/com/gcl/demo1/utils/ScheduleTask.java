@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author 小关同学
@@ -36,16 +35,6 @@ public class ScheduleTask {
 
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
-
-    /**
-     * 保存字符串数据到Redis中
-     * @param key 键
-     * @param data 待保存的数据
-     */
-    private void dataInRedis(String key, String data){
-        //设置每个存储的数据的有效时间为24小时
-        redisTemplate.opsForValue().set(key, data, 24, TimeUnit.HOURS);
-    }
 
     /**
      * 一天执行一次的任务
@@ -75,6 +64,7 @@ public class ScheduleTask {
 
         //更新每篇博客的浏览数据
         getAllBlogViewsDataToRedis();
+
         System.err.println("执行updateDayCountToShow任务的时间: " + LocalDateTime.now());
     }
 
@@ -120,27 +110,27 @@ public class ScheduleTask {
         String count = redisTemplate.opsForValue().get("newestDayCount");
         //更新当天的浏览量
         redisTemplate.opsForValue().set("newestDayCount", "0");
+        assert count != null;
         return Integer.valueOf(count);
     }
 
 
     /**
-     * 更新一次Redis中每篇博客的浏览数据
+     * 更新一次数据库中每篇博客的浏览数据
      */
     private void getAllBlogViewsDataToRedis(){
         List<Blog> blogs = blogService.findAll();
         for (Blog blog: blogs){
-            long views = blog.getViews();
-            //如果原来存在这些键的值的话就更新，不存在的话就不更新
+            int views = blog.getViews();
+            //如果原来存在这些键的值的话就更新，不存在的话就初始化
             if (Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
                 //先获取到值
                 views = Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId())));
                 //更新数据库中的博客浏览数据
-                blogService.updateBlogOfViewsById(blog.getId(), Math.toIntExact(views));
+                blogService.updateBlogOfViewsById(blog.getId(), views);
+            }else{
+                redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(views));
             }
-            //更新Redis中的值
-            redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(views));
         }
     }
-
 }

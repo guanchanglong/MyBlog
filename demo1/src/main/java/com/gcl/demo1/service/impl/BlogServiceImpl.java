@@ -186,7 +186,9 @@ public class BlogServiceImpl implements BlogService {
                 blogs = blogDao.findBlogByTag(id);
                 redisTemplate.opsForValue().set("tagBlogPage:" + pageNum + ";tagId:" + id, JSONObject.toJSONString(blogs.toPageInfo()));
                 for (Blog blog: blogs){
-                    redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
+                        redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+                    }
                 }
                 break;
             case "type":
@@ -195,7 +197,9 @@ public class BlogServiceImpl implements BlogService {
                 blogs = blogDao.findBlogByTypeId(id);
                 redisTemplate.opsForValue().set("typeBlogPage:" + pageNum + ";typeId:" + id, JSONObject.toJSONString(blogs.toPageInfo()));
                 for (Blog blog: blogs){
-                    redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
+                        redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+                    }
                 }
                 break;
             case "published":
@@ -204,7 +208,9 @@ public class BlogServiceImpl implements BlogService {
                 blogs = blogDao.findAllByPublished();
                 redisTemplate.opsForValue().set("publishedBlogPage:" + pageNum, JSONObject.toJSONString(blogs.toPageInfo()));
                 for (Blog blog: blogs){
-                    redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
+                        redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+                    }
                 }
                 break;
         }
@@ -291,9 +297,6 @@ public class BlogServiceImpl implements BlogService {
         //找到博客的作者
         User user = userDao.findUserById(blog.getUserId());
         redisTemplate.opsForValue().set("findUserById:" + blog.getUserId(), JSONObject.toJSONString(user));
-
-        //设置该篇博客的浏览数据
-        redisTemplate.opsForValue().set("updateViews:" + id, String.valueOf(blog.getViews()));
     }
 
 

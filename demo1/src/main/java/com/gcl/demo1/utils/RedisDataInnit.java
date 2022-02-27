@@ -75,8 +75,11 @@ public class RedisDataInnit {
 
         //StatisticsController
         //初始化流量统计页面中所有的浏览数据
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
-        redisTemplate.opsForValue().set("newestDayCount", String.valueOf(dayCountService.findDayCountByDay(formatter.format(new Date())).getCount()));
+        //如果存在的话就初始化，存在的话就不执行
+        if (!Boolean.TRUE.equals(redisTemplate.hasKey("newestDayCount"))){
+            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+            redisTemplate.opsForValue().set("newestDayCount", String.valueOf(dayCountService.findDayCountByDay(formatter.format(new Date())).getCount()));
+        }
         dayCountService.getCountsToUpdateRedis();
 
         //IndexController
