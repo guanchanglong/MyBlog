@@ -8,7 +8,7 @@ spring:
   mvc:
     static-path-pattern: /static/**
   profiles:
-    active: pro
+    active: dev
   messages:
     basename: i18n/messages
   web:

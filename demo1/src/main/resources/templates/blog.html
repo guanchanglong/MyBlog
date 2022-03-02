@@ -2,11 +2,11 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="_fragments :: head(~{::title})">
 
-<!--  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
   <meta charset="UTF-8">
 
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title th:text="${blog.title}">博客详情</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
@@ -67,7 +67,8 @@
         <!--图片区域-->
         <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}" alt="" class="ui fluid rounded image">
       </div>
-      <div class="ui  attached padded segment">
+
+      <div class="ui attached padded segment">
         <!--内容-->
         <div class="ui right aligned basic segment">
           <div class="ui orange basic label" th:if="${blog.flag}==0">原创</div>
@@ -446,6 +447,34 @@ h5,h6{font-size:1em;}
           <div class="ui basic teal left pointing label" th:each="tag : ${blog.getTags()}" th:text="${tag.getName()}">方法论</div>
         </div>
 
+          <div class="ui horizontal divider">End</div>
+
+          <div class="ui segment">
+              <div class="ui right aligned basic segment">
+                <div id="like-container" th:fragment="likeData">
+                  <input name="likeFlag" type="hidden" th:value="${like.like}"/>
+                  <input name="unLikeFlag" type="hidden" th:value="${like.unLike}"/>
+                  <div class="ui horizontal link list">
+                    <div class="item">
+                      <button id="likeButton" class="ui circular icon button" data-content="点赞" data-position="bottom center">
+                        <img id="imgLikeClick" onclick="likeClick()" th:if="${like.like}" src="../static/images/like.png" alt="">
+                        <img id="imgLikeClick" onclick="likeClick()" th:if="!${like.like}" src="../static/images/likeOutline.png" alt="">
+                        <span th:text="${likeCount}">123</span>
+                      </button>
+                    </div>
+
+                    <div class="item">
+                      <button id="unLikeButton" class="ui circular icon button" data-content="踩" data-position="bottom center">
+                        <img id="imgUnLikeClick" onclick="unLikeClick()" th:if="!${like.unLike}" src="../static/images/unLikeOutline.png" alt="">
+                        <img id="imgUnLikeClick" onclick="unLikeClick()" th:if="${like.unLike}" src="../static/images/unLike.png" alt="">
+                        <span th:text="${unLikeCount}">123</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
         <!--赞赏-->
         <div th:if="${blog.appreciation}">
           <div class="ui center aligned basic segment">
@@ -468,8 +497,9 @@ h5,h6{font-size:1em;}
         </div>
 
       </div>
+
       <div class="ui attached positive message" th:if="${blog.shareStatement}" style="z-index: -1 !important;">
-        <!--博客信息-->
+          <!--博客信息-->
         <div class="ui middle aligned grid">
           <div class="eleven wide column">
             <ui class="list">
@@ -480,10 +510,13 @@ h5,h6{font-size:1em;}
             </ui>
           </div>
           <div class="five wide column">
-            <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+            <h4>问题交流(QQ群)</h4>
+            <img src="../static/images/qq.png" th:src="@{/images/qq.png}" alt="" style="width: 110px">
           </div>
         </div>
       </div>
+
+
       <div  class="ui bottom attached segment" th:if="${blog.commentable}">
 
         <!--留言区域列表-->
@@ -621,7 +654,9 @@ h5,h6{font-size:1em;}
           </div>
 
         </div>
+
       </div>
+
     </div>
   </div>
 
@@ -640,10 +675,6 @@ h5,h6{font-size:1em;}
     </ol>
   </div>
 
-  <div id="qrcode" class="ui wechat-qr flowing popup transition hidden "style="width: 130px !important;">
-    <!--<img src="./static/images/wechat.jpg" alt="" class="ui rounded image" style="width: 120px !important;">-->
-  </div>
-
 
 
   <br>
@@ -654,8 +685,9 @@ h5,h6{font-size:1em;}
       <div class="ui inverted divided stackable grid">
         <div class="three wide column">
           <div class="ui inverted link list">
+            <h4 class="ui inverted header m-text-thin m-text-spaced " >问题交流(QQ群)</h4>
             <div class="item">
-              <img src="../static/images/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
+              <img src="../static/images/qq.png" class="ui rounded image" alt="" style="width: 110px">
             </div>
           </div>
         </div>
@@ -696,8 +728,69 @@ h5,h6{font-size:1em;}
     <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
   <!--/*/</th:block>/*/-->
 
-
   <script th:inline="javascript">
+
+    $("#like-container").load(/*[[@{/blog/likeData/{blogId}(blogId=${blog.id})}]]*/"/blog/likeData/34", function () {
+    });
+
+
+    function postLikeData(url, flag) {
+      $("#like-container").load(url, {"flag":flag});
+    }
+
+    function postUnLikeData(url, flag) {
+      $("#like-container").load(url, {"flag":flag});
+    }
+
+    //弹出提示
+    $('#likeButton').popup();
+    $('#unLikeButton').popup();
+
+
+    //这是全局变量
+    //见鬼，这样传过来的值是字符串，不是布尔类型。。。
+    var like = $("[name='likeFlag']").val(); //给一个开关并赋值，用来进行后面的 if else 条件判断
+    var likeUrl = /*[[@{/blog/changeBlogLikeState/{blogId}(blogId=${blog.id})}]]*/"";
+    var likeFlag = 0;
+
+    var unLike = $("[name='unLikeFlag']").val();
+    var unLikeUrl = /*[[@{/blog/changeBlogUnLikeState/{blogId}(blogId=${blog.id})}]]*/"";
+    var unLikeFlag = 0;
+
+    //实现图片切换并进行进行点赞状态转换
+    function likeClick(){
+      likeFlag = 0;
+      if (like === 'false') { //进行判断
+        likeFlag = 1;
+        $('#imgLikeClick').attr("src", "../static/images/like.png");
+        if (unLike === 'true'){
+          $('#imgUnLikeClick').attr("src", "../static/images/unLikeOutline.png");
+        }
+      } 
+      if (like === 'true') {
+        likeFlag = -1;
+        $('#imgLikeClick').attr("src", "../static/images/likeOutline.png");
+      }
+      postLikeData(likeUrl, likeFlag);
+    }
+
+
+    function unLikeClick() {
+      unLikeFlag = 0;
+      if (unLike === 'false') { //进行判断               //attr() 方法设置或返回被选元素的属性值
+        unLikeFlag = 1;
+        $('#imgUnLikeClick').attr("src", "../static/images/unLike.png");
+        if (like === 'true'){
+          $('#imgLikeClick').attr("src", "../static/images/likeOutline.png");
+        }
+      } 
+      if (unLike === 'true') {
+        unLikeFlag = -1;
+        $('#imgUnLikeClick').attr("src", "../static/images/unLikeOutline.png");
+      }
+      postUnLikeData(unLikeUrl, unLikeFlag);
+    }
+
 
     // 监听整个网页的copy(复制)事件
     document.addEventListener('copy', function (event) {
@@ -785,7 +878,6 @@ h5,h6{font-size:1em;}
         console.log('Scrolled to waypoint!  ' + direction);
       }
     })
-
 
     $(function () {
       $("#comment-container").load(/*[[@{/comments/{id}(id=${blog.id})}]]*/"comments/6");

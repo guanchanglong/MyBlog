@@ -64,9 +64,9 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public PageInfo<Blog> listBlog(int pageNum, int size, int id, String type, String content, BlogQuery blogQuery) {
         Page<Blog> blogs;
-        String data;
-        PageInfo<Blog> result = new PageInfo<>();
-        List<Blog> blogList;
+        String data = "";
+        PageInfo<Blog> result;
+        List<Blog> blogList = new ArrayList<>();
         JSONObject json;
         switch (type){
             case "tag":
@@ -79,17 +79,6 @@ public class BlogServiceImpl implements BlogService {
                 data = redisTemplate.opsForValue().get("tagBlogPage:" + pageNum + ";tagId:" + id);
                 json = JSON.parseObject(data);
                 blogList = JSON.parseArray(json.getString("list"), Blog.class);
-                System.out.println(blogList.size());
-                for (Blog blog: blogList){
-                    //如果不存在的话就刷新
-                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
-                        dataInRedis("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
-                    }
-                    blog.setViews(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId()))));
-                }
-                result = JSON.parseObject(data, PageInfo.class);
-                assert result != null;
-                result.setList(blogList);
                 break;
             case "type":
                 if (!Boolean.TRUE.equals(redisTemplate.hasKey("typeBlogPage:" + pageNum + ";typeId:" + id))){
@@ -101,16 +90,6 @@ public class BlogServiceImpl implements BlogService {
                 data = redisTemplate.opsForValue().get("typeBlogPage:" + pageNum + ";typeId:" + id);
                 json = JSON.parseObject(data);
                 blogList = JSON.parseArray(json.getString("list"), Blog.class);
-                for (Blog blog: blogList){
-                    //如果不存在的话就刷新
-                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
-                        dataInRedis("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
-                    }
-                    blog.setViews(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId()))));
-                }
-                result = JSON.parseObject(data, PageInfo.class);
-                assert result != null;
-                result.setList(blogList);
                 break;
             case "published":
                 //redis判断数据是否存储到内存中
@@ -123,28 +102,17 @@ public class BlogServiceImpl implements BlogService {
                 data = redisTemplate.opsForValue().get("publishedBlogPage:" + pageNum);
                 json = JSON.parseObject(data);
                 blogList = JSON.parseArray(json.getString("list"), Blog.class);
-                for (Blog blog: blogList){
-                    //如果不存在的话就刷新
-                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
-                        dataInRedis("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
-                    }
-                    blog.setViews(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId()))));
-                }
-                result = JSON.parseObject(data, PageInfo.class);
-                assert result != null;
-                result.setList(null);
-                result.setList(blogList);
                 break;
             case "search":              //搜索不用从Redis中取值，不然会很难受
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findBlogByContent("%"+content+"%");
                 result = new PageInfo<>(blogs);
-                break;
+                return result;
             case "findAll":             //管理员这里也不用从Redis中取值
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findAll();
                 result = new PageInfo<>(blogs);
-                break;
+                return result;
             case "searchInAdmin":       //管理员这里也不用从Redis中取值
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 String title = blogQuery.getTitle();
@@ -152,9 +120,33 @@ public class BlogServiceImpl implements BlogService {
                 blogQuery.setTitle(title);
                 blogs = blogDao.findBlogByBlogQuery(blogQuery);
                 result = new PageInfo<>(blogs);
-                break;
+                return result;
         }
+
+        for (Blog blog: blogList){
+            //如果不存在的话就刷新
+            if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
+                dataInRedis("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
+            }
+
+            if (!Boolean.TRUE.equals(redisTemplate.hasKey("blogLikeCount:"+blog.getId()))){
+                redisTemplate.opsForValue().set("blogLikeCount:"+blog.getId(), String.valueOf(blog.getLikeCount()));
+            }
+
+            if (!Boolean.TRUE.equals(redisTemplate.hasKey("blogUnLikeCount:"+blog.getId()))){
+                redisTemplate.opsForValue().set("blogUnLikeCount:"+blog.getId(), String.valueOf(blog.getUnLikeCount()));
+            }
+
+            blog.setViews(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId()))));
+        }
+        result = JSON.parseObject(data, PageInfo.class);
+        assert result != null;
+        result.setList(blogList);
+
+
         for (Blog blog: result.getList()){
+
+
             if (!Boolean.TRUE.equals(redisTemplate.hasKey("findTagByBlogId:" + blog.getId()))){
                 List<Tag> tags = tagDao.findTagByBlogId(blog.getId());
                 dataInRedis("findTagByBlogId:" + blog.getId(), JSONObject.toJSONString(tags));
@@ -176,7 +168,6 @@ public class BlogServiceImpl implements BlogService {
     }
 
 
-
     public PageInfo<Blog> listBlogToUpdateRedis(int pageNum, int size, int id, String type) {
         Page<Blog> blogs = new Page<>();
         switch (type){
@@ -185,37 +176,23 @@ public class BlogServiceImpl implements BlogService {
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findBlogByTag(id);
                 redisTemplate.opsForValue().set("tagBlogPage:" + pageNum + ";tagId:" + id, JSONObject.toJSONString(blogs.toPageInfo()));
-                for (Blog blog: blogs){
-                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
-                        redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
-                    }
-                }
                 break;
             case "type":
                 //按照博客创建时间倒序排序
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findBlogByTypeId(id);
                 redisTemplate.opsForValue().set("typeBlogPage:" + pageNum + ";typeId:" + id, JSONObject.toJSONString(blogs.toPageInfo()));
-                for (Blog blog: blogs){
-                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
-                        redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
-                    }
-                }
                 break;
             case "published":
                 //按照博客创建时间倒序排序
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findAllByPublished();
                 redisTemplate.opsForValue().set("publishedBlogPage:" + pageNum, JSONObject.toJSONString(blogs.toPageInfo()));
-                for (Blog blog: blogs){
-                    if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
-                        redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
-                    }
-                }
                 break;
         }
 
-        for (Blog blog: blogs.getResult()){
+        for (Blog blog: blogs){
+
             List<Tag> tags = tagDao.findTagByBlogId(blog.getId());
             redisTemplate.opsForValue().set("findTagByBlogId:" + blog.getId(), JSONObject.toJSONString(tags));
 
@@ -268,8 +245,13 @@ public class BlogServiceImpl implements BlogService {
         //将博客内容转换为html的格式
         blog.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
         //对当天的浏览数据进行自增
-        RedisAtomicLong entityIdCounter = new RedisAtomicLong("newestDayCount", redisTemplate.getConnectionFactory());
+        RedisAtomicLong entityIdCounter = new RedisAtomicLong("newestDayCount", Objects.requireNonNull(redisTemplate.getConnectionFactory()));
         entityIdCounter.getAndIncrement();
+
+        //设置点赞数据
+        blog.setLikeCount(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("blogLikeCount:" + blog.getId()))));
+        //设置点踩数据
+        blog.setUnLikeCount(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("blogUnLikeCount:"+blog.getId()))));
 
         //若该篇博客在Redis中还没存储它的值，则往redis中存储它的浏览数值，下次直接从redis中取出来
         if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + id))){
@@ -281,6 +263,7 @@ public class BlogServiceImpl implements BlogService {
         }
         return blog;
     }
+
 
 
 
@@ -298,10 +281,6 @@ public class BlogServiceImpl implements BlogService {
         User user = userDao.findUserById(blog.getUserId());
         redisTemplate.opsForValue().set("findUserById:" + blog.getUserId(), JSONObject.toJSONString(user));
     }
-
-
-
-
 
 
 
@@ -486,5 +465,17 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<Blog> findAll(){
         return blogDao.findAll();
+    }
+
+    @Override
+    @Transactional
+    public void updateBlogOfLikeCountById(int blogId, int likeCount){
+        blogDao.updateBlogOfLikeCountById(blogId, likeCount);
+    }
+
+    @Override
+    @Transactional
+    public void updateBlogOfUnLikeCountById(int blogId, int unLikeCount){
+        blogDao.updateBlogOfUnLikeCountById(blogId, unLikeCount);
     }
 }

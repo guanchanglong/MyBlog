@@ -48,4 +48,8 @@ public interface BlogDao {
     Page<Blog> findBlogByBlogQuery(@Param("blogQuery") BlogQuery blogQuery);
 
     List<Blog> findBlogByTypeIdByAdmin(@Param("typeId") int typeId);
+
+    void updateBlogOfLikeCountById(@Param("blogId") int blogId, @Param("likeCount") int likeCount);
+
+    void updateBlogOfUnLikeCountById(@Param("blogId") int blogId, @Param("unLikeCount") int unLikeCount);
 }

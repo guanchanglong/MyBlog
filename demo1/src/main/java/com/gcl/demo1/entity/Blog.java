@@ -44,6 +44,10 @@ public class Blog implements Comparable<Blog>, Serializable {
     private String tagIds;
     //博客简介
     private String description;
+    //点赞数
+    private int likeCount;
+    //踩数
+    private int unLikeCount;
 
     private String year;
 
@@ -240,6 +244,22 @@ public class Blog implements Comparable<Blog>, Serializable {
 
     public void init() {
         this.tagIds = tagsToIds(this.getTags());
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public int getUnLikeCount() {
+        return unLikeCount;
+    }
+
+    public void setUnLikeCount(int unLikeCount) {
+        this.unLikeCount = unLikeCount;
     }
 
     @Override

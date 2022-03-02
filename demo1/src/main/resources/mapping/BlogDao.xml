@@ -23,15 +23,17 @@
         <result property="description" column="description"/>
         <result property="userId" column="user_id"/>
         <result property="year" column="year"/>
+        <result property="likeCount" column="like_count"/>
+        <result property="unLikeCount" column="un_like_count"/>
     </resultMap>
 
     <select id="findAll" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
     </select>
 
     <select id="findAllByPublished" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where published = 1
     </select>
@@ -55,31 +57,31 @@
     </update>
 
     <select id="findBlogByTypeId" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where type_id = #{typeId} and published = 1
     </select>
 
     <select id="findBlogByTypeIdByAdmin" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where type_id = #{typeId}
     </select>
 
     <select id="findBlogByTag" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where id in (select blog_id from b_blog_tag where tag_id = #{tagId}) and published = 1
     </select>
 
     <select id="findBlogByContent" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where published = 1 and (title like #{content} or content like #{content})
     </select>
 
     <select id="findRecommendBlog" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where published = 1 and recommend = 1
     </select>
@@ -90,7 +92,7 @@
     </select>
 
     <select id="findByYear" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             where published = 1 and DATE_FORMAT(create_time,'%Y') = #{year}
     </select>
@@ -126,7 +128,7 @@
     </delete>
 
     <select id="findBlogByBlogQuery" parameterType="com.gcl.demo1.vo.BlogQuery" resultMap="blogMap">
-        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id
+        select id,title,first_picture,flag,views,appreciation,share_statement,commentable,published,recommend,create_time,update_time,type_id,description,user_id,like_count,un_like_count
           from b_blog
             <where>
               <if test="blogQuery.title != null">
@@ -140,5 +142,17 @@
               </if>
             </where>
     </select>
+
+    <update id="updateBlogOfLikeCountById">
+        update b_blog
+          set like_count = #{likeCount}
+            where id = #{blogId}
+    </update>
+
+    <update id="updateBlogOfUnLikeCountById">
+        update b_blog
+          set un_like_count = #{unLikeCount}
+            where id = #{blogId}
+    </update>
 
 </mapper>

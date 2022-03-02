@@ -47,6 +47,9 @@ public class ScheduleTask {
         int dayCount = setNewestDayCountToZero();
         changeDayCount(dayCount);
         getAllBlogViewsDataToRedis();
+
+        //更新一遍统计页面的数据
+        dayCountService.getCountsToUpdateRedis();
         System.err.println("执行dailyTask任务的时间: " + LocalDateTime.now());
     }
 
@@ -116,12 +119,14 @@ public class ScheduleTask {
 
 
     /**
-     * 更新一次数据库中每篇博客的浏览数据
+     * 更新一次数据库中每篇博客的浏览数据和点赞(踩)数据
      */
     private void getAllBlogViewsDataToRedis(){
         List<Blog> blogs = blogService.findAll();
         for (Blog blog: blogs){
             int views = blog.getViews();
+            int likeCount = blog.getLikeCount();
+            int unLikeCount = blog.getUnLikeCount();
             //如果原来存在这些键的值的话就更新，不存在的话就初始化
             if (Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
                 //先获取到值
@@ -130,6 +135,22 @@ public class ScheduleTask {
                 blogService.updateBlogOfViewsById(blog.getId(), views);
             }else{
                 redisTemplate.opsForValue().set("updateViews:" + blog.getId(), String.valueOf(views));
+            }
+
+            //更新点赞数据
+            if (Boolean.TRUE.equals(redisTemplate.hasKey("blogLikeCount:" + blog.getId()))){
+                likeCount = Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("blogLikeCount:" + blog.getId())));
+                blogService.updateBlogOfLikeCountById(blog.getId(), likeCount);
+            }else{
+                redisTemplate.opsForValue().set("blogLikeCount:" + blog.getId(), String.valueOf(likeCount));
+            }
+
+            //更新踩数据
+            if (Boolean.TRUE.equals(redisTemplate.hasKey("blogUnLikeCount:" + blog.getId()))){
+                unLikeCount = Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("blogUnLikeCount:" + blog.getId())));
+                blogService.updateBlogOfUnLikeCountById(blog.getId(), unLikeCount);
+            }else{
+                redisTemplate.opsForValue().set("blogUnLikeCount:" + blog.getId(), String.valueOf(unLikeCount));
             }
         }
     }

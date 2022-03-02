@@ -48,4 +48,8 @@ public interface BlogService {
 
     List<Blog> findAll();
 
+    void updateBlogOfLikeCountById(int blogId, int likeCount);
+
+    void updateBlogOfUnLikeCountById(int blogId, int unLikeCount);
+
 }

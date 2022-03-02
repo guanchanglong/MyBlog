@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gcl.demo1.dao.LikeDao">
+
+    <resultMap id="likeMap" type="com.gcl.demo1.entity.Like">
+        <id property="id" column="id"/>
+        <result property="blogId" column="blog_id"/>
+        <result property="viewerIP" column="viewer_ip"/>
+        <result property="like" column="like"/>
+        <result property="unLike" column="un_like"/>
+    </resultMap>
+
+    <select id="findLikeAndUnLikeByBlogIdAndIP" resultMap="likeMap">
+        select * from b_like_list where blog_id = #{blogId} and viewer_ip = #{viewerIP}
+    </select>
+
+
+</mapper>

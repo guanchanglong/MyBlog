@@ -1,9 +1,9 @@
 package com.gcl.demo1.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.gcl.demo1.dao.UserDao;
 import com.gcl.demo1.entity.User;
 import com.gcl.demo1.service.UserService;
-import com.gcl.demo1.utils.JSONToStringUtils;
 import com.gcl.demo1.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
             User user = userDao.findUserByNickname(username);
             user.setPassword(null);     //设置密码为空
             user.setBlogs(null);
-            String data = JSONToStringUtils.JSONToString(user);
+            String data = JSON.toJSONString(user);
             dataInRedis("adminUser", data);
         }
         //从Redis中获取用户信息
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
         User user = userDao.findUserByNickname(username);
         user.setPassword(null);     //设置密码为空
         user.setBlogs(null);
-        dataInRedis("adminUser", JSONToStringUtils.JSONToString(user));
+        dataInRedis("adminUser", JSON.toJSONString(user));
         return user;
     }
 

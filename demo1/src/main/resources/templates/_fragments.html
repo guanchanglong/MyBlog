@@ -4,10 +4,10 @@
 <head th:fragment="head(title)">
 
   <!--自动将http的不安全请求升级为https-->
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 
   <!--标记用于指定用户是否可以缩放Web页面-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
   <meta charset="UTF-8">
   <title th:replace="${title}">博客详情</title>
@@ -65,8 +65,9 @@
     <div class="ui inverted divided stackable grid">
       <div class="three wide column">
         <div class="ui inverted link list">
+          <h4 class="ui inverted header m-text-thin m-text-spaced " >问题交流(QQ群)</h4>
           <div class="item">
-            <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}"  class="ui rounded image" alt="" style="width: 110px">
+            <img src="../static/images/qq.png" th:src="@{/images/qq.png}"  class="ui rounded image" alt="" style="width: 110px">
           </div>
         </div>
       </div>
@@ -175,6 +176,7 @@
       }(),
       language: (navigator.browserLanguage || navigator.language).toLowerCase()
     }
+
     if (browser.versions.mobile) {
       /*移动端移除animated特效*/
       $('#typeDiv').removeClass('animated fadeInRightBig ');
@@ -185,19 +187,19 @@
     }else if(!browser.versions.mobile){ //非移动端，动态加载js和div
 
       var script1 = document.createElement('script');
-      var script2 = document.createElement('script');
+      // var script2 = document.createElement('script');
       var script3 = document.createElement('script');
 
       script1.type = 'text/javascript';
       script1.src = '..\\static\\js\\snow.js';
 
-      script2.type = 'text/javascript';
-      script2.src = '..\\static\\js\\click_show_text.js'
+      // script2.type = 'text/javascript';
+      // script2.src = '..\\static\\js\\click_show_text.js'
 
       script3.type = 'text/javascript';
       script3.src = '..\\static\\js\\canvas-nest.min.js';
 
-      $('body').append(script1,script2,script3);
+      $('body').append(script1,script3);
     }
   </script>
 
