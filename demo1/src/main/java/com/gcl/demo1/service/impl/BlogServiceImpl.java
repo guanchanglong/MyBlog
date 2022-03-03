@@ -123,7 +123,12 @@ public class BlogServiceImpl implements BlogService {
                 return result;
         }
 
-        for (Blog blog: blogList){
+        result = JSON.parseObject(data, PageInfo.class);
+        assert result != null;
+        result.setList(blogList);
+
+        for (Blog blog: result.getList()){
+
             //如果不存在的话就刷新
             if (!Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
                 dataInRedis("updateViews:" + blog.getId(), String.valueOf(blog.getViews()));
@@ -137,20 +142,11 @@ public class BlogServiceImpl implements BlogService {
                 redisTemplate.opsForValue().set("blogUnLikeCount:"+blog.getId(), String.valueOf(blog.getUnLikeCount()));
             }
 
-            blog.setViews(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId()))));
-        }
-        result = JSON.parseObject(data, PageInfo.class);
-        assert result != null;
-        result.setList(blogList);
-
-
-        for (Blog blog: result.getList()){
-
-
             if (!Boolean.TRUE.equals(redisTemplate.hasKey("findTagByBlogId:" + blog.getId()))){
                 List<Tag> tags = tagDao.findTagByBlogId(blog.getId());
                 dataInRedis("findTagByBlogId:" + blog.getId(), JSONObject.toJSONString(tags));
             }
+
             if (!Boolean.TRUE.equals(redisTemplate.hasKey("findTypeById:" + blog.getTypeId()))){
                 Type blogType = typeDao.findTypeById(blog.getTypeId());
                 dataInRedis("findTypeById:" + blog.getTypeId(), JSONObject.toJSONString(blogType));
@@ -163,6 +159,10 @@ public class BlogServiceImpl implements BlogService {
             blog.setUser(userService.getUserByNickname("小关同学"));
             //设置博客的类型
             blog.setType(blogType);
+            //设置最新的浏览人数
+            blog.setViews(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("updateViews:" + blog.getId()))));
+            //设置最新的点赞数据
+            blog.setLikeCount(Integer.valueOf(Objects.requireNonNull(redisTemplate.opsForValue().get("blogLikeCount:" + blog.getId()))));
         }
         return result;
     }

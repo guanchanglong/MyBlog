@@ -76,6 +76,9 @@
                       <div class="item">
                         <i class="eye icon"></i> <span th:text="${blog.views}">2342</span>
                       </div>
+                      <div class="item">
+                        <i class="thumbs up icon"></i><span th:text="${blog.likeCount}">123</span>
+                      </div>
                     </div>
                   </div>
                   <div class="right aligned five wide column">
@@ -242,7 +245,11 @@
     var script1 = document.createElement('script');
     script1.type = 'text/javascript';
     script1.src = '..\\static\\js\\click_show_text.js'
-    $('body').append(script1);
+
+    var script2 = document.createElement('script');
+    script2.type = 'text/javascript';
+    script2.src = '..\\static\\js\\snow.js';
+    $('body').append(script1,script2);
 
   </script>
 
