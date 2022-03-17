@@ -78,11 +78,10 @@ public class IndexController {
     public String blog(@PathVariable int id,
                        HttpServletRequest request,
                        Model model) {
-        String ip = request.getRemoteAddr();
+        String ip = getIpAddr(request);
         Blog blog = blogService.getAndConvert(id);
         Like like = likeService.findByBlogIdAndIP(id, ip);
         model.addAttribute("like", like);
-        System.out.println("Like的值："+like.toString());
         model.addAttribute("blog", blog);
         model.addAttribute("likeCount", blog.getLikeCount());
         model.addAttribute("unLikeCount", blog.getUnLikeCount());
@@ -113,13 +112,10 @@ public class IndexController {
     public String likeData(@PathVariable int blogId,
                            HttpServletRequest request,
                            Model model){
-        String ip = request.getRemoteAddr();
+        String ip = getIpAddr(request);
         Like like = likeService.findByBlogIdAndIP(blogId, ip);
         int likeCount = likeService.getLikeCount(blogId);
         int unLikeCount = likeService.getUnLikeCount(blogId);
-        System.out.println("likeCount:" + likeCount);
-        System.out.println("unLikeCount:" + unLikeCount);
-        System.out.println(like.toString());
         model.addAttribute("like", like);
         model.addAttribute("likeCount", likeCount);
         model.addAttribute("unLikeCount", unLikeCount);
@@ -137,7 +133,7 @@ public class IndexController {
     public String changeBlogLikeState(@PathVariable int blogId,
                                       @RequestParam int flag,
                                       HttpServletRequest request){
-        String ip = request.getRemoteAddr();
+        String ip = getIpAddr(request);
         likeService.changeBlogLikeState(blogId, ip, flag);
         return "redirect:/blog/likeData/" + blogId;
     }
@@ -151,8 +147,31 @@ public class IndexController {
      */
     @PostMapping("/blog/changeBlogUnLikeState/{blogId}")
     public String changeBlogUnLikeState(@PathVariable int blogId, @RequestParam int flag, HttpServletRequest request){
-        String ip = request.getRemoteAddr();
+        String ip = getIpAddr(request);
         likeService.changeBlogUnLikeState(blogId, ip, flag);
         return "redirect:/blog/likeData/" + blogId;
     }
+
+    /**
+     * 获取用户真实ip地址
+     * @param request
+     * @return
+     */
+    private String getIpAddr(HttpServletRequest request) {
+        //因为使用了Nginx代理，所以这里不能直接获得用户的ip地址，只能获得服务器的ip地址
+        //所以，这里不能直接使用request.getRemoteAddr()获取ip地址
+        //获取客户端真实ip地址的方法：
+        String ip = request.getHeader("x-forwarded-for");
+        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("PRoxy-Client-IP");
+        }
+        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        return ip;
+    }
+
 }

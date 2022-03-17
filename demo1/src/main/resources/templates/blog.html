@@ -763,7 +763,6 @@ h5,h6{font-size:1em;}
       console.log("like:"+like);
       if (like === 'false') { //进行判断
         likeFlag = 1;
-        console.log("../static/images/like.png");
         $('#imgLikeClick').attr("src", "../static/images/like.png");
         if (unLike === 'true'){
           $('#imgUnLikeClick').attr("src", "../static/images/unLikeOutline.png");
@@ -771,7 +770,6 @@ h5,h6{font-size:1em;}
       } 
       if (like === 'true') {
         likeFlag = -1;
-        console.log("../static/images/likeOutline.png");
         $('#imgLikeClick').attr("src", "../static/images/likeOutline.png");
       }
       postLikeData(likeUrl, likeFlag);
@@ -784,7 +782,6 @@ h5,h6{font-size:1em;}
       unLikeFlag = 0;
       if (unLike === 'false') { //进行判断               //attr() 方法设置或返回被选元素的属性值
         unLikeFlag = 1;
-        console.log("../static/images/unLike.png");
         $('#imgUnLikeClick').attr("src", "../static/images/unLike.png");
         if (like === 'true'){
           $('#imgLikeClick').attr("src", "../static/images/likeOutline.png");
@@ -792,7 +789,6 @@ h5,h6{font-size:1em;}
       } 
       if (unLike === 'true') {
         unLikeFlag = -1;
-        console.log("../static/images/unLikeOutline.png");
         $('#imgUnLikeClick').attr("src", "../static/images/unLikeOutline.png");
       }
       postUnLikeData(unLikeUrl, unLikeFlag);
