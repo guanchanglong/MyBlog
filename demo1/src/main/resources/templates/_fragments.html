@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
   <link rel="stylesheet" href="../static/css/me.css">
   <link rel="stylesheet" type="text/css" href="../static/css/jquery.emoji.css">
+  <link rel="stylesheet" href="../static/css/timeline.css">
   <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
@@ -29,14 +30,16 @@
   <div id="message-position" class="ui container">
     <div class="ui inverted secondary stackable menu">
       <h2 class="ui teal header item">小关同学的Blog</h2>
-      <a href="http://www.xiaoguantongxue.com" th:href="@{/}" class="m-item item m-mobile-hide " th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>&nbsp;首页</a>
-      <a href="http://www.xiaoguantongxue.com/types?typeId=-1" th:href="'/types?typeId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>&nbsp;分类</a>
-      <a href="http://www.xiaoguantongxue.com/tags?tagId=-1" th:href="'/tags?tagId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>&nbsp;标签</a>
-      <a href="http://www.xiaoguantongxue.com/archives" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>&nbsp;归档</a>
+      <a href="http://www.xiaoguantongxue.com" th:href="@{/}" class="m-item item m-mobile-hide " th:classappend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
+      <a href="http://www.xiaoguantongxue.com/types?typeId=-1" th:href="'/types?typeId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
+      <a href="http://www.xiaoguantongxue.com/tags?tagId=-1" th:href="'/tags?tagId=-1'" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+      <a href="http://www.xiaoguantongxue.com/archives" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="clone icon"></i>归档</a>
       <!--这个等什么时候申请了评论再弄-->
-      <!--<a href="http://www.xiaoguantongxue.com/messages" th:href="@{/messages}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini envelope outline icon"></i>&nbsp;留言</a>-->
-      <a href="http://www.xiaoguantongxue.com/statistics/getDateCounts" th:href="@{/statistics/getDateCounts}" class="m-item item m-mobile-hide" th:classappend="${n==6} ? 'active'"><i class="mini icon chart pie"></i>&nbsp;流量统计</a>
-      <a href="http://www.xiaoguantongxue.com/about" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==7} ? 'active'"><i class="mini info icon"></i>&nbsp;关于我</a>
+      <!--<a href="http://www.xiaoguantongxue.com/messages" th:href="@{/messages}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="envelope outline icon"></i>留言板</a>-->
+      <a href="http://www.xiaoguantongxue.com/statistics/getDateCounts" th:href="@{/statistics/getDateCounts}" class="m-item item m-mobile-hide" th:classappend="${n==6} ? 'active'"><i class="icon chart pie"></i>流量统计</a>
+      <a href="http://www.xiaoguantongxue.com/timeLine/timeLinePage" th:href="@{/timeLine/timeLinePage}" class="m-item item m-mobile-hide" th:classappend="${n==7} ? 'active'"><i class="icon clock"></i>流年记</a>
+      <a href="http://www.xiaoguantongxue.com/about" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==8} ? 'active'"><i class="info icon"></i>关于我</a>
+
       <div class="right m-item item m-mobile-hide">
         <form name="search" action="http://www.xiaoguantongxue.com/search" th:action="@{/search}" method="get">
           <div class="ui icon inverted transparent input m-margin-tb-tiny">
@@ -45,6 +48,7 @@
           </div>
         </form>
       </div>
+
     </div>
   </div>
   <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">

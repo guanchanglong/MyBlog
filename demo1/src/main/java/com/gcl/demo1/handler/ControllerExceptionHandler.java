@@ -32,6 +32,6 @@ public class ControllerExceptionHandler {
         model.addAttribute("exception",e);
 
         //返回到error页面去
-        return new ModelAndView("errors/error","model",model);
+        return new ModelAndView("errors/error","model", model);
     }
 }

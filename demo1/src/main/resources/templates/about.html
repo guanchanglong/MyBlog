@@ -4,7 +4,7 @@
     把页面的的title标签及里面的内容， 取出来传进去来替代fragment里面的对应标签。
     比如这个页面的title内容是“关于我”，就把它的值取出来传到fragment模板页面里面去，
 -->
-<head  th:replace="_fragments :: head(~{::title})">
+<head th:replace="_fragments :: head(~{::title})">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +16,18 @@
 <body>
 
 <!--导航-->
-  <nav th:replace="_fragments :: menu(7)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+  <nav th:replace="_fragments :: menu(8)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
     <div class="ui container">
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">Blog</h2>
-        <a href="#" class=" m-item item m-mobile-hide"><i class="mini home icon"></i>&nbsp;首页</a>
-        <a href="#" class=" m-item item m-mobile-hide"><i class="mini idea icon"></i>&nbsp;分类</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>&nbsp;标签</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>&nbsp;归档</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini envelope outline icon"></i>&nbsp;留言</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini icon chart pie"></i>&nbsp;流量统计</a>
-        <a href="#" class="active m-item item m-mobile-hide"><i class="mini info icon"></i>&nbsp;关于我</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>&nbsp;首页</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>&nbsp;分类</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>&nbsp;标签</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>&nbsp;归档</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="envelope outline icon"></i>&nbsp;留言板</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="icon chart pie"></i>&nbsp;流量统计</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="icon clock"></i>&nbsp;流年记</a>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="info icon"></i>&nbsp;关于我</a>
         <div class="right m-item item m-mobile-hide">
           <div class="ui icon inverted transparent input m-margin-tb-tiny">
             <input type="text" placeholder="Search....">

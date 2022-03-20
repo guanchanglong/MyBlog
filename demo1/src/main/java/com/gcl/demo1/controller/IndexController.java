@@ -9,9 +9,14 @@ import com.gcl.demo1.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * @author：小关同学
@@ -161,17 +166,57 @@ public class IndexController {
         //因为使用了Nginx代理，所以这里不能直接获得用户的ip地址，只能获得服务器的ip地址
         //所以，这里不能直接使用request.getRemoteAddr()获取ip地址
         //获取客户端真实ip地址的方法：
-        String ip = request.getHeader("x-forwarded-for");
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("PRoxy-Client-IP");
+
+        // 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址
+        String headerName = "x-forwarded-for";
+        String ip = request.getHeader(headerName);
+        if (null != ip && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
+            // 多次反向代理后会有多个IP值，第一个IP才是真实IP,它们按照英文逗号','分割
+            if (ip.contains(",")) {
+                ip = ip.split(",")[0];
+            }
         }
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("WL-Proxy-Client-IP");
+        if (checkIp(ip)) {
+            headerName = "Proxy-Client-IP";
+            ip = request.getHeader(headerName);
         }
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (checkIp(ip)) {
+            headerName = "WL-Proxy-Client-IP";
+            ip = request.getHeader(headerName);
+        }
+        if (checkIp(ip)) {
+            headerName = "HTTP_CLIENT_IP";
+            ip = request.getHeader(headerName);
+        }
+        if (checkIp(ip)) {
+            headerName = "HTTP_X_FORWARDED_FOR";
+            ip = request.getHeader(headerName);
+        }
+        if (checkIp(ip)) {
+            headerName = "X-Real-IP";
+            ip = request.getHeader(headerName);
+        }
+        if (checkIp(ip)) {
+            headerName = "remote addr";
             ip = request.getRemoteAddr();
+            // 127.0.0.1 ipv4, 0:0:0:0:0:0:0:1 ipv6
+            if ("127.0.0.1".equals(ip) || "0:0:0:0:0:0:0:1".equals(ip)) {
+                //根据网卡取本机配置的IP
+                InetAddress inet = null;
+                try {
+                    inet = InetAddress.getLocalHost();
+                } catch (UnknownHostException e) {
+                    e.printStackTrace();
+                }
+                assert inet != null;
+                ip = inet.getHostAddress();
+            }
         }
         return ip;
+    }
+
+    private static boolean checkIp(String ip) {
+        return null == ip || ip.length() == 0 || "unknown".equalsIgnoreCase(ip);
     }
 
 }

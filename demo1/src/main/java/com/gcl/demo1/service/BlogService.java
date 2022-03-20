@@ -16,6 +16,8 @@ public interface BlogService {
 
     PageInfo<Blog> listBlog(int pageNum, int size, int id, String type, String content, BlogQuery blogQuery);
 
+    PageInfo<Blog> listBlogAdmin(int pageNum, int size, int id, String type, String content, BlogQuery blogQuery);
+
     PageInfo<Blog> listBlogToUpdateRedis(int pageNum, int size, int id, String type);
 
     Blog getAndConvert(int id);

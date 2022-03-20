@@ -34,7 +34,7 @@ public class TagController {
     public String tags(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                        @RequestParam(value = "size",defaultValue = "8")int size,
                        Model model) {
-        model.addAttribute("page", tagService.listTag(pageNum,size));
+        model.addAttribute("page", tagService.listTag(pageNum, size));
         return "admin/tags";
     }
 

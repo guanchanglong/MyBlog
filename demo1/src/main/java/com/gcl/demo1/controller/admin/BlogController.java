@@ -42,7 +42,7 @@ public class BlogController {
                         Model model) {
         model.addAttribute("types", typeService.listType());
         //获得page对象
-        model.addAttribute("page", blogService.listBlog(pageNum, size,0,"findAll","", null));
+        model.addAttribute("page", blogService.listBlogAdmin(pageNum, size,0,"findAll","", null));
         return LIST;
     }
 
@@ -52,7 +52,7 @@ public class BlogController {
                          BlogQuery blogQuery,
                          Model model) {
         System.out.println(blogQuery.toString());
-        model.addAttribute("page", blogService.listBlog(pageNum, size,0,"searchInAdmin","", blogQuery));
+        model.addAttribute("page", blogService.listBlogAdmin(pageNum, size,0,"searchInAdmin","", blogQuery));
         return "admin/blogs :: blogList";
     }
 

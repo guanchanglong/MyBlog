@@ -84,7 +84,7 @@
       </div>
       <div id="table-container">
         <table th:fragment="blogList" class="ui compact teal table">
-          <thead>
+          <thead style="text-align: center">
           <tr>
             <th></th>
             <th>标题</th>
@@ -95,7 +95,7 @@
             <th>操作</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody style="text-align: center">
           <tr th:each="blog,iterStat : ${page.getList()}">
             <td th:text="${iterStat.count}">1</td>
             <td th:text="${blog.title}">刻意练习清单</td>

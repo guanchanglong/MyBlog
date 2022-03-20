@@ -26,13 +26,14 @@
     <div class="ui container">
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">Blog</h2>
-        <a href="#" class="active m-item item m-mobile-hide"><i class="mini home icon"></i>&nbsp;首页</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>&nbsp;分类</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>&nbsp;标签</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>&nbsp;归档</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini envelope outline icon"></i>&nbsp;留言</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini icon chart pie"></i>&nbsp;流量统计</a>
-        <a href="#" class="m-item item m-mobile-hide"><i class="mini info icon"></i>&nbsp;关于我</a>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>&nbsp;首页</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>&nbsp;分类</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>&nbsp;标签</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>&nbsp;归档</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="envelope outline icon"></i>&nbsp;留言板</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="icon chart pie"></i>&nbsp;流量统计</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="icon clock"></i>&nbsp;流年记</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>&nbsp;关于我</a>
         <div class="right m-item item m-mobile-hide">
           <div class="ui icon inverted transparent input m-margin-tb-tiny">
             <input type="text" placeholder="Search....">
@@ -645,7 +646,7 @@ h5,h6{font-size:1em;}
                 <input type="text" name="email" placeholder="邮箱" th:value="${session.user}!=null ? ${session.user.email}">
               </div>
             </div>
-            <div class="field  m-margin-bottom-small m-mobile-wide">
+            <div class="field m-margin-bottom-small m-mobile-wide">
               <button id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
 
               <div class="ui error message"></div>
@@ -760,7 +761,6 @@ h5,h6{font-size:1em;}
       var like = $("[name='likeFlag']").val();
       var unLike = $("[name='unLikeFlag']").val();
       likeFlag = 0;
-      console.log("like:"+like);
       if (like === 'false') { //进行判断
         likeFlag = 1;
         $('#imgLikeClick').attr("src", "../static/images/like.png");

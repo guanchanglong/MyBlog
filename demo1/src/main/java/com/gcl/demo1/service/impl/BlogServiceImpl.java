@@ -168,6 +168,9 @@ public class BlogServiceImpl implements BlogService {
     }
 
 
+
+
+
     public PageInfo<Blog> listBlogToUpdateRedis(int pageNum, int size, int id, String type) {
         Page<Blog> blogs = new Page<>();
         switch (type){
@@ -204,6 +207,33 @@ public class BlogServiceImpl implements BlogService {
     }
 
 
+
+    @Override
+    public PageInfo<Blog> listBlogAdmin(int pageNum, int size, int id, String type, String content, BlogQuery blogQuery) {
+        List<Blog> blogs = new ArrayList<>();
+        //按照博客创建时间倒序排序
+        PageHelper.startPage(pageNum,size,"create_time desc");
+        switch (type){
+            case "findAll":
+                blogs = blogDao.findAll();
+                break;
+            case "searchInAdmin":
+                String title = blogQuery.getTitle();
+                title = "%"+title+"%";
+                blogQuery.setTitle(title);
+                blogs = blogDao.findBlogByBlogQuery(blogQuery);
+                break;
+        }
+        for (Blog blog:blogs){
+            //设置博客的标签信息
+            blog.setTags(tagDao.findTagByBlogId(blog.getId()));
+            //设置博客的作者
+            blog.setUser(userDao.findUserById(blog.getUserId()));
+            //设置博客的类型
+            blog.setType(typeDao.findTypeById(blog.getTypeId()));
+        }
+        return new PageInfo<>(blogs);
+    }
 
 
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gcl.demo1.dao.TimeLineDao">
+
+    <resultMap id="timeLineMap" type="com.gcl.demo1.entity.TimeLine">
+        <id property="id" column="id"/>
+        <result property="content" column="content"/>
+        <result property="publicTime" column="public_time"/>
+        <result property="picture" column="picture"/>
+        <result property="published" column="published"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <select id="findAllTimeLine" resultMap="timeLineMap">
+        select *
+          from b_time_line
+    </select>
+
+    <select id="findTimeLineByPublished" resultMap="timeLineMap">
+        select *
+          from b_time_line
+            where published = 1
+              group by public_time desc
+    </select>
+
+    <select id="findTimeLineById" resultMap="timeLineMap">
+        select *
+          from b_time_line
+            where id = #{id}
+    </select>
+
+    <insert id="insertTimeLine" parameterType="com.gcl.demo1.entity.TimeLine">
+        insert into b_time_line(content, public_time, picture, user_id, published)
+          values(#{timeLine.content}, #{timeLine.publicTime}, #{timeLine.picture}, #{timeLine.userId}, #{timeLine.published})
+    </insert>
+
+    <update id="updateTimeLineById" parameterType="com.gcl.demo1.entity.TimeLine">
+        update b_time_line
+          set content = #{timeLine.content},
+              public_time = #{timeLine.publicTime},
+              picture = #{timeLine.picture},
+              published = #{timeLine.published}
+            where id = #{timeLine.id}
+    </update>
+
+    <delete id="deleteTimeLineById">
+        delete from b_time_line
+          where id = #{id};
+        alter table b_time_line drop id;
+        alter table b_time_line add id int not null primary key auto_increment first;
+    </delete>
+
+</mapper>

@@ -6,6 +6,7 @@
   <title th:replace="${title}">博客详情</title>
   <link rel="stylesheet" type="text/css" href="../../static/css/semantic.min.css" th:href="@{/static/css/semantic.min.css}"/>
   <link rel="stylesheet" type="text/css" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/static/lib/editormd/css/editormd.min.css}">
+  <link rel="stylesheet" type="text/css" href="../../static/css/jquery.emoji.css" th:href="@{/static/css/jquery.emoji.css}">
   <link rel="stylesheet" type="text/css" href="../../static/css/me2.css" th:href="@{/static/css/me2.css}">
   <link rel="icon" href="../../static/favicon.ico" th:href="@{/static/favicon.ico}">
 </head>
@@ -16,9 +17,10 @@
   <div class="ui container">
     <div class="ui inverted secondary stackable menu">
       <h2 class="ui teal header item">管理后台</h2>
-      <a href="#" th:href="@{/admin/blogs/list}" class=" m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>博客</a>
-      <a href="#" th:href="@{/admin/types/list}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
-      <a href="#" th:href="@{/admin/tags/list}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
+      <a href="#" th:href="@{/admin/blogs/list}" class=" m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>博客</a>
+      <a href="#" th:href="@{/admin/types/list}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
+      <a href="#" th:href="@{/admin/tags/list}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+      <a href="#" th:href="@{/admin/timeLine/list}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="icon clock"></i>流年记</a>
       <div class="right m-item m-mobile-hide menu">
         <div class="ui dropdown item">
           <div class="text">
@@ -140,6 +142,8 @@
   <script type="text/javascript" src="../../static/js/snow.js" th:src="@{/static/js/snow.js}"></script>
   <script type="text/javascript" src="../../static/js/click_show_text.js" th:src="@{/static/js/click_show_text.js}"></script>
   <script type="text/javascript" src="../../static/js/canvas-nest.min.js" th:src="@{/static/js/canvas-nest.min.js}"></script>
+  <script src="../../static/js/jquery.emoji.js" th:src="@{/static/js/jquery.emoji.js}"></script>
+  <script src="../../static/js/emoji.list.js" th:src="@{/static/js/emoji.list.js}"></script>
 
 
 

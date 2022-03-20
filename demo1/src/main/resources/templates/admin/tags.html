@@ -54,14 +54,14 @@
         <p th:text="${message}">恭喜，操作成功！</p>
       </div>
       <table class="ui compact teal table">
-        <thead>
+        <thead style="text-align: center">
           <tr>
             <th></th>
             <th>名称</th>
             <th>操作</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="text-align: center">
           <tr th:each="tag,iterStat : ${page.getList()}">
             <td th:text="${iterStat.count}">1</td>
             <td th:text="${tag.name}">刻意练习清单</td>

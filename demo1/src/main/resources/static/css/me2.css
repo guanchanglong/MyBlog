@@ -176,6 +176,7 @@
     content: attr(data-placeholder) !important;
     color:#bbb !important;
 }
+
 #commentEditor:focus:before {
     content:none !important;
 }
