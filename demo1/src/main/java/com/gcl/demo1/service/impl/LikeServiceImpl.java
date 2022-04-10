@@ -33,6 +33,7 @@ public class LikeServiceImpl implements LikeService {
     public Like findByBlogIdAndIP(int blogId, String viewerIP){
         Like like;
         Like result = new Like();
+        System.out.println("访问的BlogId："+blogId+", 访问者的IP地址：" + viewerIP);
         if (!redisTemplate.opsForHash().hasKey("blogLikeList:" + blogId, viewerIP)){
             like = likeDao.findLikeAndUnLikeByBlogIdAndIP(blogId, viewerIP);
             if (like == null){
@@ -46,6 +47,7 @@ public class LikeServiceImpl implements LikeService {
                 }
             }
         }
+
         int flag = Integer.valueOf((String) Objects.requireNonNull(redisTemplate.opsForHash().get("blogLikeList:" + blogId, viewerIP)));
 
         if (flag == 0){
@@ -57,6 +59,7 @@ public class LikeServiceImpl implements LikeService {
         if (flag == -1){
             result = new Like(blogId, viewerIP, false, true);
         }
+        System.out.println("点赞状态blogLikeFlag：" + result.isLike());
         return result;
     }
 

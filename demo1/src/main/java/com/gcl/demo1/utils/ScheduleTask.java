@@ -57,7 +57,7 @@ public class ScheduleTask {
      * 每次启动时都会运行一次
      * 每2小时更新一次当天的浏览量数据，防止Redis崩溃导致当天的浏览数据丢失
      */
-    @Scheduled(fixedDelay = 2*60*60*1000)
+//    @Scheduled(fixedDelay = 2*60*60*1000)
     private void updateViewsDataToShow(){
 
         //更新当天总的浏览数据
@@ -74,7 +74,7 @@ public class ScheduleTask {
     /**
      * 3小时更新一遍全部的数据
      */
-    @Scheduled(fixedDelay = 3*60*60*1000)
+//    @Scheduled(fixedDelay = 3*60*60*1000)
     private void updateAllData(){
         redisDataInnit.initData();
         System.err.println("执行updateAllData任务的时间: " + LocalDateTime.now());
@@ -127,6 +127,7 @@ public class ScheduleTask {
             int views = blog.getViews();
             int likeCount = blog.getLikeCount();
             int unLikeCount = blog.getUnLikeCount();
+
             //如果原来存在这些键的值的话就更新，不存在的话就初始化
             if (Boolean.TRUE.equals(redisTemplate.hasKey("updateViews:" + blog.getId()))){
                 //先获取到值

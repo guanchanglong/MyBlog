@@ -33,6 +33,7 @@ public class TimeLineServiceImpl implements TimeLineService {
             if (timeLine.getContent().length()>25){
                 timeLine.setContent(timeLine.getContent().substring(0,25));
             }
+            timeLine.setContent(timeLine.getContent().replaceAll("../", "../../"));
         }
         return new PageInfo<>(timeLines);
     }

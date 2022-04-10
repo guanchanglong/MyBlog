@@ -11,25 +11,22 @@
  Target Server Version : 50650
  File Encoding         : 65001
 
- Date: 10/04/2022 15:56:01
+ Date: 10/04/2022 15:55:54
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for b_message
+-- Table structure for b_like_list
 -- ----------------------------
-DROP TABLE IF EXISTS `b_message`;
-CREATE TABLE `b_message`  (
+DROP TABLE IF EXISTS `b_like_list`;
+CREATE TABLE `b_like_list`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `create_time` datetime(6) NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `nickname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `parent_message_id` int(11) NULL DEFAULT -1,
-  `role` int(11) NULL DEFAULT 1 COMMENT '留言者身份（0是管理员）',
+  `blog_id` int(11) NULL DEFAULT NULL COMMENT '博客id',
+  `viewer_ip` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '访问者的ip地址',
+  `like` bit(1) NULL DEFAULT b'0' COMMENT '点赞(1是点赞，0是没点赞)',
+  `un_like` bit(1) NULL DEFAULT b'0' COMMENT '踩(1是踩，0是没踩)',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 

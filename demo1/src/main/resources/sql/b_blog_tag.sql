@@ -11,7 +11,7 @@
  Target Server Version : 50650
  File Encoding         : 65001
 
- Date: 22/02/2022 12:32:48
+ Date: 10/04/2022 15:55:19
 */
 
 SET NAMES utf8mb4;
@@ -26,6 +26,6 @@ CREATE TABLE `b_blog_tag`  (
   `blog_id` int(11) NOT NULL COMMENT '博客id',
   `tag_id` int(11) NULL DEFAULT NULL COMMENT '标签id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -11,7 +11,7 @@
  Target Server Version : 50650
  File Encoding         : 65001
 
- Date: 22/02/2022 12:32:27
+ Date: 10/04/2022 15:54:51
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,9 @@ CREATE TABLE `b_blog`  (
   `user_id` int(11) NULL DEFAULT NULL COMMENT '文章作者id',
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文章简介',
   `flag` int(1) NULL DEFAULT 0 COMMENT '博客的原创(0)、转载(1)和翻译(2)标识',
+  `like_count` int(11) NULL DEFAULT 0 COMMENT '点赞数',
+  `un_like_count` int(11) NULL DEFAULT 0 COMMENT '踩数',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;

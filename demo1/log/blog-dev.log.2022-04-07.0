@@ -1,0 +1,1153 @@
+2022-04-07 22:33:45.048  INFO 9940 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9940 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:33:45.053 DEBUG 9940 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:33:45.053  INFO 9940 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:33:45.130  INFO 9940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:33:45.130  INFO 9940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:33:46.606  INFO 9940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:33:46.618  INFO 9940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:33:46.666  INFO 9940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:33:47.641  INFO 9940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:33:47.659  INFO 9940 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:33:47.660  INFO 9940 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:33:47.759  INFO 9940 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:33:47.760  INFO 9940 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2629 ms
+2022-04-07 22:33:49.149  INFO 9940 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:33:49.318  INFO 9940 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:33:49.673  INFO 9940 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:33:50.203  INFO 9940 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:33:50.234  INFO 9940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:33:50.246  INFO 9940 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 6.036 seconds (JVM running for 7.686)
+2022-04-07 22:34:09.135  INFO 9940 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 22:34:09.142  INFO 9940 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 22:34:09.142  INFO 9940 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 22:34:09.144  INFO 9940 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-07 22:34:09.195  INFO 9940 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 22:34:18.797  INFO 9940 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-04-07 22:34:20.575  INFO 9940 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 22:34:20.721  INFO 9940 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 22:34:29.613  INFO 9940 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/search', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.search', args=[1, 8, docker, {}]}
+2022-04-07 22:34:29.641  INFO 9940 --- [http-nio-8888-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-07 22:34:30.613  INFO 9940 --- [http-nio-8888-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-07 22:34:30.843 DEBUG 9940 --- [http-nio-8888-exec-6] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?)
+2022-04-07 22:34:30.865 DEBUG 9940 --- [http-nio-8888-exec-6] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==> Parameters: %docker%(String), %docker%(String)
+2022-04-07 22:34:30.930 DEBUG 9940 --- [http-nio-8888-exec-6] c.g.d.d.BlogDao.findBlogByContent_COUNT  : <==      Total: 1
+2022-04-07 22:34:30.933 DEBUG 9940 --- [http-nio-8888-exec-6] c.g.demo1.dao.BlogDao.findBlogByContent  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?) order by create_time desc LIMIT ?
+2022-04-07 22:34:30.935 DEBUG 9940 --- [http-nio-8888-exec-6] c.g.demo1.dao.BlogDao.findBlogByContent  : ==> Parameters: %docker%(String), %docker%(String), 8(Integer)
+2022-04-07 22:34:30.992 DEBUG 9940 --- [http-nio-8888-exec-6] c.g.demo1.dao.BlogDao.findBlogByContent  : <==      Total: 5
+2022-04-07 22:34:30.993  INFO 9940 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：search
+2022-04-07 22:34:31.055 ERROR 9940 --- [http-nio-8888-exec-6] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8888-exec-6] Exception processing template "search": An error happened during template parsing (template: "class path resource [templates/search.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/search.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1394)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1139)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1078)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "blog.user.avatar" (template: "search" - line 66, col 73)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "blog.user.avatar" (template: "search" - line 66, col 73)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 79 common frames omitted
+
+2022-04-07 22:34:31.057 ERROR 9940 --- [http-nio-8888-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/search.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1394)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1139)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1078)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-04-07 22:36:21.976  INFO 7636 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 7636 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:36:21.978 DEBUG 7636 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:36:21.978  INFO 7636 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:36:22.021  INFO 7636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:36:22.021  INFO 7636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:36:22.607  INFO 7636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:36:22.609  INFO 7636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:36:22.636  INFO 7636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:36:23.320  INFO 7636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:36:23.328  INFO 7636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:36:23.328  INFO 7636 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:36:23.390  INFO 7636 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:36:23.390  INFO 7636 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1368 ms
+2022-04-07 22:36:51.974  INFO 7636 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:36:52.087  INFO 7636 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:36:52.490  INFO 7636 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:36:52.824  INFO 7636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:36:52.851  INFO 7636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:36:52.863  INFO 7636 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 31.368 seconds (JVM running for 32.935)
+2022-04-07 22:36:53.203  INFO 7636 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-04-07 22:36:53.204  INFO 7636 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:36:57.701  INFO 4240 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 4240 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:36:57.703 DEBUG 4240 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:36:57.704  INFO 4240 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:36:57.756  INFO 4240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:36:57.757  INFO 4240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:36:58.351  INFO 4240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:36:58.353  INFO 4240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:36:58.378  INFO 4240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:36:59.020  INFO 4240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:36:59.028  INFO 4240 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:36:59.028  INFO 4240 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:36:59.085  INFO 4240 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:36:59.085  INFO 4240 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1327 ms
+2022-04-07 22:37:40.720  INFO 4240 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:37:40.837  INFO 4240 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:37:41.304  INFO 4240 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:37:41.629  INFO 4240 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:37:41.660  INFO 4240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:37:41.674  INFO 4240 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 44.582 seconds (JVM running for 45.53)
+2022-04-07 22:37:42.002  INFO 4240 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-04-07 22:37:42.003  INFO 4240 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:37:44.579  INFO 2524 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 2524 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:37:44.582 DEBUG 2524 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:37:44.582  INFO 2524 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:37:44.627  INFO 2524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:37:44.627  INFO 2524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:37:45.221  INFO 2524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:37:45.223  INFO 2524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:37:45.248  INFO 2524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:37:45.872  INFO 2524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:37:45.879  INFO 2524 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:37:45.880  INFO 2524 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:37:45.941  INFO 2524 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:37:45.941  INFO 2524 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
+2022-04-07 22:38:03.644  INFO 2524 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:38:03.763  INFO 2524 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:38:04.301  INFO 2524 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:38:04.652  INFO 2524 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:38:04.678  INFO 2524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:38:04.689  INFO 2524 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 20.65 seconds (JVM running for 21.8)
+2022-04-07 22:38:05.032  INFO 2524 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-04-07 22:38:05.033  INFO 2524 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:38:11.240  INFO 14728 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 14728 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:38:11.243 DEBUG 14728 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:38:11.244  INFO 14728 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:38:11.316  INFO 14728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:38:11.316  INFO 14728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:38:11.939  INFO 14728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:38:11.941  INFO 14728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:38:11.966  INFO 14728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:38:12.597  INFO 14728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:38:12.604  INFO 14728 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:38:12.604  INFO 14728 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:38:12.660  INFO 14728 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:38:12.661  INFO 14728 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1343 ms
+2022-04-07 22:38:13.613  INFO 14728 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:38:13.700  INFO 14728 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:38:14.014  INFO 14728 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:38:14.335  INFO 14728 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:38:14.361  INFO 14728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:38:14.372  INFO 14728 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 3.686 seconds (JVM running for 4.628)
+2022-04-07 22:38:14.507  INFO 14728 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 22:38:14.518  INFO 14728 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 22:38:14.518  INFO 14728 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 22:38:14.519  INFO 14728 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-07 22:38:14.555  INFO 14728 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='127.0.0.1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 22:38:20.803  INFO 14728 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='127.0.0.1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 22:38:26.054  INFO 14728 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-04-07 22:38:31.291  INFO 14728 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-04-07 22:38:31.863  INFO 14728 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='127.0.0.1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 22:38:31.964  INFO 14728 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 22:38:38.404  INFO 14728 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/search', ip='127.0.0.1', classMethod='com.gcl.demo1.controller.IndexController.search', args=[1, 8, docker, {}]}
+2022-04-07 22:39:04.037  INFO 14728 --- [http-nio-8888-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-07 22:39:05.127  INFO 14728 --- [http-nio-8888-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-07 22:39:05.274 DEBUG 14728 --- [http-nio-8888-exec-5] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?)
+2022-04-07 22:39:05.508 DEBUG 14728 --- [http-nio-8888-exec-5] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==> Parameters: %docker%(String), %docker%(String)
+2022-04-07 22:39:05.695 DEBUG 14728 --- [http-nio-8888-exec-5] c.g.d.d.BlogDao.findBlogByContent_COUNT  : <==      Total: 1
+2022-04-07 22:39:05.708 DEBUG 14728 --- [http-nio-8888-exec-5] c.g.demo1.dao.BlogDao.findBlogByContent  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?) order by create_time desc LIMIT ?
+2022-04-07 22:39:05.709 DEBUG 14728 --- [http-nio-8888-exec-5] c.g.demo1.dao.BlogDao.findBlogByContent  : ==> Parameters: %docker%(String), %docker%(String), 8(Integer)
+2022-04-07 22:39:05.773 DEBUG 14728 --- [http-nio-8888-exec-5] c.g.demo1.dao.BlogDao.findBlogByContent  : <==      Total: 5
+2022-04-07 22:39:20.987  INFO 14728 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：search
+2022-04-07 22:39:21.002 ERROR 14728 --- [http-nio-8888-exec-5] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8888-exec-5] Exception processing template "search": An error happened during template parsing (template: "class path resource [templates/search.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/search.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1394)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1139)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1078)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "blog.user.avatar" (template: "search" - line 66, col 73)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "blog.user.avatar" (template: "search" - line 66, col 73)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 79 common frames omitted
+
+2022-04-07 22:39:21.004 ERROR 14728 --- [http-nio-8888-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/search.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1394)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1139)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1078)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-04-07 22:39:21.625  INFO 14728 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-04-07 22:39:21.625  INFO 14728 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:39:21.742  INFO 14728 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-07 22:39:22.096  INFO 14728 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-07 22:39:43.371  INFO 12192 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12192 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:39:43.374 DEBUG 12192 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:39:43.374  INFO 12192 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:39:43.439  INFO 12192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:39:43.439  INFO 12192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:39:44.142  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:39:44.144  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:39:44.169  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:39:44.914  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:39:44.922  INFO 12192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:39:44.922  INFO 12192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:39:44.984  INFO 12192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:39:44.984  INFO 12192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1544 ms
+2022-04-07 22:39:46.244  INFO 12192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:39:46.357  INFO 12192 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:39:46.759  INFO 12192 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:39:47.108  INFO 12192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:39:47.150  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:39:47.166  INFO 12192 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 4.486 seconds (JVM running for 5.496)
+2022-04-07 22:39:54.666  INFO 12192 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 22:39:54.671  INFO 12192 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 22:39:54.671  INFO 12192 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 22:39:54.672  INFO 12192 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-07 22:39:54.712  INFO 12192 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/search', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.search', args=[1, 8, docker, {}]}
+2022-04-07 22:40:20.052  INFO 12192 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-07 22:40:21.055  INFO 12192 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-07 22:40:21.211 DEBUG 12192 --- [http-nio-8888-exec-1] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?)
+2022-04-07 22:40:21.441 DEBUG 12192 --- [http-nio-8888-exec-1] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==> Parameters: %docker%(String), %docker%(String)
+2022-04-07 22:40:21.638 DEBUG 12192 --- [http-nio-8888-exec-1] c.g.d.d.BlogDao.findBlogByContent_COUNT  : <==      Total: 1
+2022-04-07 22:40:21.649 DEBUG 12192 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByContent  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?) order by create_time desc LIMIT ?
+2022-04-07 22:40:21.650 DEBUG 12192 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByContent  : ==> Parameters: %docker%(String), %docker%(String), 8(Integer)
+2022-04-07 22:40:21.714 DEBUG 12192 --- [http-nio-8888-exec-1] c.g.demo1.dao.BlogDao.findBlogByContent  : <==      Total: 5
+2022-04-07 22:41:35.327  INFO 12192 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：search
+2022-04-07 22:41:35.635 ERROR 12192 --- [http-nio-8888-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8888-exec-1] Exception processing template "search": An error happened during template parsing (template: "class path resource [templates/search.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/search.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1394)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1139)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1078)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "blog.user.avatar" (template: "search" - line 66, col 73)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "blog.user.avatar" (template: "search" - line 66, col 73)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'avatar' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 79 common frames omitted
+
+2022-04-07 22:41:36.050  INFO 12192 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2022-04-07 22:41:36.051  INFO 12192 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:41:36.069  INFO 12192 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-07 22:41:36.329  INFO 12192 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-07 22:47:47.007  INFO 7772 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 7772 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 22:47:47.010 DEBUG 7772 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 22:47:47.011  INFO 7772 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 22:47:47.097  INFO 7772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 22:47:47.098  INFO 7772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 22:47:47.871  INFO 7772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 22:47:47.874  INFO 7772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 22:47:47.906  INFO 7772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2022-04-07 22:47:48.623  INFO 7772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 22:47:48.631  INFO 7772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 22:47:48.631  INFO 7772 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 22:47:48.696  INFO 7772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 22:47:48.697  INFO 7772 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1598 ms
+2022-04-07 22:47:49.685  INFO 7772 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 22:47:49.781  INFO 7772 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 22:47:50.109  INFO 7772 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 22:47:50.440  INFO 7772 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 22:47:50.467  INFO 7772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 22:47:50.483  INFO 7772 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 4.045 seconds (JVM running for 5.072)
+2022-04-07 22:48:20.418  INFO 7772 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 22:48:20.425  INFO 7772 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 22:48:20.425  INFO 7772 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 22:48:20.426  INFO 7772 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-07 22:48:20.450  INFO 7772 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 22:48:33.538  INFO 7772 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-04-07 22:48:34.566  INFO 7772 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 22:48:34.659  INFO 7772 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 22:49:18.518  INFO 7772 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/search', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.search', args=[1, 8, 测试, {}]}
+2022-04-07 22:49:18.541  INFO 7772 --- [http-nio-8888-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-07 22:49:20.217  INFO 7772 --- [http-nio-8888-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-07 22:49:20.451 DEBUG 7772 --- [http-nio-8888-exec-10] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?)
+2022-04-07 22:49:20.485 DEBUG 7772 --- [http-nio-8888-exec-10] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==> Parameters: %测试%(String), %测试%(String)
+2022-04-07 22:49:20.557 DEBUG 7772 --- [http-nio-8888-exec-10] c.g.d.d.BlogDao.findBlogByContent_COUNT  : <==      Total: 1
+2022-04-07 22:49:20.563 DEBUG 7772 --- [http-nio-8888-exec-10] c.g.demo1.dao.BlogDao.findBlogByContent  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?) order by create_time desc LIMIT ?
+2022-04-07 22:49:20.563 DEBUG 7772 --- [http-nio-8888-exec-10] c.g.demo1.dao.BlogDao.findBlogByContent  : ==> Parameters: %测试%(String), %测试%(String), 8(Integer)
+2022-04-07 22:49:20.670 DEBUG 7772 --- [http-nio-8888-exec-10] c.g.demo1.dao.BlogDao.findBlogByContent  : <==      Total: 8
+2022-04-07 22:49:25.697  INFO 7772 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：search
+2022-04-07 22:49:32.780  INFO 7772 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/search', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.search', args=[2, 8, 测试, {}]}
+2022-04-07 22:49:32.822 DEBUG 7772 --- [http-nio-8888-exec-7] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?)
+2022-04-07 22:49:32.823 DEBUG 7772 --- [http-nio-8888-exec-7] c.g.d.d.BlogDao.findBlogByContent_COUNT  : ==> Parameters: %测试%(String), %测试%(String)
+2022-04-07 22:49:32.866 DEBUG 7772 --- [http-nio-8888-exec-7] c.g.d.d.BlogDao.findBlogByContent_COUNT  : <==      Total: 1
+2022-04-07 22:49:32.867 DEBUG 7772 --- [http-nio-8888-exec-7] c.g.demo1.dao.BlogDao.findBlogByContent  : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog WHERE published = 1 AND (title LIKE ? OR content LIKE ?) order by create_time desc LIMIT ?, ?
+2022-04-07 22:49:32.868 DEBUG 7772 --- [http-nio-8888-exec-7] c.g.demo1.dao.BlogDao.findBlogByContent  : ==> Parameters: %测试%(String), %测试%(String), 8(Integer), 8(Integer)
+2022-04-07 22:49:32.966 DEBUG 7772 --- [http-nio-8888-exec-7] c.g.demo1.dao.BlogDao.findBlogByContent  : <==      Total: 4
+2022-04-07 22:49:35.269  INFO 7772 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：search
+2022-04-07 23:14:55.079  INFO 7772 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 23:14:55.690 ERROR 7772 --- [http-nio-8888-exec-10] c.g.d.h.ControllerExceptionHandler       : Request URL : /,Exception : {}
+
+org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:272)
+	at org.springframework.data.redis.connection.lettuce.LettuceKeyCommands.convertLettuceAccessException(LettuceKeyCommands.java:810)
+	at org.springframework.data.redis.connection.lettuce.LettuceKeyCommands.exists(LettuceKeyCommands.java:78)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.exists(DefaultedRedisConnection.java:69)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.exists(DefaultStringRedisConnection.java:343)
+	at org.springframework.data.redis.core.RedisTemplate.lambda$hasKey$6(RedisTemplate.java:774)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:229)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.RedisTemplate.hasKey(RedisTemplate.java:774)
+	at com.gcl.demo1.service.impl.BlogServiceImpl.listBlog(BlogServiceImpl.java:102)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$6f27ab09.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$3881bd0d.listBlog(<generated>)
+	at com.gcl.demo1.controller.IndexController.index(IndexController.java:51)
+	at com.gcl.demo1.controller.IndexController$$FastClassBySpringCGLIB$$dfe53a47.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.gcl.demo1.controller.IndexController$$EnhancerBySpringCGLIB$$abdbad50.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:807)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:53)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:75)
+	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:80)
+	at com.sun.proxy.$Proxy126.exists(Unknown Source)
+	at org.springframework.data.redis.connection.lettuce.LettuceKeyCommands.exists(LettuceKeyCommands.java:76)
+	... 81 common frames omitted
+
+2022-04-07 23:14:55.693  WARN 7772 --- [http-nio-8888-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)]
+2022-04-07 23:15:09.159  INFO 14576 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 14576 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 23:15:09.162 DEBUG 14576 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 23:15:09.162  INFO 14576 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 23:15:09.218  INFO 14576 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 23:15:09.219  INFO 14576 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 23:15:09.836  INFO 14576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 23:15:09.838  INFO 14576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 23:15:09.862  INFO 14576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-07 23:15:10.463  INFO 14576 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 23:15:10.469  INFO 14576 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 23:15:10.470  INFO 14576 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 23:15:10.527  INFO 14576 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 23:15:10.527  INFO 14576 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1307 ms
+2022-04-07 23:15:11.436  INFO 14576 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 23:15:11.534  INFO 14576 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 23:15:11.823  INFO 14576 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 23:15:12.165  INFO 14576 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 23:15:12.192  INFO 14576 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 23:15:12.203  INFO 14576 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 3.551 seconds (JVM running for 4.548)
+2022-04-07 23:15:12.228  INFO 14576 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 23:15:12.234  INFO 14576 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 23:15:12.234  INFO 14576 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 23:15:12.235  INFO 14576 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-07 23:15:12.265  INFO 14576 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 23:15:18.691 ERROR 14576 --- [http-nio-8888-exec-1] c.g.d.h.ControllerExceptionHandler       : Request URL : /,Exception : {}
+
+org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:272)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.convertLettuceAccessException(LettuceStringCommands.java:800)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:70)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.get(DefaultedRedisConnection.java:267)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:406)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:57)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:60)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:229)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
+	at com.gcl.demo1.service.impl.TypeServiceImpl.listTypeTop(TypeServiceImpl.java:64)
+	at com.gcl.demo1.service.impl.TypeServiceImpl$$FastClassBySpringCGLIB$$17f81c71.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687)
+	at com.gcl.demo1.service.impl.TypeServiceImpl$$EnhancerBySpringCGLIB$$21dabaa7.listTypeTop(<generated>)
+	at com.gcl.demo1.controller.IndexController.index(IndexController.java:52)
+	at com.gcl.demo1.controller.IndexController$$FastClassBySpringCGLIB$$dfe53a47.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.gcl.demo1.controller.IndexController$$EnhancerBySpringCGLIB$$df226756.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:807)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:53)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:75)
+	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:80)
+	at com.sun.proxy.$Proxy126.get(Unknown Source)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:68)
+	... 83 common frames omitted
+
+2022-04-07 23:15:18.693  WARN 14576 --- [http-nio-8888-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)]
+2022-04-07 23:15:27.121  INFO 14576 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 23:15:37.191  INFO 14576 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-04-07 23:15:37.927  INFO 14576 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:15:38.008  INFO 14576 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:15:40.575  INFO 14576 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, org.apache.catalina.connector.RequestFacade@545826ae, {}]}
+2022-04-07 23:15:41.230  INFO 14576 --- [http-nio-8888-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-07 23:15:42.202  INFO 14576 --- [http-nio-8888-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-07 23:15:42.207 DEBUG 14576 --- [http-nio-8888-exec-9] c.g.d.d.L.findLikeAndUnLikeByBlogIdAndIP : ==>  Preparing: select * from b_like_list where blog_id = ? and viewer_ip = ?
+2022-04-07 23:15:42.225 DEBUG 14576 --- [http-nio-8888-exec-9] c.g.d.d.L.findLikeAndUnLikeByBlogIdAndIP : ==> Parameters: 34(Integer), 192.168.126.1(String)
+2022-04-07 23:15:42.283 DEBUG 14576 --- [http-nio-8888-exec-9] c.g.d.d.L.findLikeAndUnLikeByBlogIdAndIP : <==      Total: 0
+2022-04-07 23:15:42.364  INFO 14576 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-04-07 23:15:42.864  INFO 14576 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:15:42.877  INFO 14576 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/likeData/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.likeData', args=[34, org.apache.catalina.connector.RequestFacade@5cd6794d, {}]}
+2022-04-07 23:15:42.967  INFO 14576 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:15:43.048  INFO 14576 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：blog :: likeData
+2022-04-07 23:16:39.430  INFO 6000 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 6000 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 23:16:39.434 DEBUG 6000 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 23:16:39.435  INFO 6000 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 23:16:39.555  INFO 6000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 23:16:39.556  INFO 6000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 23:16:40.563  INFO 6000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 23:16:40.565  INFO 6000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 23:16:40.600  INFO 6000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-04-07 23:16:41.696  INFO 6000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 23:16:41.704  INFO 6000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 23:16:41.705  INFO 6000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 23:16:41.793  INFO 6000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 23:16:41.793  INFO 6000 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2232 ms
+2022-04-07 23:16:43.101  INFO 6000 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 23:16:43.238  INFO 6000 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 23:16:43.681  INFO 6000 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 23:16:44.082  INFO 6000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 23:16:44.116  INFO 6000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 23:16:44.133  INFO 6000 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 5.418 seconds (JVM running for 6.635)
+2022-04-07 23:16:50.877  INFO 6000 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 23:16:50.883  INFO 6000 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 23:16:50.883  INFO 6000 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 23:16:50.884  INFO 6000 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-07 23:16:50.926  INFO 6000 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, org.apache.catalina.connector.RequestFacade@3cd2c9bc, {}]}
+2022-04-07 23:16:53.099  INFO 6000 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-04-07 23:16:53.923  INFO 6000 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:16:53.935  INFO 6000 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/likeData/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.likeData', args=[34, org.apache.catalina.connector.RequestFacade@61e5531a, {}]}
+2022-04-07 23:16:54.015  INFO 6000 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:16:54.118  INFO 6000 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：blog :: likeData
+2022-04-07 23:23:33.643  INFO 15932 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 15932 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-04-07 23:23:33.647 DEBUG 15932 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-04-07 23:23:33.648  INFO 15932 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-04-07 23:23:33.744  INFO 15932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-07 23:23:33.744  INFO 15932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-07 23:23:34.557  INFO 15932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-07 23:23:34.559  INFO 15932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-07 23:23:34.594  INFO 15932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-04-07 23:23:35.321  INFO 15932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-04-07 23:23:35.329  INFO 15932 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-07 23:23:35.330  INFO 15932 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-04-07 23:23:35.397  INFO 15932 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-07 23:23:35.397  INFO 15932 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1652 ms
+2022-04-07 23:23:36.391  INFO 15932 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-07 23:23:36.492  INFO 15932 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-07 23:23:36.845  INFO 15932 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-04-07 23:23:37.183  INFO 15932 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-07 23:23:37.212  INFO 15932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-04-07 23:23:37.224  INFO 15932 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 4.238 seconds (JVM running for 5.315)
+2022-04-07 23:23:54.107  INFO 15932 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-04-07 23:23:54.112  INFO 15932 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-07 23:23:54.113  INFO 15932 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-07 23:23:54.116  INFO 15932 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-07 23:23:54.166  INFO 15932 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 23:23:56.103 ERROR 15932 --- [http-nio-8888-exec-1] c.g.d.h.ControllerExceptionHandler       : Request URL : /,Exception : {}
+
+org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:272)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.convertLettuceAccessException(LettuceStringCommands.java:800)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:70)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.get(DefaultedRedisConnection.java:267)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:406)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:57)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:60)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:229)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
+	at com.gcl.demo1.service.impl.BlogServiceImpl.listBlog(BlogServiceImpl.java:108)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$6f27ab09.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$cdf956f3.listBlog(<generated>)
+	at com.gcl.demo1.controller.IndexController.index(IndexController.java:51)
+	at com.gcl.demo1.controller.IndexController$$FastClassBySpringCGLIB$$dfe53a47.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.gcl.demo1.controller.IndexController$$EnhancerBySpringCGLIB$$43c7caaa.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:807)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:53)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:75)
+	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:80)
+	at com.sun.proxy.$Proxy126.get(Unknown Source)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:68)
+	... 83 common frames omitted
+
+2022-04-07 23:23:56.108  WARN 15932 --- [http-nio-8888-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)]
+2022-04-07 23:23:59.742  INFO 15932 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-04-07 23:24:10.706  INFO 15932 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-04-07 23:24:11.235  INFO 15932 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:24:11.569  INFO 15932 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:24:12.543  INFO 15932 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, org.apache.catalina.connector.RequestFacade@136d97af, {}]}
+2022-04-07 23:24:13.491  INFO 15932 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-04-07 23:24:14.103  INFO 15932 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:24:14.114  INFO 15932 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/likeData/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.likeData', args=[34, org.apache.catalina.connector.RequestFacade@3ec419fb, {}]}
+2022-04-07 23:24:14.193  INFO 15932 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:24:14.533  INFO 15932 --- [http-nio-8888-exec-8] com.gcl.demo1.aspect.LogAspect           : Result：blog :: likeData
+2022-04-07 23:24:43.194  INFO 15932 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/changeBlogLikeState/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.changeBlogLikeState', args=[34, 1, org.apache.catalina.connector.RequestFacade@448186fe]}
+2022-04-07 23:24:43.369  INFO 15932 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：redirect:/blog/likeData/34
+2022-04-07 23:24:43.385  INFO 15932 --- [http-nio-8888-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03Q0x0bK0xb00xe8RP0x950xd20x0fa0xa60xcc0x9d0x17F0xa3a)0xf50x01S0xa9f0xdbd0x1a0x89M0x1e+0xbb]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-04-07 23:24:58.632  INFO 15932 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, org.apache.catalina.connector.RequestFacade@448186fe, {}]}
+2022-04-07 23:24:59.268  INFO 15932 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-04-07 23:24:59.719  INFO 15932 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:24:59.726  INFO 15932 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/likeData/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.likeData', args=[34, org.apache.catalina.connector.RequestFacade@fad294d, {}]}
+2022-04-07 23:24:59.804  INFO 15932 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:24:59.904  INFO 15932 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：blog :: likeData
+2022-04-07 23:25:40.331  INFO 15932 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.blog', args=[34, org.apache.catalina.connector.RequestFacade@fad294d, {}]}
+2022-04-07 23:25:41.008  INFO 15932 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：blog
+2022-04-07 23:25:41.460  INFO 15932 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-04-07 23:25:41.472  INFO 15932 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Request : {url='/blog/likeData/34', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.likeData', args=[34, org.apache.catalina.connector.RequestFacade@3f3e1394, {}]}
+2022-04-07 23:25:41.565  INFO 15932 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-04-07 23:25:41.647  INFO 15932 --- [http-nio-8888-exec-10] com.gcl.demo1.aspect.LogAspect           : Result：blog :: likeData

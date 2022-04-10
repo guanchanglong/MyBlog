@@ -320,8 +320,8 @@ img:hover {
     padding-bottom: 4em !important;
 }
 .m-padded-tb-massive {
-    padding-top: 5em !important;
-    padding-bottom: 5em !important;
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
 }
 
 
@@ -457,4 +457,62 @@ img:hover {
     div{
         opacity: 1 !important;
     }
+}
+
+
+/*照片墙相关设置*/
+.m-bg{
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+.m-bg-type_outer {
+    display: block;
+    /*margin: 10px auto 0 0;*/
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.m-bg-class_cover {
+    width: 100%;
+    height: 800px;
+    line-height: 50px;
+    padding-left: 6px;
+    background-color: rgba(0, 0, 0, .60);
+    /*color: #FFFFFF;*/
+    /*font-size: 26px;*/
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.m-font-size-title{
+    font-size: 450%;
+    color: #ffffff;
+}
+.m-right-bottom {
+    bottom: 0 !important;
+    right: 0 !important;
+}
+.m-font-size-text-init-title{
+    font-size: 24px;
+    color: #fffffc;
+    align-content: center;
+    font-family:'STXingkai';
+}
+.m-picture-text{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size:large;
+    font-weight: bold;
+    /*font-family: '_GB2312 FangSong_GB2312';*/
+}
+div.rthumbnail{ /* style for thumbsnail DIVs that appear initially on the page */
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+div.rthumbnail div.rcaption{
+    display: none;
 }

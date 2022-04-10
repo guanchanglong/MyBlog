@@ -1,0 +1,608 @@
+2022-03-22 09:27:29.039  INFO 13624 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 13624 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-03-22 09:27:29.047 DEBUG 13624 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-03-22 09:27:29.047  INFO 13624 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-03-22 09:27:29.160  INFO 13624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-22 09:27:29.182  INFO 13624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-22 09:27:30.481  INFO 13624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-22 09:27:30.493  INFO 13624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-22 09:27:30.540  INFO 13624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2022-03-22 09:27:31.563  INFO 13624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-03-22 09:27:31.573  INFO 13624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-22 09:27:31.573  INFO 13624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-03-22 09:27:31.680  INFO 13624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-22 09:27:31.680  INFO 13624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2497 ms
+2022-03-22 09:27:33.018  INFO 13624 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-22 09:27:33.132  INFO 13624 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-22 09:27:33.501  INFO 13624 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-03-22 09:27:34.091  INFO 13624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-22 09:27:34.120  INFO 13624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-03-22 09:27:34.131  INFO 13624 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 5.814 seconds (JVM running for 7.196)
+2022-03-22 09:27:39.812  INFO 13624 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-03-22 09:27:39.816  INFO 13624 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 09:27:39.817  INFO 13624 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-22 09:27:39.818  INFO 13624 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-22 09:27:39.860  INFO 13624 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-03-22 09:27:43.688  INFO 13624 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-03-22 09:27:50.071  INFO 13624 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-03-22 09:27:50.773 ERROR 13624 --- [http-nio-8888-exec-2] c.g.d.h.ControllerExceptionHandler       : Request URL : /,Exception : {}
+
+org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:272)
+	at org.springframework.data.redis.connection.lettuce.LettuceKeyCommands.convertLettuceAccessException(LettuceKeyCommands.java:810)
+	at org.springframework.data.redis.connection.lettuce.LettuceKeyCommands.exists(LettuceKeyCommands.java:78)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.exists(DefaultedRedisConnection.java:69)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.exists(DefaultStringRedisConnection.java:343)
+	at org.springframework.data.redis.core.RedisTemplate.lambda$hasKey$6(RedisTemplate.java:774)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:229)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.RedisTemplate.hasKey(RedisTemplate.java:774)
+	at com.gcl.demo1.service.impl.BlogServiceImpl.listBlog(BlogServiceImpl.java:145)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$6f27ab09.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687)
+	at com.gcl.demo1.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$a5ececb3.listBlog(<generated>)
+	at com.gcl.demo1.controller.IndexController.index(IndexController.java:54)
+	at com.gcl.demo1.controller.IndexController$$FastClassBySpringCGLIB$$dfe53a47.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.gcl.demo1.controller.IndexController$$EnhancerBySpringCGLIB$$7dc6dd93.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:807)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:53)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:75)
+	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:80)
+	at com.sun.proxy.$Proxy126.exists(Unknown Source)
+	at org.springframework.data.redis.connection.lettuce.LettuceKeyCommands.exists(LettuceKeyCommands.java:76)
+	... 81 common frames omitted
+
+2022-03-22 09:27:50.774  WARN 13624 --- [http-nio-8888-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 600 millisecond(s)]
+2022-03-22 09:28:04.401  INFO 13624 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-03-22 09:28:13.032  INFO 13624 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-03-22 09:28:13.525  INFO 13624 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 09:28:13.631  INFO 13624 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 09:28:17.213  INFO 13624 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 09:28:17.257  INFO 13624 --- [http-nio-8888-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-22 09:28:18.029  INFO 13624 --- [http-nio-8888-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-22 09:28:18.170 DEBUG 13624 --- [http-nio-8888-exec-9] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 09:28:18.192 DEBUG 13624 --- [http-nio-8888-exec-9] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 09:28:18.258 DEBUG 13624 --- [http-nio-8888-exec-9] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 1
+2022-03-22 09:28:18.263 DEBUG 13624 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:28:18.263 DEBUG 13624 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:28:18.304 DEBUG 13624 --- [http-nio-8888-exec-9] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:28:18.304  INFO 13624 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 09:28:18.650  INFO 13624 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 09:28:18.730  INFO 13624 --- [http-nio-8888-exec-4] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 09:28:36.875 DEBUG 13624 --- [http-nio-8888-exec-8] com.gcl.demo1.dao.UserDao.login          : ==>  Preparing: select * from b_user where username = ? and password = ?
+2022-03-22 09:28:36.875 DEBUG 13624 --- [http-nio-8888-exec-8] com.gcl.demo1.dao.UserDao.login          : ==> Parameters: 关昌隆(String), 1663f0a8abd78197aa83c14938f010f1(String)
+2022-03-22 09:28:36.918 DEBUG 13624 --- [http-nio-8888-exec-8] com.gcl.demo1.dao.UserDao.login          : <==      Total: 1
+2022-03-22 09:28:38.537 DEBUG 13624 --- [http-nio-8888-exec-5] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 09:28:38.537 DEBUG 13624 --- [http-nio-8888-exec-5] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 09:28:38.578 DEBUG 13624 --- [http-nio-8888-exec-5] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 09:28:38.581 DEBUG 13624 --- [http-nio-8888-exec-5] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 09:28:38.581 DEBUG 13624 --- [http-nio-8888-exec-5] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 09:28:38.621 DEBUG 13624 --- [http-nio-8888-exec-5] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 1
+2022-03-22 09:28:53.927 DEBUG 13624 --- [http-nio-8888-exec-9] c.g.d.dao.TimeLineDao.insertTimeLine     : ==>  Preparing: insert into b_time_line(content, public_time, picture, user_id, published) values(?, ?, ?, ?, ?)
+2022-03-22 09:28:53.928 DEBUG 13624 --- [http-nio-8888-exec-9] c.g.d.dao.TimeLineDao.insertTimeLine     : ==> Parameters: <img width="30" height="30" class="emoji_icon" src="../static/images/emoji/aru/6.png"><img width="30" height="30" class="emoji_icon" src="../static/images/emoji/aru/2.png">哈哈哈(String), 2022-03-22 09:28:53.842(Timestamp), https://img-blog.csdnimg.cn/fe8de1a209e249a3b44e0c47baf1a078.jpg(String), 1(Integer), false(Boolean)
+2022-03-22 09:28:54.008 DEBUG 13624 --- [http-nio-8888-exec-9] c.g.d.dao.TimeLineDao.insertTimeLine     : <==    Updates: 1
+2022-03-22 09:28:54.108 DEBUG 13624 --- [http-nio-8888-exec-3] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 09:28:54.108 DEBUG 13624 --- [http-nio-8888-exec-3] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 09:28:54.148 DEBUG 13624 --- [http-nio-8888-exec-3] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 09:28:54.149 DEBUG 13624 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 09:28:54.149 DEBUG 13624 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 09:28:54.189 DEBUG 13624 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 09:28:58.554 DEBUG 13624 --- [http-nio-8888-exec-2] c.g.d.dao.TimeLineDao.findTimeLineById   : ==>  Preparing: select * from b_time_line where id = ?
+2022-03-22 09:28:58.555 DEBUG 13624 --- [http-nio-8888-exec-2] c.g.d.dao.TimeLineDao.findTimeLineById   : ==> Parameters: 2(Integer)
+2022-03-22 09:28:58.597 DEBUG 13624 --- [http-nio-8888-exec-2] c.g.d.dao.TimeLineDao.findTimeLineById   : <==      Total: 1
+2022-03-22 09:29:57.536  INFO 17064 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 17064 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-03-22 09:29:57.539 DEBUG 17064 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-03-22 09:29:57.539  INFO 17064 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-03-22 09:29:57.622  INFO 17064 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-22 09:29:57.623  INFO 17064 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-22 09:29:58.319  INFO 17064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-22 09:29:58.320  INFO 17064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-22 09:29:58.350  INFO 17064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2022-03-22 09:29:59.008  INFO 17064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-03-22 09:29:59.015  INFO 17064 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-22 09:29:59.017  INFO 17064 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-03-22 09:29:59.075  INFO 17064 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-22 09:29:59.075  INFO 17064 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1451 ms
+2022-03-22 09:29:59.928  INFO 17064 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-22 09:30:00.019  INFO 17064 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-22 09:30:00.381  INFO 17064 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-03-22 09:30:00.726  INFO 17064 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-22 09:30:00.752  INFO 17064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-03-22 09:30:00.764  INFO 17064 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 3.774 seconds (JVM running for 4.679)
+2022-03-22 09:30:04.556  INFO 17064 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2; JSESSIONID=788E0361014194DE899ECD4B2C23BFEC] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-03-22 09:30:04.562  INFO 17064 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 09:30:04.562  INFO 17064 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-22 09:30:04.563  INFO 17064 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-22 09:30:15.033  INFO 17064 --- [http-nio-8888-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-22 09:30:15.533  INFO 17064 --- [http-nio-8888-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-22 09:30:15.538 DEBUG 17064 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.UserDao.login          : ==>  Preparing: select * from b_user where username = ? and password = ?
+2022-03-22 09:30:15.554 DEBUG 17064 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.UserDao.login          : ==> Parameters: 关昌隆(String), 1663f0a8abd78197aa83c14938f010f1(String)
+2022-03-22 09:30:15.605 DEBUG 17064 --- [http-nio-8888-exec-4] com.gcl.demo1.dao.UserDao.login          : <==      Total: 1
+2022-03-22 09:30:16.916 DEBUG 17064 --- [http-nio-8888-exec-6] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 09:30:16.916 DEBUG 17064 --- [http-nio-8888-exec-6] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 09:30:16.953 DEBUG 17064 --- [http-nio-8888-exec-6] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 09:30:16.955 DEBUG 17064 --- [http-nio-8888-exec-6] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 09:30:16.956 DEBUG 17064 --- [http-nio-8888-exec-6] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 09:30:16.995 DEBUG 17064 --- [http-nio-8888-exec-6] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 09:30:18.517 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findTimeLineById   : ==>  Preparing: select * from b_time_line where id = ?
+2022-03-22 09:30:18.518 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findTimeLineById   : ==> Parameters: 2(Integer)
+2022-03-22 09:30:18.556 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findTimeLineById   : <==      Total: 1
+2022-03-22 09:30:26.988 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findAllType    : ==>  Preparing: select * from b_type
+2022-03-22 09:30:26.988 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findAllType    : ==> Parameters: 
+2022-03-22 09:30:27.033 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findAllType    : <==      Total: 4
+2022-03-22 09:30:27.034 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog
+2022-03-22 09:30:27.035 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll_COUNT  : ==> Parameters: 
+2022-03-22 09:30:27.072 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll_COUNT  : <==      Total: 1
+2022-03-22 09:30:27.073 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll        : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog order by create_time desc LIMIT ?
+2022-03-22 09:30:27.074 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll        : ==> Parameters: 8(Integer)
+2022-03-22 09:30:27.114 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll        : <==      Total: 8
+2022-03-22 09:30:27.115 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.115 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 34(Integer)
+2022-03-22 09:30:27.152 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.152 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.153 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.191 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.191 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.192 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-03-22 09:30:27.231 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.232 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.232 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 33(Integer)
+2022-03-22 09:30:27.270 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-03-22 09:30:27.271 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.271 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.309 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.309 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.309 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 4(Integer)
+2022-03-22 09:30:27.347 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.348 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.348 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 32(Integer)
+2022-03-22 09:30:27.387 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.388 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.388 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.426 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.426 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.427 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-03-22 09:30:27.464 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.465 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.466 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 31(Integer)
+2022-03-22 09:30:27.502 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.503 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.504 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.542 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.542 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.543 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 2(Integer)
+2022-03-22 09:30:27.580 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.580 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.581 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 30(Integer)
+2022-03-22 09:30:27.618 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.619 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.619 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.657 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.657 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.657 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.719 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.720 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.720 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 29(Integer)
+2022-03-22 09:30:27.758 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.759 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.759 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.796 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.796 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.797 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.834 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.834 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.834 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 28(Integer)
+2022-03-22 09:30:27.872 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.872 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.872 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.910 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:27.911 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:27.911 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:27.948 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:27.948 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 09:30:27.949 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 27(Integer)
+2022-03-22 09:30:27.986 DEBUG 17064 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 09:30:27.987 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 09:30:27.987 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 09:30:28.029 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 09:30:28.029 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 09:30:28.029 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-03-22 09:30:28.068 DEBUG 17064 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 09:30:33.947 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 09:30:33.947 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 09:30:33.984 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 09:30:33.985 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 09:30:33.985 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 09:30:34.023 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 09:32:02.285 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findTimeLineById   : ==>  Preparing: select * from b_time_line where id = ?
+2022-03-22 09:32:02.285 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findTimeLineById   : ==> Parameters: 2(Integer)
+2022-03-22 09:32:02.324 DEBUG 17064 --- [http-nio-8888-exec-3] c.g.d.dao.TimeLineDao.findTimeLineById   : <==      Total: 1
+2022-03-22 10:02:57.451  INFO 11568 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 11568 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-03-22 10:02:57.453 DEBUG 11568 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-03-22 10:02:57.453  INFO 11568 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-03-22 10:02:57.491  INFO 11568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-22 10:02:57.491  INFO 11568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-22 10:02:58.033  INFO 11568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-22 10:02:58.034  INFO 11568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-22 10:02:58.057  INFO 11568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-03-22 10:02:58.629  INFO 11568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-03-22 10:02:58.635  INFO 11568 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-22 10:02:58.635  INFO 11568 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-03-22 10:02:58.689  INFO 11568 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-22 10:02:58.689  INFO 11568 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1197 ms
+2022-03-22 10:02:59.579  INFO 11568 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-22 10:02:59.672  INFO 11568 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-22 10:02:59.945  INFO 11568 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-03-22 10:03:00.256  INFO 11568 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-22 10:03:00.281  INFO 11568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-03-22 10:03:00.292  INFO 11568 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 3.27 seconds (JVM running for 4.133)
+2022-03-22 10:03:17.599  INFO 11568 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2; JSESSIONID=EBCB09DB2CB6FAC839E066E2358F467A] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-03-22 10:03:17.603  INFO 11568 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 10:03:17.603  INFO 11568 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-22 10:03:17.604  INFO 11568 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-22 10:03:27.910  INFO 11568 --- [http-nio-8888-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-22 10:03:28.487  INFO 11568 --- [http-nio-8888-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-22 10:03:28.492 DEBUG 11568 --- [http-nio-8888-exec-7] com.gcl.demo1.dao.UserDao.login          : ==>  Preparing: select * from b_user where username = ? and password = ?
+2022-03-22 10:03:28.515 DEBUG 11568 --- [http-nio-8888-exec-7] com.gcl.demo1.dao.UserDao.login          : ==> Parameters: 关昌隆(String), 1663f0a8abd78197aa83c14938f010f1(String)
+2022-03-22 10:03:28.574 DEBUG 11568 --- [http-nio-8888-exec-7] com.gcl.demo1.dao.UserDao.login          : <==      Total: 1
+2022-03-22 10:03:30.085 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:03:30.085 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:03:30.130 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:03:30.136 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:03:30.137 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:03:30.184 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 10:03:32.062 DEBUG 11568 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.findTimeLineById   : ==>  Preparing: select * from b_time_line where id = ?
+2022-03-22 10:03:32.062 DEBUG 11568 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.findTimeLineById   : ==> Parameters: 2(Integer)
+2022-03-22 10:03:32.106 DEBUG 11568 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.findTimeLineById   : <==      Total: 1
+2022-03-22 10:03:36.412  INFO 11568 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-03-22 10:03:42.045  INFO 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.index', args=[1, 8, {}]}
+2022-03-22 10:03:46.074  INFO 11568 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-03-22 10:03:51.588  INFO 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：index
+2022-03-22 10:03:52.306  INFO 11568 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:03:52.406  INFO 11568 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:03:57.577  INFO 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 10:03:57.623 DEBUG 11568 --- [http-nio-8888-exec-6] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 10:03:57.623 DEBUG 11568 --- [http-nio-8888-exec-6] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 10:03:57.668 DEBUG 11568 --- [http-nio-8888-exec-6] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 1
+2022-03-22 10:03:57.668 DEBUG 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:03:57.668 DEBUG 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:03:57.713 DEBUG 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:03:57.714  INFO 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 10:03:58.041  INFO 11568 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:03:58.129  INFO 11568 --- [http-nio-8888-exec-5] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:04:09.834 DEBUG 11568 --- [http-nio-8888-exec-4] c.g.d.d.TimeLineDao.deleteTimeLineById   : ==>  Preparing: delete from b_time_line where id = ?; alter table b_time_line drop id; alter table b_time_line add id int not null primary key auto_increment first;
+2022-03-22 10:04:09.834 DEBUG 11568 --- [http-nio-8888-exec-4] c.g.d.d.TimeLineDao.deleteTimeLineById   : ==> Parameters: 2(Integer)
+2022-03-22 10:04:10.085 DEBUG 11568 --- [http-nio-8888-exec-4] c.g.d.d.TimeLineDao.deleteTimeLineById   : <==    Updates: 1
+2022-03-22 10:04:10.196 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:04:10.197 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:04:10.242 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:04:10.242 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:04:10.242 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:04:10.287 DEBUG 11568 --- [http-nio-8888-exec-1] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 1
+2022-03-22 10:04:24.543 DEBUG 11568 --- [http-nio-8888-exec-6] c.g.d.dao.TimeLineDao.insertTimeLine     : ==>  Preparing: insert into b_time_line(content, public_time, picture, user_id, published) values(?, ?, ?, ?, ?)
+2022-03-22 10:04:24.544 DEBUG 11568 --- [http-nio-8888-exec-6] c.g.d.dao.TimeLineDao.insertTimeLine     : ==> Parameters: 测试<img width="30" height="30" class="emoji_icon" src="../static/images/emoji/aru/1.png">(String), 2022-03-22 10:04:24.455(Timestamp), (String), 1(Integer), true(Boolean)
+2022-03-22 10:04:24.631 DEBUG 11568 --- [http-nio-8888-exec-6] c.g.d.dao.TimeLineDao.insertTimeLine     : <==    Updates: 1
+2022-03-22 10:04:24.730 DEBUG 11568 --- [http-nio-8888-exec-5] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:04:24.730 DEBUG 11568 --- [http-nio-8888-exec-5] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:04:24.774 DEBUG 11568 --- [http-nio-8888-exec-5] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:04:24.775 DEBUG 11568 --- [http-nio-8888-exec-5] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:04:24.775 DEBUG 11568 --- [http-nio-8888-exec-5] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:04:24.820 DEBUG 11568 --- [http-nio-8888-exec-5] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 10:04:27.235  INFO 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 10:04:27.279 DEBUG 11568 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 10:04:27.279 DEBUG 11568 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 10:04:27.325 DEBUG 11568 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 2
+2022-03-22 10:04:27.326 DEBUG 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:04:27.326 DEBUG 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:04:27.370 DEBUG 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:04:27.370 DEBUG 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:04:27.370 DEBUG 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:04:27.415 DEBUG 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:04:27.416  INFO 11568 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 10:04:27.722  INFO 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:04:27.809  INFO 11568 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:05:50.981  INFO 9336 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9336 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-03-22 10:05:50.985 DEBUG 9336 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-03-22 10:05:50.985  INFO 9336 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-03-22 10:05:51.079  INFO 9336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-22 10:05:51.079  INFO 9336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-22 10:05:52.020  INFO 9336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-22 10:05:52.022  INFO 9336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-22 10:05:52.061  INFO 9336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2022-03-22 10:05:52.796  INFO 9336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-03-22 10:05:52.806  INFO 9336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-22 10:05:52.807  INFO 9336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-03-22 10:05:52.876  INFO 9336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-22 10:05:52.877  INFO 9336 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1796 ms
+2022-03-22 10:05:53.827  INFO 9336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-22 10:05:53.927  INFO 9336 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-22 10:05:54.202  INFO 9336 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-03-22 10:05:54.519  INFO 9336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-22 10:05:54.543  INFO 9336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-03-22 10:05:54.553  INFO 9336 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 4.262 seconds (JVM running for 5.236)
+2022-03-22 10:05:58.363  INFO 9336 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2; JSESSIONID=98062977E9FC3C405B08E567905AFDAA] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-03-22 10:05:58.367  INFO 9336 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 10:05:58.367  INFO 9336 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-22 10:05:58.368  INFO 9336 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-22 10:05:58.385  INFO 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 10:05:58.404  INFO 9336 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-22 10:05:58.937  INFO 9336 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-22 10:05:58.942 DEBUG 9336 --- [http-nio-8888-exec-1] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 10:05:58.958 DEBUG 9336 --- [http-nio-8888-exec-1] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 10:05:59.012 DEBUG 9336 --- [http-nio-8888-exec-1] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 2
+2022-03-22 10:05:59.016 DEBUG 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:05:59.016 DEBUG 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:05:59.056 DEBUG 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:05:59.057 DEBUG 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:05:59.057 DEBUG 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:05:59.097 DEBUG 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:05:59.097  INFO 9336 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 10:05:59.708  INFO 9336 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:06:00.893  INFO 9336 --- [http-nio-8888-exec-7] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:06:03.151  INFO 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 10:06:03.190 DEBUG 9336 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 10:06:03.190 DEBUG 9336 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 10:06:03.231 DEBUG 9336 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 2
+2022-03-22 10:06:03.232 DEBUG 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:06:03.232 DEBUG 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:06:03.272 DEBUG 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:06:03.273 DEBUG 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:06:03.273 DEBUG 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:06:03.313 DEBUG 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:06:03.313  INFO 9336 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 10:06:03.612  INFO 9336 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:06:03.694  INFO 9336 --- [http-nio-8888-exec-9] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:06:56.156  INFO 16188 --- [restartedMain] com.gcl.demo1.Demo1Application           : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 16188 (F:\Code\GithubRepository\MyBlog-MyBatis\demo1\target\classes started by 关昌隆 in F:\Code\GithubRepository\MyBlog-MyBatis\demo1)
+2022-03-22 10:06:56.158 DEBUG 16188 --- [restartedMain] com.gcl.demo1.Demo1Application           : Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-03-22 10:06:56.158  INFO 16188 --- [restartedMain] com.gcl.demo1.Demo1Application           : The following profiles are active: dev
+2022-03-22 10:06:56.238  INFO 16188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-22 10:06:56.238  INFO 16188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-22 10:06:56.911  INFO 16188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-22 10:06:56.913  INFO 16188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-22 10:06:56.951  INFO 16188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2022-03-22 10:06:57.734  INFO 16188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-03-22 10:06:57.743  INFO 16188 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-22 10:06:57.743  INFO 16188 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-03-22 10:06:57.829  INFO 16188 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-22 10:06:57.829  INFO 16188 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1590 ms
+2022-03-22 10:06:58.825  INFO 16188 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-22 10:06:58.919  INFO 16188 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-22 10:06:59.237  INFO 16188 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2022-03-22 10:06:59.563  INFO 16188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-22 10:06:59.590  INFO 16188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-03-22 10:06:59.602  INFO 16188 --- [restartedMain] com.gcl.demo1.Demo1Application           : Started Demo1Application in 4.011 seconds (JVM running for 4.99)
+2022-03-22 10:06:59.642  INFO 16188 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; Idea-8e95ea20=4abcc05d-8fd1-4de9-a0ad-524165c3f2a2; JSESSIONID=98062977E9FC3C405B08E567905AFDAA] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-03-22 10:06:59.647  INFO 16188 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 10:06:59.647  INFO 16188 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-22 10:06:59.648  INFO 16188 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-22 10:07:12.053  INFO 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 10:07:12.075  INFO 16188 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-22 10:07:12.657  INFO 16188 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-22 10:07:12.661 DEBUG 16188 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 10:07:12.678 DEBUG 16188 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 10:07:12.737 DEBUG 16188 --- [http-nio-8888-exec-2] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 2
+2022-03-22 10:07:12.741 DEBUG 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:07:12.741 DEBUG 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:07:12.786 DEBUG 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:07:12.787 DEBUG 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:07:12.787 DEBUG 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:07:12.833 DEBUG 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:07:12.834  INFO 16188 --- [http-nio-8888-exec-2] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 10:07:13.404  INFO 16188 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:07:14.607  INFO 16188 --- [http-nio-8888-exec-6] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:07:33.916 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.login          : ==>  Preparing: select * from b_user where username = ? and password = ?
+2022-03-22 10:07:33.916 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.login          : ==> Parameters: 关昌隆(String), 1663f0a8abd78197aa83c14938f010f1(String)
+2022-03-22 10:07:33.961 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.login          : <==      Total: 1
+2022-03-22 10:07:35.532 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:07:35.532 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:07:35.576 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:07:35.578 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:07:35.578 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:07:35.623 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 10:08:28.417 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.insertTimeLine     : ==>  Preparing: insert into b_time_line(content, public_time, picture, user_id, published) values(?, ?, ?, ?, ?)
+2022-03-22 10:08:28.418 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.insertTimeLine     : ==> Parameters: <div>压缩功能是按照文件里面的各个元素按照权值（即元素出现的次数）形成哈夫曼树，再通过遍历形成的哈夫曼树形成哈夫曼编码<img width="30" height="30" class="emoji_icon" src="../static/images/emoji/aru/8.png">，再对形成的哈夫曼编码进行按位压缩（即每8位形成一个字节）<img width="30" height="30" class="emoji_icon" src="../static/images/emoji/aru/1.png">，最后将按位压缩后的编码、哈夫曼树的元素以及这些元素对应的权值和该文件的名字格式写入压缩文件里面方便进行下一次解压缩操作。</div>(String), 2022-03-22 10:08:28.336(Timestamp), (String), 1(Integer), true(Boolean)
+2022-03-22 10:08:28.491 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.insertTimeLine     : <==    Updates: 1
+2022-03-22 10:08:28.584 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:08:28.584 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:08:28.622 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:08:28.623 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:08:28.623 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:08:28.661 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 3
+2022-03-22 10:08:32.072  INFO 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Request : {url='/timeLine/timeLinePage', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.TimeLineShowController.timeLinePage', args=[{}]}
+2022-03-22 10:08:32.109 DEBUG 16188 --- [http-nio-8888-exec-1] c.g.d.d.T.findTimeLineByPublished        : ==>  Preparing: select * from b_time_line where published = 1 group by public_time desc
+2022-03-22 10:08:32.109 DEBUG 16188 --- [http-nio-8888-exec-1] c.g.d.d.T.findTimeLineByPublished        : ==> Parameters: 
+2022-03-22 10:08:32.147 DEBUG 16188 --- [http-nio-8888-exec-1] c.g.d.d.T.findTimeLineByPublished        : <==      Total: 3
+2022-03-22 10:08:32.148 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:08:32.148 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:08:32.186 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:08:32.186 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:08:32.186 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:08:32.223 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:08:32.224 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:08:32.224 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:08:32.261 DEBUG 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:08:32.262  INFO 16188 --- [http-nio-8888-exec-1] com.gcl.demo1.aspect.LogAspect           : Result：timeLine
+2022-03-22 10:08:32.599  INFO 16188 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Request : {url='/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.gcl.demo1.controller.IndexController.newBlogs', args=[{}]}
+2022-03-22 10:08:32.687  INFO 16188 --- [http-nio-8888-exec-3] com.gcl.demo1.aspect.LogAspect           : Result：_fragments :: newBlogList
+2022-03-22 10:08:46.739 DEBUG 16188 --- [http-nio-8888-exec-8] c.g.d.d.TimeLineDao.deleteTimeLineById   : ==>  Preparing: delete from b_time_line where id = ?; alter table b_time_line drop id; alter table b_time_line add id int not null primary key auto_increment first;
+2022-03-22 10:08:46.739 DEBUG 16188 --- [http-nio-8888-exec-8] c.g.d.d.TimeLineDao.deleteTimeLineById   : ==> Parameters: 3(Integer)
+2022-03-22 10:08:46.967 DEBUG 16188 --- [http-nio-8888-exec-8] c.g.d.d.TimeLineDao.deleteTimeLineById   : <==    Updates: 1
+2022-03-22 10:08:47.044 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:08:47.044 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:08:47.081 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:08:47.082 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:08:47.083 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:08:47.120 DEBUG 16188 --- [http-nio-8888-exec-4] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 2
+2022-03-22 10:08:48.436 DEBUG 16188 --- [http-nio-8888-exec-2] c.g.d.d.TimeLineDao.deleteTimeLineById   : ==>  Preparing: delete from b_time_line where id = ?; alter table b_time_line drop id; alter table b_time_line add id int not null primary key auto_increment first;
+2022-03-22 10:08:48.437 DEBUG 16188 --- [http-nio-8888-exec-2] c.g.d.d.TimeLineDao.deleteTimeLineById   : ==> Parameters: 2(Integer)
+2022-03-22 10:08:48.609 DEBUG 16188 --- [http-nio-8888-exec-2] c.g.d.d.TimeLineDao.deleteTimeLineById   : <==    Updates: 1
+2022-03-22 10:08:48.686 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:08:48.686 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:08:48.724 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:08:48.725 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:08:48.725 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:08:48.763 DEBUG 16188 --- [http-nio-8888-exec-10] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 1
+2022-03-22 10:09:02.118 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findAllType    : ==>  Preparing: select * from b_type
+2022-03-22 10:09:02.119 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findAllType    : ==> Parameters: 
+2022-03-22 10:09:02.157 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findAllType    : <==      Total: 4
+2022-03-22 10:09:02.159 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll_COUNT  : ==>  Preparing: SELECT count(0) FROM b_blog
+2022-03-22 10:09:02.160 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll_COUNT  : ==> Parameters: 
+2022-03-22 10:09:02.197 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll_COUNT  : <==      Total: 1
+2022-03-22 10:09:02.198 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll        : ==>  Preparing: SELECT id, title, first_picture, flag, views, appreciation, share_statement, commentable, published, recommend, create_time, update_time, type_id, description, user_id, like_count, un_like_count FROM b_blog order by create_time desc LIMIT ?
+2022-03-22 10:09:02.198 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll        : ==> Parameters: 8(Integer)
+2022-03-22 10:09:02.238 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.BlogDao.findAll        : <==      Total: 8
+2022-03-22 10:09:02.239 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.239 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 34(Integer)
+2022-03-22 10:09:02.276 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:02.277 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.277 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.315 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:02.316 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:02.316 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-03-22 10:09:02.352 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:02.353 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.353 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 33(Integer)
+2022-03-22 10:09:02.395 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 2
+2022-03-22 10:09:02.396 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.397 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.434 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:02.435 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:02.435 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 4(Integer)
+2022-03-22 10:09:02.473 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:02.473 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.473 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 32(Integer)
+2022-03-22 10:09:02.510 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:02.511 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.511 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.549 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:02.549 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:02.549 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-03-22 10:09:02.586 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:02.587 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.587 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 31(Integer)
+2022-03-22 10:09:02.624 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:02.624 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.625 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.662 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:02.662 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:02.662 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 2(Integer)
+2022-03-22 10:09:02.700 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:02.700 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.700 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 30(Integer)
+2022-03-22 10:09:02.737 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:02.737 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.737 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.775 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:02.776 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:02.776 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.813 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:02.813 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.814 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 29(Integer)
+2022-03-22 10:09:02.850 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:02.850 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.850 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.888 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:02.888 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:02.889 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:02.927 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:02.927 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:02.927 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 28(Integer)
+2022-03-22 10:09:02.965 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:02.966 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:02.966 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:03.002 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:03.002 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:03.003 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:03.040 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:03.041 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==>  Preparing: select * from b_tag where id in (select tag_id from b_blog_tag where blog_id = ?)
+2022-03-22 10:09:03.041 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : ==> Parameters: 27(Integer)
+2022-03-22 10:09:03.078 DEBUG 16188 --- [http-nio-8888-exec-5] c.gcl.demo1.dao.TagDao.findTagByBlogId   : <==      Total: 1
+2022-03-22 10:09:03.078 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==>  Preparing: select * from b_user where id = ?
+2022-03-22 10:09:03.079 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : ==> Parameters: 1(Integer)
+2022-03-22 10:09:03.116 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.UserDao.findUserById   : <==      Total: 1
+2022-03-22 10:09:03.116 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==>  Preparing: select * from b_type where id = ?
+2022-03-22 10:09:03.117 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : ==> Parameters: 3(Integer)
+2022-03-22 10:09:03.154 DEBUG 16188 --- [http-nio-8888-exec-5] com.gcl.demo1.dao.TypeDao.findTypeById   : <==      Total: 1
+2022-03-22 10:09:04.705 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.d.T.findAllTimeLine_COUNT          : ==>  Preparing: SELECT count(0) FROM b_time_line
+2022-03-22 10:09:04.705 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.d.T.findAllTimeLine_COUNT          : ==> Parameters: 
+2022-03-22 10:09:04.743 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.d.T.findAllTimeLine_COUNT          : <==      Total: 1
+2022-03-22 10:09:04.743 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==>  Preparing: SELECT * FROM b_time_line order by public_time desc LIMIT ?
+2022-03-22 10:09:04.743 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.dao.TimeLineDao.findAllTimeLine    : ==> Parameters: 8(Integer)
+2022-03-22 10:09:04.780 DEBUG 16188 --- [http-nio-8888-exec-7] c.g.d.dao.TimeLineDao.findAllTimeLine    : <==      Total: 1

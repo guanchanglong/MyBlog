@@ -65,7 +65,7 @@ public class BlogServiceImpl implements BlogService {
     public PageInfo<Blog> listBlog(int pageNum, int size, int id, String type, String content, BlogQuery blogQuery) {
         Page<Blog> blogs;
         String data = "";
-        PageInfo<Blog> result;
+        PageInfo<Blog> result = new PageInfo<>();
         List<Blog> blogList = new ArrayList<>();
         JSONObject json;
         switch (type){
@@ -79,6 +79,9 @@ public class BlogServiceImpl implements BlogService {
                 data = redisTemplate.opsForValue().get("tagBlogPage:" + pageNum + ";tagId:" + id);
                 json = JSON.parseObject(data);
                 blogList = JSON.parseArray(json.getString("list"), Blog.class);
+                result = JSON.parseObject(data, PageInfo.class);
+                assert result != null;
+                result.setList(blogList);
                 break;
             case "type":
                 if (!Boolean.TRUE.equals(redisTemplate.hasKey("typeBlogPage:" + pageNum + ";typeId:" + id))){
@@ -90,6 +93,9 @@ public class BlogServiceImpl implements BlogService {
                 data = redisTemplate.opsForValue().get("typeBlogPage:" + pageNum + ";typeId:" + id);
                 json = JSON.parseObject(data);
                 blogList = JSON.parseArray(json.getString("list"), Blog.class);
+                result = JSON.parseObject(data, PageInfo.class);
+                assert result != null;
+                result.setList(blogList);
                 break;
             case "published":
                 //redis判断数据是否存储到内存中
@@ -102,17 +108,20 @@ public class BlogServiceImpl implements BlogService {
                 data = redisTemplate.opsForValue().get("publishedBlogPage:" + pageNum);
                 json = JSON.parseObject(data);
                 blogList = JSON.parseArray(json.getString("list"), Blog.class);
+                result = JSON.parseObject(data, PageInfo.class);
+                assert result != null;
+                result.setList(blogList);
                 break;
             case "search":              //搜索不用从Redis中取值，不然会很难受
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findBlogByContent("%"+content+"%");
                 result = new PageInfo<>(blogs);
-                return result;
+                break;
             case "findAll":             //管理员这里也不用从Redis中取值
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 blogs = blogDao.findAll();
                 result = new PageInfo<>(blogs);
-                return result;
+                break;
             case "searchInAdmin":       //管理员这里也不用从Redis中取值
                 PageHelper.startPage(pageNum, size,"create_time desc");
                 String title = blogQuery.getTitle();
@@ -120,12 +129,8 @@ public class BlogServiceImpl implements BlogService {
                 blogQuery.setTitle(title);
                 blogs = blogDao.findBlogByBlogQuery(blogQuery);
                 result = new PageInfo<>(blogs);
-                return result;
+                break;
         }
-
-        result = JSON.parseObject(data, PageInfo.class);
-        assert result != null;
-        result.setList(blogList);
 
         for (Blog blog: result.getList()){
 
